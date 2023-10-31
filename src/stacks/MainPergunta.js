@@ -9,7 +9,7 @@ import Second from "../pages/Second";
 import Test from "../screens/Test";
 import Prot from "../screens/Prot";
 
-//Tela para perguntas
+//Tela para perguntas  
 import Fatori from "../screens/ScreensPergunta/Pergunta1";
 import Fatori from "../screens/ScreensPergunta/Pergunta2";
 import Fatori from "../screens/ScreensPergunta/Pergunta3";

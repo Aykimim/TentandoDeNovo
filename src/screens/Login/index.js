@@ -6,21 +6,6 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import LottieView from "lottie-react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-// //*****************Telas*****************
-
-// import menu from "../screens/Home";
-// //*****************Telas*****************
-
-// const Stack = createStackNavigator();
-
-// export default () => (
-//   <Stack.Navigator
-//     screenOptions={{ headerShown: false }}
-//     initialRouteName="menu"
-//   >
-//     <Stack.Screen name="menu" component={menu} />
-//   </Stack.Navigator>
-// );
 
 import {
   CustomButton,
