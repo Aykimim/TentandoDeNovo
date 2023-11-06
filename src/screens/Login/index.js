@@ -110,7 +110,6 @@ export default function App() {
             style={{ width: 100, height: 100, borderRadius: 50 }}
           />
           
-
           <Textentrada
             placeholder="Email:"
             placeholderTextColor={"#fff"}

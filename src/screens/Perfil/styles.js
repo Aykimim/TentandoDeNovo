@@ -8,6 +8,7 @@ export const Container = styled.SafeAreaView`
   align-items: center;
   padding-horizontal: 5%;
   padding-vertical: 5%;
+  flex-direction: row;
 `;
 
 export const Textbotao = styled.Text`
@@ -60,7 +61,9 @@ export const TextEscrita = styled.Text`
 
 export const View = styled.View`
   flex: 1;
-  justifycontent: "center";
+  justifycontent: "top";
   alignitems: "center";
-  color: #f0dfc8;
+  color: #303030;
+  border: 2px;
+  
 `;
