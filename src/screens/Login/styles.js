@@ -55,30 +55,32 @@ export const Textentrada = styled.TextInput`
 `;
 
 export const SendButtontextBorda = styled.Text`
+  border-radius: 50px;
+  padding-left: 10px;
   font-size: 25px;
   text-align: center;
   color: #f0dfc8;
-background-color: #795833;
+  background-color: #795833;
   font-size: 20px;
   width: 80%;
   justify-content: center;
-  align-items: center; 
-  border-radius: 10px;
+  align-items: center;
+
   margin-top: 20px;
   margin-right: 5px;
 `;
 
 export const CustomButton = styled.TouchableOpacity`
-    width: 70%;
-    max-width: 100px;
-    background-color: #795833;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 8px;
-    `;
+  width: 70%;
+  max-width: 100px;
+  background-color: #795833;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+`;
 
 export const Text = styled.Text`
   font-size: 25px;
@@ -87,7 +89,6 @@ export const Text = styled.Text`
 `;
 
 export const TextEscrita = styled.Text`
-  font-family: "";
   font-size: 15px;
   text-align: center;
   color: #f0dfc8;

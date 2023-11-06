@@ -65,7 +65,7 @@ export default function App() {
 
   const handleLogin = () => {
     // autenticação (nome e senha)
-    if (nomeUser === "Coxinha" && senha === "Coxinha") {
+    if (nomeUser === "" && senha === "") {
       setLoggedIn(true);
     } else {
       alert("Credenciais incorretas. Tente novamente.");
@@ -96,7 +96,7 @@ export default function App() {
           </SendButton>
 
           <SendButton onPress={navigateToHome}>
-            <SendButtontext>Entar</SendButtontext>
+            <SendButtontext>Entrar</SendButtontext>
           </SendButton>
 
           <SendButton onPress={navigateToPerguntas}>
