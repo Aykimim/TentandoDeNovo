@@ -24,7 +24,9 @@ import {
 const botaoteste = () => {
   alert("Teste");
 };
-
+const Custumizavel = () => {
+  alert("Acho que nao Presisa desse botao");
+};
 function navigateToVoltar() {
   navigation.navigate("Login");
 }
@@ -32,7 +34,7 @@ function navigateToVoltar() {
 function MyCustomLeftComponent() {
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <TouchableOpacity onPress={botaoteste}>
+      <TouchableOpacity onPress={Custumizavel}>
         <Icon name="arrow-left" size={40} color="#000" />
       </TouchableOpacity>
     </View>

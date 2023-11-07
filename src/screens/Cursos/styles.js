@@ -19,7 +19,7 @@ export const ButtonText = styled.Text`
   font-size: 20px;
   text-align: center;
   flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
-  
+  font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
 
 `;
 
