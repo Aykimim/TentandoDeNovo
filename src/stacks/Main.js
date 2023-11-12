@@ -15,6 +15,7 @@ import Fisica from "../screens/Fisica";
 
 import Esquecisenha from "../screens/Esquecisenha";
 import Perguntas from "../screens/Perguntas";
+import CursoDetalhado from "../screens/CursoDetalhado";
 
 import Home from "../screens/Home";
 import Rank from "../screens/Rank";
@@ -52,11 +53,12 @@ export default () => (
 
     <Stack.Screen name="Esquecisenha" component={Esquecisenha} />
     <Stack.Screen name="Perguntas" component={Perguntas} />
-
+<Stack.Screen name="CursoDetalhado" component={CursoDetalhado} />
 
     <Stack.Screen name="Home" component={Home} />
     <Stack.Screen name="Rank" component={Rank} />
     <Stack.Screen name="Cursos" component={Cursos} />
     <Stack.Screen name="Perfil" component={Perfil} />
+
   </Stack.Navigator>
 );

@@ -1,41 +1,30 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  Image
-} from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { ScrollView, TouchableOpacity, View } from "react-native";
 import { Header } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import {
   TextEscrita,
   Container,
   ButtonText,
-  ButtonCurso, // Importe ButtonCurso do styles.js
+  ButtonCurso,
   SendButtontext,
   IconImage,
   ButtonCursoPressed,
   ButtonTextPressed
 } from "./styles";
 
-const botaoteste = () => {
-  alert("Teste");
-};
 const Custumizavel = () => {
   alert("Acho que nao Presisa desse botao");
 };
-function navigateToVoltar() {
-  navigation.navigate("Login");
-}
 
 function MyCustomLeftComponent() {
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
       <TouchableOpacity onPress={Custumizavel}>
-        <Icon name="arrow-left" size={40} color="#000" />
+        <Icon name="star" size={40} color="#000" />
       </TouchableOpacity>
     </View>
   );
@@ -54,57 +43,62 @@ function MyCustomRightComponent() {
     <ButtonText></ButtonText>
   );
 }
+const Stack = createStackNavigator();
 
-export default function App() {
-  const navigation = useNavigation();
-
-  function navigateToLogin() {
-    navigation.navigate("Login");
-  }
+function HomeScreen({ navigation }) {
+  const cursos = [
+    { nome: "Empreendedorismo" },
+    { nome: "Finanças" },
+    { nome: "Marketing" },
+    { nome: "estão de RH" },
+    { nome: "Planejamento" },
+    { nome: "eyk" }
+  ];
 
   return (
     <Container>
-      <Header
-        backgroundColor="#E16539"
-        leftComponent={<MyCustomLeftComponent />}
-        centerComponent={<MyCustomCenterComponent />}
-        rightComponent={<MyCustomRightComponent />}
+      <Header backgroundColor="#E16539" 
+      leftComponent={<MyCustomLeftComponent />}
+      centerComponent={<MyCustomCenterComponent />}
+      rightComponent={<MyCustomRightComponent />}
       />
+      <ScrollView>
+        {cursos.map((curso, index) => (
+          <ButtonCurso
+            key={index}
+            onPress={() => navigation.navigate("CursoDetalhado", { nome: curso.nome })}
+            underlayColor="#E16539"
+          >
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <IconImage source={require("../../Components/img/LogoQuadrada.png")} />
+              <ButtonText>{curso.nome}</ButtonText>
+            </View>
+          </ButtonCurso>
+        ))}
+      </ScrollView>
+    </Container>
+  );
+}
 
-      <ButtonCurso onPress={botaoteste} underlayColor="#E16539">
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <IconImage source={require("../../Components/img/LogoQuadrada.png")} />
-        <ButtonText>Empreendedorismo</ButtonText>
-        </View>
-      </ButtonCurso>
+function CursoDetalhado({ route }) {
+  const { nome } = route.params;
 
-      <ButtonCurso onPress={botaoteste} underlayColor="#E16539">
-  <View style={{ flexDirection: "row", alignItems: "center" }}>
-    <IconImage source={require("../../Components/img/LogoQuadrada.png")} />
-    <ButtonText>Finanças</ButtonText>
-  </View>
-</ButtonCurso>
+  return (
+    <Container>
+      {/* Conteúdo da tela "CursoDetalhado" */}
+      <ButtonText>{nome}</ButtonText>
+    </Container>
+  );
+}
 
-      <ButtonCurso onPress={botaoteste} underlayColor="#E16539">
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <IconImage source={require("../../Components/img/LogoQuadrada.png")} />
-        <ButtonText>Marketing</ButtonText>
-        </View>
-      </ButtonCurso>
 
-      <ButtonCurso onPress={botaoteste} underlayColor="#E16539">
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <IconImage source={require("../../Components/img/LogoQuadrada.png")} />
-        <ButtonText>Gestão de RH</ButtonText>
-        </View>
-      </ButtonCurso>
-
-      <ButtonCurso onPress={botaoteste} underlayColor="#E16539">
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <IconImage source={require("../../Components/img/LogoQuadrada.png")} />
-        <ButtonText>Planejamento</ButtonText>
-        </View>
-      </ButtonCurso>
+export default function App() {
+  return (
+    <Container>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name=" " component={HomeScreen} />
+        <Stack.Screen name="CursoDetalhado" component={CursoDetalhado} />
+      </Stack.Navigator>
     </Container>
   );
 }

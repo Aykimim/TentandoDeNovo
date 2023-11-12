@@ -6,7 +6,6 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import LottieView from "lottie-react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-
 import {
   CustomButton,
   TouchableOpacity,
@@ -85,10 +84,21 @@ export default function App() {
     <Container>
       {loggedIn ? (
         <>
-          <Image
-            source={require("../../Components/img/LogoQuadrada.png")} // Substitua pelo caminho da sua imagem
-            style={{ width: 100, height: 100, borderRadius: 50 }}
-          />
+          <View
+            style={{
+              width: 100,
+              height: 100,
+              borderRadius: 50,
+              margin: 20,
+              overflow: "hidden"
+              
+            }}
+          >
+            <Image
+              source={require("../../Components/img/LogoQuadrada.png")} // Substitua pelo caminho da sua imagem
+              style={{ width: "100%", height: "100%" }}
+            />
+          </View>
 
           <Textbotao>Bem-vindo, {nomeUser}!</Textbotao>
           <SendButton onPress={handleLogout}>
@@ -105,11 +115,22 @@ export default function App() {
         </>
       ) : (
         <>
-          <Image
-            source={require("../../Components/img/LogoQuadrada.png")} // Substitua pelo caminho da sua imagem
-            style={{ width: 100, height: 100, borderRadius: 50 }}
-          />
-          
+          <View
+            style={{
+              width: 100,
+              height: 100,
+              borderRadius: 50,
+              margin: 20,
+              overflow: "hidden"
+              
+            }}
+          >
+            <Image
+              source={require("../../Components/img/LogoQuadrada.png")} // Substitua pelo caminho da sua imagem
+              style={{ width: "100%", height: "100%" }}
+            />
+          </View>
+
           <Textentrada
             placeholder="Email:"
             placeholderTextColor={"#fff"}
@@ -125,7 +146,9 @@ export default function App() {
             onChangeText={(text) => setSenha(text)}
           />
           <SendButton onPress={navigateToEsqueciSenha}>
-            <SendButtontextEsqueciSenha>Esqueci a senha.</SendButtontextEsqueciSenha>
+            <SendButtontextEsqueciSenha>
+              Esqueci a senha.
+            </SendButtontextEsqueciSenha>
           </SendButton>
           <SendButton onPress={handleLogin}>
             <SendButtontextBorda>Entrar</SendButtontextBorda>
@@ -142,8 +165,8 @@ export default function App() {
               <Image
                 source={require("../../Components/img/google-icon.png")} // Substitua pelo caminho do ícone do Google
                 style={{
-                  width: 40,
-                  height: 40,
+                  width: 50,
+                  height: 50,
                   marginRight: 10,
                   borderRadius: 50
                 }}
@@ -153,7 +176,7 @@ export default function App() {
             <TouchableWithoutFeedback onPress={handleLoginWithFacebook}>
               <Image
                 source={require("../../Components/img/facebook-icon.png")} // Substitua pelo caminho do ícone do Facebook
-                style={{ width: 40, height: 40, borderRadius: 50 }}
+                style={{ width: 50, height: 50, borderRadius: 80 }}
               />
             </TouchableWithoutFeedback>
           </View>
