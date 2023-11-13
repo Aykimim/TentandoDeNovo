@@ -43,6 +43,10 @@ export default function App() {
     });
   }
 
+  function navigateTest() {
+    navigation.navigate("Configpage");
+  }
+
   function navigateToPerguntas() {
     navigation.navigate("Perguntas");
   }
@@ -108,7 +112,9 @@ export default function App() {
           <SendButton onPress={navigateToHome}>
             <SendButtontext>Entrar</SendButtontext>
           </SendButton>
-
+          <SendButton onPress={navigateTest}>
+            <SendButtontext>Test</SendButtontext>
+          </SendButton>
           <SendButton onPress={navigateToPerguntas}>
             <SendButtontext>Perguntas</SendButtontext>
           </SendButton>

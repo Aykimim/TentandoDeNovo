@@ -8,6 +8,8 @@ import First from "../pages/First";
 import Second from "../pages/Second";
 import Test from "../screens/Test";
 import Prot from "../screens/Prot";
+import Configpage from "../screens/Configpage";
+
 
 import Fatori from "../screens/Fatori";
 import Finanças from "../screens/Finanças";
@@ -43,6 +45,7 @@ export default () => (
     <Stack.Screen name="First" component={First} />
     <Stack.Screen name="Test" component={Test} />
     <Stack.Screen name="Prot" component={Prot} />
+    <Stack.Screen name="Configpage" component={Configpage} />
 
     <Stack.Screen name="Fatori" component={Fatori} />
     <Stack.Screen name="Finanças" component={Finanças} />
