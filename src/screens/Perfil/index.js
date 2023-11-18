@@ -6,6 +6,7 @@ import { Container, SendButton, SendButtontext, View } from "./styles";
 
 //components
 import HeaderPerfil from "../../Components/FotoPerfil";
+import ScreenNameHeader from "../../Components/ScreenNameHeader";
 
 //imagens
 import coxinha from "../../Components/img/coxinha.png"
@@ -22,6 +23,9 @@ export default function App() {
 
   return (
     <View>
+      <ScreenNameHeader
+        headerName="Perfil"
+      />
       <HeaderPerfil
           source = {require = (coxinha)}
           username = {nomeUsuario}

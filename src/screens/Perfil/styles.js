@@ -64,6 +64,4 @@ export const View = styled.View`
   justifycontent: "top";
   alignitems: "center";
   color: #303030;
-  border: 2px;
-  
 `;

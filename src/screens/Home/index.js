@@ -3,8 +3,9 @@ import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity} from "react-native";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { Container, SendButton, SendButtontext, ButtonText } from "./styles";
-import { Header } from "react-native-elements";
-import Icon from "react-native-vector-icons/FontAwesome";
+
+//components
+import ScreenNameHeader from "../../Components/ScreenNameHeader";
 
 export default function App() {
   const navigation = useNavigation();
@@ -13,41 +14,9 @@ export default function App() {
     navigation.navigate("Login");
   }
 
-  const Custumizavel = () => {
-    alert("Voltar");
-  };
-
-  function MyCustomLeftComponent() {
-    return (
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <TouchableOpacity onPress={Custumizavel}>
-          <Icon name="arrow-left" size={40} color="#000" />
-        </TouchableOpacity>
-      </View>
-    );
-  }
-
-  function MyCustomCenterComponent() {
-    return (
-      // Personalize o componente de acordo com suas necessidades
-      <ButtonText>Home</ButtonText>
-    );
-  }
-  
-  function MyCustomRightComponent() {
-    return (
-      // Personalize o componente de acordo com suas necessidades
-      <ButtonText></ButtonText>
-    );
-    }
-
   return (
     <Container>
-      <Header backgroundColor="#E16539" 
-      leftComponent={<MyCustomLeftComponent />}
-      centerComponent={<MyCustomCenterComponent />}
-      rightComponent={<MyCustomRightComponent />}
-      />
+      <ScreenNameHeader headerName="Home" />
       <View>
         <Text>Home!</Text>
       </View>

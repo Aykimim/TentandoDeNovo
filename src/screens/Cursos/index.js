@@ -16,33 +16,9 @@ import {
   ButtonTextPressed
 } from "./styles";
 
-const Custumizavel = () => {
-  alert("Acho que nao Presisa desse botao");
-};
+//components
+import ScreenNameHeader from "../../Components/ScreenNameHeader"
 
-function MyCustomLeftComponent() {
-  return (
-    <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <TouchableOpacity onPress={Custumizavel}>
-        <Icon name="star" size={40} color="#000" />
-      </TouchableOpacity>
-    </View>
-  );
-}
-
-function MyCustomCenterComponent() {
-  return (
-    // Personalize o componente de acordo com suas necessidades
-    <ButtonText>Cursos</ButtonText>
-  );
-}
-
-function MyCustomRightComponent() {
-  return (
-    // Personalize o componente de acordo com suas necessidades
-    <ButtonText></ButtonText>
-  );
-}
 const Stack = createStackNavigator();
 
 function HomeScreen({ navigation }) {
@@ -57,10 +33,8 @@ function HomeScreen({ navigation }) {
 
   return (
     <Container>
-      <Header backgroundColor="#E16539" 
-      leftComponent={<MyCustomLeftComponent />}
-      centerComponent={<MyCustomCenterComponent />}
-      rightComponent={<MyCustomRightComponent />}
+      <ScreenNameHeader
+        headerName="Cursos"
       />
       <ScrollView>
         {cursos.map((curso, index) => (

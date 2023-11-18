@@ -7,8 +7,7 @@ import {
   Image,
   ScrollView
 } from "react-native";
-import { Header } from "react-native-elements";
-import Icon from "react-native-vector-icons/FontAwesome";
+
 
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import {
@@ -22,39 +21,17 @@ import {
   ButtonTextPressed
 } from "./styles";
 
+//components
+import ScreenNameHeader from "../../Components/ScreenNameHeader";
+
 const botaoteste = () => {
   alert("Teste");
 };
-const Custumizavel = () => {
-  alert("Acho que nao Presisa desse botao");
-};
+
 function navigateToVoltar() {
   navigation.navigate("Login");
 }
 
-function MyCustomLeftComponent() {
-  return (
-    <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <TouchableOpacity onPress={Custumizavel}>
-        <Icon name="star" size={40} color="#000" />
-      </TouchableOpacity>
-    </View>
-  );
-}
-
-function MyCustomCenterComponent() {
-  return (
-    // Personalize o componente de acordo com suas necessidades
-    <ButtonText>Classificação</ButtonText>
-  );
-}
-
-function MyCustomRightComponent() {
-  return (
-    // Personalize o componente de acordo com suas necessidades
-    <ButtonText></ButtonText>
-  );
-}
 
 export default function App() {
   const navigation = useNavigation();
@@ -73,11 +50,8 @@ export default function App() {
   ];
   return (
     <Container>
-      <Header
-        backgroundColor="#795833"
-        leftComponent={<MyCustomLeftComponent />}
-        centerComponent={<MyCustomCenterComponent />}
-        rightComponent={<MyCustomRightComponent />}
+      <ScreenNameHeader
+        headerName="Rank"
       />
       <ScrollView>
         {cursos.map((curso, index) => (
