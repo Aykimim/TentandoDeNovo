@@ -3,10 +3,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/FontAwesome"; // Importe o ícone que deseja usar
 
 // Resto das importações de telas...
-import Home from "../screens/Home";
-import Rank from "../screens/Rank";
-import Cursos from "../screens/Cursos";
-import Perfil from "../screens/Perfil";
+import Home from "../screens/TelasPrincipais/Home";
+import Rank from "../screens/TelasPrincipais/Rank";
+import Cursos from "../screens/TelasPrincipais/Cursos";
+import Perfil from "../screens/TelasPrincipais/Perfil";
 
 const Tab = createBottomTabNavigator();
 

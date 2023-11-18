@@ -21,8 +21,8 @@ import {
   ButtonTextPressed
 } from "./styles";
 
-//components
-import ScreenNameHeader from "../../Components/ScreenNameHeader";
+
+import ScreenNameHeader from "../../../Components/ScreenNameHeader";
 
 const botaoteste = () => {
   alert("Teste");
@@ -58,7 +58,7 @@ export default function App() {
           <ButtonCurso key={index} onPress={botaoteste} underlayColor="#795833">
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <IconImage
-                source={require("../../Components/img/IconeUsuario.png")}
+                source={require("../../../Components/img/IconeUsuario.png")}
               />
 
               <ButtonText>{curso.rank}</ButtonText>

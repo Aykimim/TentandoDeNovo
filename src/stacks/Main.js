@@ -3,32 +3,29 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 //*****************Telas*****************
 
-import Login from "../screens/Login";
-import First from "../pages/First";
-import Second from "../pages/Second";
-import Test from "../screens/Test";
-import Prot from "../screens/Prot";
-import Configpage from "../screens/Configpage";
+import Login from "../screens/Entrada/Login";
+import First from "../screens/AreaDeTests/pages/First";
+import Second from "../screens/AreaDeTests/pages/Second";
+import Test from "../screens/AreaDeTests/Test";
+import Prot from "../screens/AreaDeTests/Prot";
+import Configpage from "../screens/ConfiguracaoDoUsuario/Configpage";
 
+import Fatori from "../screens/AreaDeTests/Fatori";
+import Finanças from "../screens/AreaDeTests/Finanças";
+import Fisica from "../screens/AreaDeTests/Fisica";
 
-import Fatori from "../screens/Fatori";
-import Finanças from "../screens/Finanças";
-import Fisica from "../screens/Fisica";
+import Esquecisenha from "../screens/Entrada/Esquecisenha";
+import Perguntas from "../screens/ScreensPergunta/Perguntas";
+import CursoDetalhado from "../screens/TelasPrincipais/CursoDetalhado";
 
-import Esquecisenha from "../screens/Esquecisenha";
-import Perguntas from "../screens/Perguntas";
-import CursoDetalhado from "../screens/CursoDetalhado";
-
-import Home from "../screens/Home";
-import Rank from "../screens/Rank";
-import Cursos from "../screens/Cursos";
-import Perfil from "../screens/Perfil";
-
+import Home from "../screens/TelasPrincipais/Home";
+import Rank from "../screens/TelasPrincipais/Rank";
+import Cursos from "../screens/TelasPrincipais/Cursos";
+import Perfil from "../screens/TelasPrincipais/Perfil";
 
 //*****************Telas*****************
 import BotonTab from "./BotonTab";
 import MainTab from "./MainTab";
-
 
 const Stack = createStackNavigator();
 
@@ -51,17 +48,13 @@ export default () => (
     <Stack.Screen name="Finanças" component={Finanças} />
     <Stack.Screen name="Fisica" component={Fisica} />
 
-
-
-
     <Stack.Screen name="Esquecisenha" component={Esquecisenha} />
     <Stack.Screen name="Perguntas" component={Perguntas} />
-<Stack.Screen name="CursoDetalhado" component={CursoDetalhado} />
+    <Stack.Screen name="CursoDetalhado" component={CursoDetalhado} />
 
     <Stack.Screen name="Home" component={Home} />
     <Stack.Screen name="Rank" component={Rank} />
     <Stack.Screen name="Cursos" component={Cursos} />
     <Stack.Screen name="Perfil" component={Perfil} />
-
   </Stack.Navigator>
 );

@@ -5,14 +5,14 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { Container, SendButton, SendButtontext, View } from "./styles";
 
 //components
-import HeaderPerfil from "../../Components/FotoPerfil";
-import ScreenNameHeader from "../../Components/ScreenNameHeader";
+import HeaderPerfil from "../../../Components/FotoPerfil";
+import ScreenNameHeader from "../../../Components/ScreenNameHeader";
 
 //imagens
-import coxinha from "../../Components/img/coxinha.png"
+import coxinha from "../../../Components/img/coxinha.png"
 
 //variáveis
-import nomeUsuario from "../Login/index"
+import nomeUsuario from "../../Entrada/Login/index"
 
 export default function App() {
   const navigation = useNavigation();

@@ -51,11 +51,11 @@ export default function App() {
     navigation.navigate("Perguntas");
   }
 
-  function handleAula() {
-    navigation.reset({
-      routes: [{ name: "BotonTab" }]
-    });
-  }
+  // function handleAula() {
+  //   navigation.reset({
+  //     routes: [{ name: "BotonTab" }]
+  //   });
+  // }
   const handleLoginWithGoogle = () => {
     // Adicione a lógica de login com o Google aqui
     alert("Login com o Google");
@@ -99,7 +99,7 @@ export default function App() {
             }}
           >
             <Image
-              source={require("../../Components/img/LogoQuadrada.png")} // Substitua pelo caminho da sua imagem
+              source={require("../../../Components/img/LogoQuadrada.png")} // Substitua pelo caminho da sua imagem
               style={{ width: "100%", height: "100%" }}
             />
           </View>
@@ -132,7 +132,7 @@ export default function App() {
             }}
           >
             <Image
-              source={require("../../Components/img/LogoQuadrada.png")} // Substitua pelo caminho da sua imagem
+              source={require("../../../Components/img/LogoQuadrada.png")} // Substitua pelo caminho da sua imagem
               style={{ width: "100%", height: "100%" }}
             />
           </View>
@@ -169,7 +169,7 @@ export default function App() {
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <TouchableWithoutFeedback onPress={handleLoginWithGoogle}>
               <Image
-                source={require("../../Components/img/google-icon.png")} // Substitua pelo caminho do ícone do Google
+                source={require("../../../Components/img/google-icon.png")} // Substitua pelo caminho do ícone do Google
                 style={{
                   width: 50,
                   height: 50,
@@ -181,15 +181,15 @@ export default function App() {
 
             <TouchableWithoutFeedback onPress={handleLoginWithFacebook}>
               <Image
-                source={require("../../Components/img/facebook-icon.png")} // Substitua pelo caminho do ícone do Facebook
+                source={require("../../../Components/img/facebook-icon.png")} // Substitua pelo caminho do ícone do Facebook
                 style={{ width: 50, height: 50, borderRadius: 80 }}
               />
             </TouchableWithoutFeedback>
           </View>
 
-          <SendButton onPress={handleAula}>
+          {/* <SendButton onPress={handleAula}>
             <SendButtontext>Aula</SendButtontext>
-          </SendButton>
+          </SendButton> */}
 
           <TextEscrita style={{ flex: 0 }}>
             Ao se inscrever, você concorda com nossos Termos e Política de

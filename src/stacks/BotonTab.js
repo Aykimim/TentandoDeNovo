@@ -3,9 +3,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 //*****************Telas*****************
 
-import Fatori from "../screens/Fatori";
-import Finanças from "../screens/Finanças";
-import Fisica from "../screens/Fisica";
+import Fatori from "../screens/AreaDeTests/Fatori";
+import Finanças from "../screens/AreaDeTests/Finanças";
+import Fisica from "../screens/AreaDeTests/Fisica";
 
 //*****************Telas*****************
 

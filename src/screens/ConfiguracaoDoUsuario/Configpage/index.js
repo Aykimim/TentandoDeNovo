@@ -41,7 +41,7 @@ function MyCustomCenterComponent() {
     // Personalize o componente de acordo com suas necessidades
 
     <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <IconImage source={require("../../Components/img/IconeUsuario.png")} />
+      <IconImage source={require("../../../Components/img/IconeUsuario.png")} />
       
       <ButtonText>Adam Levi</ButtonText>
     </View>

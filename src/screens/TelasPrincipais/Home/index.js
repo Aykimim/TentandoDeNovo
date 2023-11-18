@@ -5,7 +5,7 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { Container, SendButton, SendButtontext, ButtonText } from "./styles";
 
 //components
-import ScreenNameHeader from "../../Components/ScreenNameHeader";
+import ScreenNameHeader from "../../../Components/ScreenNameHeader";
 
 export default function App() {
   const navigation = useNavigation();

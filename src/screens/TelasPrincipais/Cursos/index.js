@@ -17,7 +17,7 @@ import {
 } from "./styles";
 
 //components
-import ScreenNameHeader from "../../Components/ScreenNameHeader"
+import ScreenNameHeader from "../../../Components/ScreenNameHeader"
 
 const Stack = createStackNavigator();
 
@@ -44,7 +44,7 @@ function HomeScreen({ navigation }) {
             underlayColor="#E16539"
           >
             <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <IconImage source={require("../../Components/img/LogoQuadrada.png")} />
+              <IconImage source={require("../../../Components/img/LogoQuadrada.png")} />
               <ButtonText>{curso.nome}</ButtonText>
             </View>
           </ButtonCurso>
