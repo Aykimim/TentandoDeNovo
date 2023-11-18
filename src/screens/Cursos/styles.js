@@ -1,17 +1,15 @@
 import styled from "styled-components/native";
 
 export const ButtonCurso = styled.TouchableHighlight`
-
-
-background-color: #795833;
-border-radius: 10px; 
-align-items: center;
-justify-content: space-between;
-flex-direction: row; /* Define a direção como "row" para alinhar os elementos horizontalmente */
-padding: 20px;
-margin-top: 15px;
-margin-right: 30px;
-margin-left: 30px;
+  background-color: #795833;
+  border-radius: 10px; 
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row; /* Define a direção como "row" para alinhar os elementos horizontalmente */
+  padding: 20px;
+  margin-top: 15px;
+  margin-right: 30px;
+  margin-left: 30px;
 `;
 
 export const ButtonText = styled.Text`

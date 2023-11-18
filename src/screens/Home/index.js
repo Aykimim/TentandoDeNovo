@@ -1,8 +1,10 @@
 import React from "react";
 
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity} from "react-native";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { Container, SendButton, SendButtontext } from "./styles";
+import { Container, SendButton, SendButtontext, ButtonText } from "./styles";
+import { Header } from "react-native-elements";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 export default function App() {
   const navigation = useNavigation();
@@ -10,15 +12,46 @@ export default function App() {
   function navigateToLogin() {
     navigation.navigate("Login");
   }
+
+  const Custumizavel = () => {
+    alert("Voltar");
+  };
+
+  function MyCustomLeftComponent() {
+    return (
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <TouchableOpacity onPress={Custumizavel}>
+          <Icon name="arrow-left" size={40} color="#000" />
+        </TouchableOpacity>
+      </View>
+    );
+  }
+
+  function MyCustomCenterComponent() {
+    return (
+      // Personalize o componente de acordo com suas necessidades
+      <ButtonText>Home</ButtonText>
+    );
+  }
+  
+  function MyCustomRightComponent() {
+    return (
+      // Personalize o componente de acordo com suas necessidades
+      <ButtonText></ButtonText>
+    );
+    }
+
   return (
     <Container>
+      <Header backgroundColor="#E16539" 
+      leftComponent={<MyCustomLeftComponent />}
+      centerComponent={<MyCustomCenterComponent />}
+      rightComponent={<MyCustomRightComponent />}
+      />
       <View>
         <Text>Home!</Text>
       </View>
-
-      <SendButton onPress={navigateToLogin}>
-        <SendButtontext>login</SendButtontext>
-      </SendButton>
+    
     </Container>
   );
 }

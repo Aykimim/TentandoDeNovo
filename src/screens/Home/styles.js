@@ -4,10 +4,6 @@ import styled from "styled-components/native";
 export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #303030;
-  justify-content: center;
-  align-items: center;
-  padding-horizontal: 5%;
-  padding-vertical: 5%;
 `;
 
 export const Textbotao = styled.Text`
@@ -63,4 +59,13 @@ export const View = styled.View`
   justifycontent: "center";
   alignitems: "center";
   color: #f0dfc8;
+`;
+
+export const ButtonText = styled.Text`
+  color: #f0dfc8;
+  font-size: 20px;
+  text-align: center;
+  flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
+  font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
+
 `;
