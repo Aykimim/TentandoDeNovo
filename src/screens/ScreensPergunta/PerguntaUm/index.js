@@ -76,7 +76,7 @@ export default function App() {
         onPress={() => setRespostaSelecionada("correta")}
         style={{
           backgroundColor:
-            respostaSelecionada === "correta" ? "#e16539" : "#f0dfc8",
+            respostaSelecionada === "correta" ? "#e16539" : "#795833",
         }}
       >
         "Podemos imprimir dinheiro à vontade, vários países adotam essa técnica
@@ -87,7 +87,7 @@ export default function App() {
         onPress={() => setRespostaSelecionada("incorreta1")}
         style={{
           backgroundColor:
-            respostaSelecionada === "incorreta1" ? "#e16539" : "#f0dfc8",
+            respostaSelecionada === "incorreta1" ? "#e16539" : "#795833",
         }}
       >
         "O Brasil não imprime dinheiro pois não há papel e impressoras suficientes
@@ -98,7 +98,7 @@ export default function App() {
         onPress={() => setRespostaSelecionada("incorreta2")}
         style={{
           backgroundColor:
-            respostaSelecionada === "incorreta2" ? "#e16539" : "#f0dfc8",
+            respostaSelecionada === "incorreta2" ? "#e16539" : "#795833",
         }}
       >
         "Países comunistas não imprimem dinheiro, diferente dos países capitalistas."
@@ -108,7 +108,7 @@ export default function App() {
         onPress={() => setRespostaSelecionada("incorreta3")}
         style={{
           backgroundColor:
-            respostaSelecionada === "incorreta3" ? "#e16539" : "#f0dfc8",
+            respostaSelecionada === "incorreta3" ? "#e16539" : "#795833",
         }}
       >
         "Dinheiros impressos são doados para moradores de rua e pessoas em extrema
@@ -119,7 +119,7 @@ export default function App() {
         onPress={() => setRespostaSelecionada("incorreta4")}
         style={{
           backgroundColor:
-            respostaSelecionada === "incorreta4" ? "#e16539" : "#f0dfc8",
+            respostaSelecionada === "incorreta4" ? "#e16539" : "#795833",
         }}
       >
         "Não pode imprimir dinheiro porque isso resultaria em diversos problemas.
