@@ -14,9 +14,9 @@ import Fatori from "../screens/AreaDeTests/Fatori";
 import Finanças from "../screens/AreaDeTests/Finanças";
 import Fisica from "../screens/AreaDeTests/Fisica";
 
-  // import PerguntaUm from "../screens/ScreensPergunta/PerguntaUm";
-// import PerguntaDois from "../screens/ScreensPergunta/PerguntaDois";
-// import PerguntaTres from "../screens/ScreensPergunta/PerguntaTres";
+ import PerguntaUm from "../screens/ScreensPergunta/PerguntaUm";
+ import PerguntaDois from "../screens/ScreensPergunta/PerguntaDois";
+ import PerguntaTres from "../screens/ScreensPergunta/PerguntaTres";
 
 import Esquecisenha from "../screens/Entrada/Esquecisenha";
 import Perguntas from "../screens/ScreensPergunta/Perguntas";
@@ -52,9 +52,9 @@ export default () => (
     <Stack.Screen name="Finanças" component={Finanças} />
     <Stack.Screen name="Fisica" component={Fisica} />
 
-    {/*<Stack.Screen name="PerguntaUm" component={PerguntaUm} />
+    <Stack.Screen name="PerguntaUm" component={PerguntaUm} />
      <Stack.Screen name="PerguntaDois" component={PerguntaDois} />
-    <Stack.Screen name="PerguntaTres" component={PerguntaTres} />  */}
+    <Stack.Screen name="PerguntaTres" component={PerguntaTres} />  
 
     <Stack.Screen name="Esquecisenha" component={Esquecisenha} />
     <Stack.Screen name="Perguntas" component={Perguntas} />
