@@ -8,7 +8,6 @@ import {
   ScrollView
 } from "react-native";
 
-
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import {
   TextEscrita,
@@ -21,7 +20,6 @@ import {
   ButtonTextPressed
 } from "./styles";
 
-
 import ScreenNameHeader from "../../../Components/ScreenNameHeader";
 
 const botaoteste = () => {
@@ -31,7 +29,6 @@ const botaoteste = () => {
 function navigateToVoltar() {
   navigation.navigate("Login");
 }
-
 
 export default function App() {
   const navigation = useNavigation();
@@ -50,12 +47,12 @@ export default function App() {
   ];
   return (
     <Container>
-      <ScreenNameHeader
-        headerName="Rank"
-      />
+      <ScreenNameHeader headerName="Rank" />
       <ScrollView>
         {cursos.map((curso, index) => (
-          <ButtonCurso key={index} onPress={botaoteste} underlayColor="#795833">
+          <ButtonCurso key={index} 
+          onPress={botaoteste} 
+          underlayColor="#795833">
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <IconImage
                 source={require("../../../Components/img/IconeUsuario.png")}

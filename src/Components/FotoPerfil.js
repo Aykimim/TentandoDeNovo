@@ -1,8 +1,17 @@
 import react from "react";
 import { View, Text, Image, ProgressBarAndroid, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useNavigation } from "@react-navigation/native";
 
-  const HeaderPerfil = ({ username, source, onSettingsPress }) => {
+const HeaderPerfil = ({ username, source, onSettingsPress }) => {
+  const navigation = useNavigation(); // Mova useNavigation para dentro do componente
+
+
+function navigateConfig() {
+  navigation.navigate("Configpage");
+}
+
+  
     return (
       <View style={styles.container}>
         <View style={styles.row1}>
@@ -19,7 +28,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
           />
         </View>
         <View style={styles.row3}>
-            <TouchableOpacity onPress={onSettingsPress}>
+            <TouchableOpacity onPress={navigateConfig}>
                 <Icon name="cog" size={35} color="white"></Icon>
             </TouchableOpacity>
         </View>
@@ -71,4 +80,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
       },
       
   });
+
+ 
   export default HeaderPerfil; 
+

@@ -37,11 +37,12 @@ export default function App() {
     navigation.navigate("Esquecisenha");
   }
 
-  function navigateToHome() {
+  const navigateToHome = () => {
     navigation.reset({
-      routes: [{ name: "MainTab" }]
+      index: 0,
+      routes: [{ name: 'MainTab' }],
     });
-  }
+  };
 
   function navigateTest() {
     navigation.navigate("Configpage");
@@ -67,11 +68,13 @@ export default function App() {
   };
 
   const handleLogin = () => {
-    // autenticação (nome e senha)
-    if (nomeUser === "" && senha === "") {
+    // Simule uma autenticação bem-sucedida
+    // Substitua esta lógica pela sua lógica de autenticação real
+    if (nomeUser === '' && senha === '') {
       setLoggedIn(true);
+      navigateToHome();
     } else {
-      alert("Credenciais incorretas. Tente novamente.");
+      alert('Credenciais incorretas. Tente novamente.');
     }
   };
 

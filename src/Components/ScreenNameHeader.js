@@ -9,11 +9,12 @@ const Custumizavel = () => {
 
 function MyCustomLeftComponent() {
     return (
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <TouchableOpacity onPress={Custumizavel}>
-          <Icon name="arrow-left" size={40} color="#000" />
-        </TouchableOpacity>
-      </View>
+      // <View style={{ flexDirection: "row", alignItems: "center" }}>
+      //   <TouchableOpacity onPress={Custumizavel}>
+      //     <Icon name="arrow-left" size={40} color="#000" />
+      //   </TouchableOpacity>
+      // </View>
+      <Text></Text>
     );
   }
 

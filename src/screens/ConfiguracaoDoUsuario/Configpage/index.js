@@ -15,65 +15,65 @@ import {
   TextEscrita,
   Container,
   ButtonText,
-  ButtonCurso, // Importe ButtonCurso do styles.js
+  ButtonCurso,
   SendButtontext,
   IconImage,
   ButtonCursoPressed,
   ButtonTextPressed
 } from "./styles";
 
-const botaoteste = () => {
-  alert("Teste");
-};
-const Custumizavel = () => {
-  alert("Acho que nao Presisa desse botao");
-};
-function navigateToVoltar() {
-  navigation.navigate("Login");
-}
-
 function MyCustomLeftComponent() {
-  return <ButtonText></ButtonText>;
+  const navigation = useNavigation();
+
+  function navigateToVoltar() {
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'MainTab' }],
+    });
+  }
+
+  return (
+    <ButtonText onPress={navigateToVoltar}>
+      <Icon name="arrow-left" size={20} color="#fff" />
+    </ButtonText>
+  );
 }
 
 function MyCustomCenterComponent() {
   return (
-    // Personalize o componente de acordo com suas necessidades
-
     <View style={{ flexDirection: "row", alignItems: "center" }}>
       <IconImage source={require("../../../Components/img/IconeUsuario.png")} />
-      
       <ButtonText>Adam Levi</ButtonText>
     </View>
-    
   );
 }
 
 function MyCustomRightComponent() {
-  return (
-    // Personalize o componente de acordo com suas necessidades
-    <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <TouchableOpacity onPress={Custumizavel}>
-        <Icon name="gear" size={40} color="#ffffff" />
-      </TouchableOpacity>
-    </View>
-  );
+  return <ButtonText></ButtonText>;
 }
 
 export default function App() {
   const navigation = useNavigation();
 
-  function navigateToLogin() {
+
+
+  // Adicione funções específicas para cada botão
+  function editarNome() {
+    alert("Lógica para editar nome");
+  }
+
+  function editarFotoPerfil() {
+    alert("Lógica para editar foto de perfil");
+  }
+
+  function alterarSenha() {
+    alert("Lógica para alterar senha");
+  }
+
+  function navigateToSair() {
     navigation.navigate("Login");
   }
-  // Defina o número de rank para cada botão de curso
-  const cursos = [
-    { nome: "Editar Nome" },
-    { nome: "Editar Foto de Perfil" },
-    { nome: "Alterar Senha" },
-    { nome: "Trocar de Conta" },
-    { nome: "Sair" }
-  ];
+
   return (
     <Container>
       <Header
@@ -82,14 +82,31 @@ export default function App() {
         centerComponent={<MyCustomCenterComponent />}
         rightComponent={<MyCustomRightComponent />}
       />
+
       <ScrollView>
-        {cursos.map((curso, index) => (
-          <ButtonCurso key={index} onPress={botaoteste} underlayColor="#e16539">
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <ButtonText>{curso.nome}</ButtonText>
-            </View>
-          </ButtonCurso>
-        ))}
+        <ButtonCurso key="1" onPress={editarNome} underlayColor="#e16539">
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <ButtonText>Editar Nome</ButtonText>
+          </View>
+        </ButtonCurso>
+
+        <ButtonCurso key="2" onPress={editarFotoPerfil} underlayColor="#e16539">
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <ButtonText>Editar Foto de Perfil</ButtonText>
+          </View>
+        </ButtonCurso>
+
+        <ButtonCurso key="3" onPress={alterarSenha} underlayColor="#e16539">
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <ButtonText>Alterar Senha</ButtonText>
+          </View>
+        </ButtonCurso>
+
+        <ButtonCurso key="5" onPress={navigateToSair} underlayColor="#e16539">
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <ButtonText>Sair</ButtonText>
+          </View>
+        </ButtonCurso>
       </ScrollView>
     </Container>
   );
