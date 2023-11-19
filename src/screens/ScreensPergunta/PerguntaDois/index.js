@@ -1,25 +1,9 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  Image,
-  ScrollView
-} from "react-native";
+import { View } from "react-native";
 import { Header } from "react-native-elements";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome";
-import {
-  TextEscrita,
-  Container,
-  ButtonText,
-  ButtonCurso, // Importe ButtonCurso do styles.js
-  SendButtontext,
-  IconImage,
-  ButtonCursoPressed,
-  ButtonTextPressed
-} from "./styles";
+import { Container, ButtonText } from "./styles";
 function MyCustomLeftComponent() {
   const navigation = useNavigation();
 
@@ -59,13 +43,13 @@ export default function App() {
 
   return (
     <Container>
-            <Header
+      <Header
         backgroundColor="#f0dfc8"
         leftComponent={<MyCustomLeftComponent />}
         centerComponent={<MyCustomCenterComponent />}
         rightComponent={<MyCustomRightComponent />}
       />
-<ButtonText>"Teste2"</ButtonText>
+      <ButtonText>"Teste2"</ButtonText>
     </Container>
   );
 }
