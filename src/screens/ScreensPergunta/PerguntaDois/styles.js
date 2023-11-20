@@ -1,8 +1,9 @@
+
 import styled from "styled-components/native";
 
 export const ButtonCurso = styled.TouchableHighlight`
   background-color: #795833;
-  border-radius: 10px; 
+  border-radius: 10px;
   align-items: center;
   justify-content: space-between;
   flex-direction: row; /* Define a direção como "row" para alinhar os elementos horizontalmente */
@@ -18,7 +19,6 @@ export const ButtonText = styled.Text`
   text-align: center;
   flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
-
 `;
 
 export const IconImage = styled.Image`
@@ -29,7 +29,7 @@ export const IconImage = styled.Image`
 
 // Adicione um estilo de pressionamento
 export const ButtonCursoPressed = styled.TouchableHighlight`
-  background-color: #E16539; /* Cor diferente quando pressionado */
+  background-color: #e16539; /* Cor diferente quando pressionado */
   border-radius: 10px;
   align-items: center;
   justify-content: space-between;
@@ -47,13 +47,6 @@ export const ButtonTextPressed = styled.Text`
   flex: 1;
 `;
 
-
-
-
-
-
-
-
 export const Header = styled.View`
   background-color: #e16539;
 `;
@@ -62,8 +55,6 @@ export const Container = styled.SafeAreaView`
   background-color: #f0dfc8;
   justify-content: center;
   align-items: center;
-
-
 `;
 
 export const TextBotao = styled.Text`
