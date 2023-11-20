@@ -30,7 +30,7 @@ const cursos = [
   { nome: "Empreendedorismo" },
   { nome: "Finanças" },
   { nome: "Marketing" },
-  { nome: "estão de RH" },
+  { nome: "Gestão de RH" },
   { nome: "Planejamento" },
   { nome: "eyk" }
 ];

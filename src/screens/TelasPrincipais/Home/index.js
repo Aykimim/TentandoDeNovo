@@ -80,7 +80,7 @@ const StyledSvg = styled(Svg)`
 
   return (
     <Container>
-      <ScreenNameHeader headerName="Home" />
+      <ScreenNameHeader headerName="Finanças" />
       <View style={{ flexDirection: "row", alignItems: "center" }}>
         <IconImage
           source={require("../../../Components/img/LogoQuadrada.png")}

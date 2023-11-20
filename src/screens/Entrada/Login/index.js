@@ -18,7 +18,8 @@ import {
   SendButtontext,
   SendButtontextEsqueciSenha,
   SendButtontextBorda,
-  TextEscrita
+  TextEscrita,
+  SendButtonEntrar
 } from "./styles";
 
 // import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -159,9 +160,9 @@ export default function App() {
               Esqueci a senha.
             </SendButtontextEsqueciSenha>
           </SendButton>
-          <SendButton onPress={handleLogin}>
-            <SendButtontextBorda>Entrar</SendButtontextBorda>
-          </SendButton>
+          <SendButtontextBorda onPress={handleLogin}>
+            <SendButtonEntrar>Entrar</SendButtonEntrar>
+          </SendButtontextBorda>
 
           <Text
             style={{ textAlign: "center", marginTop: 10, marginBottom: 10 }}

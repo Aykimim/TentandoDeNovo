@@ -14,16 +14,17 @@ export const ButtonCurso = styled.TouchableHighlight`
 
 export const ButtonText = styled.Text`
   color: #000;
-  font-size: 10px;
+  font-size: 15px;
   text-align: center;
   border-radius: 15px;
   flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
-  margin-top: 15px;
+  padding: 10px;
+  margin-top: 5px;
   margin-right: 30px;
   margin-left: 30px;
 `;
-
+// 
 export const ButtonTextPergunta = styled.Text`
   color: #000;
   font-size: 20px;

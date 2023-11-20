@@ -1,6 +1,27 @@
 import React from "react";
 import styled from "styled-components/native";
 
+export const SendButtonEntrar = styled.Text`
+  font-size: 25px;
+  text-align: center;
+  color: #f0dfc8;
+  padding-horizontal: 10%;
+  
+`;
+
+export const SendButtontextBorda = styled.TouchableHighlight`
+  border-radius: 20px;
+  background-color: #795833;
+  margin-top: 20px;
+  padding: 5px;
+  color: #ffffff;
+`;
+export const SendButton = styled.Text`
+  font-size: 25px;
+  text-align: center;
+  color: #f0dfc8;
+  margin-top: 20px;
+`;
 export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #303030;
@@ -10,22 +31,16 @@ export const Container = styled.SafeAreaView`
   padding-vertical: 5%;
 `;
 export const ViewFoto = styled.View`
-width: 100;
-height: 100;
-borderRadius: 50;
-
+  width: 100;
+  height: 100;
+  borderradius: 50;
 `;
 export const Textbotao = styled.Text`
   font-size: 25px;
   text-align: center;
   color: #f0dfc8;
 `;
-export const SendButton = styled.Text`
-  font-size: 25px;
-  text-align: center;
-  color: #f0dfc8;
-  margin-top: 20px;
-`;
+
 export const SendButtontext = styled.Text`
   font-size: 25px;
   text-align: center;
@@ -37,7 +52,8 @@ export const SendButtontextEsqueciSenha = styled.Text`
   font-size: 15px;
   text-align: left;
   color: #f0dfc8;
-  margin-top: 5px;
+  margin-top: 1px;
+  padding-left: 10px;
 `;
 export const CampoNome = styled.Text`
   font-size: 25px;
@@ -60,28 +76,19 @@ export const Textentrada = styled.TextInput`
   padding: 10px;
 `;
 
-export const SendButtontextBorda = styled.Text`
+//
+// -left
+// font-size: 25px;
+// text-align: center;
+//
+//
+// font-size: 20px;
+// width: 80%;
+// justify-content: center;
+// align-items: center;
 
-border-radius: 20px;
-background-color: #795833;
-margin-top: 20px;
-padding: 10px;
-color: #FFFFFF;
-
-`;
-  // 
-  // -left
-  // font-size: 25px;
-  // text-align: center;
-  // 
-  // 
-  // font-size: 20px;
-  // width: 80%;
-  // justify-content: center;
-  // align-items: center;
-
-  // 
-  // margin-right: 5px;
+//
+// margin-right: 5px;
 export const CustomButton = styled.TouchableOpacity`
   width: 70%;
   max-width: 100px;
