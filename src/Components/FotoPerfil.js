@@ -1,8 +1,7 @@
 import react from "react";
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, ProgressBarAndroid, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from "@react-navigation/native";
-import * as Progress from 'react-native-progress';
 
 const HeaderPerfil = ({ username, source, onSettingsPress }) => {
   const navigation = useNavigation(); // Mova useNavigation para dentro do componente
@@ -21,16 +20,12 @@ function navigateConfig() {
         <View style={styles.row2}>
            <Text style={styles.userName}>{'Player'}</Text>
            <Text style={styles.userName}>{'Nível 60'}</Text>
-           <Progress.Bar progress={0.3} width={200} />
-     
-          
-          
-           {/* <ProgressBarAndroid
+           <ProgressBarAndroid
               styleAttr="Horizontal" // Estilo da barra de progresso (Horizontal é o padrão)
               indeterminate={false}  // Define se é indeterminada ou não (false para determinada)
               progress={0.6}        // Progresso atual (0.6 = 60%)
               style={{ width: 100, height: 25}}
-          /> */}
+          />
         </View>
         <View style={styles.row3}>
             <TouchableOpacity onPress={navigateConfig}>

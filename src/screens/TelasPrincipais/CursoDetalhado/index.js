@@ -20,6 +20,7 @@ function MyCustomLeftComponent() {
   const navigation = useNavigation();
 
   function navigateToVoltar() {
+    // navigation.navigate("Cursos");
     navigation.reset({
       index: 0,
       routes: [{ name: "MainTab" }]
