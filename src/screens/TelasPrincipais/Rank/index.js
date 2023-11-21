@@ -10,14 +10,17 @@ import {
 
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import {
-  TextEscrita,
+  
   Container,
   ButtonText,
   ButtonCurso, // Importe ButtonCurso do styles.js
-  SendButtontext,
+ 
   IconImage,
-  ButtonCursoPressed,
-  ButtonTextPressed
+
+  
+  ButtonCursoTudo,
+  ButtonCursoRankNun,
+  ScrollViewTudo
 } from "./styles";
 
 import ScreenNameHeader from "../../../Components/ScreenNameHeader";
@@ -48,22 +51,24 @@ export default function App() {
   return (
     <Container>
       <ScreenNameHeader headerName="Rank" />
-      <ScrollView>
+      <ScrollViewTudo justifyContent={"spaceBetween"}>
         {cursos.map((curso, index) => (
-          <ButtonCurso key={index} 
-          onPress={botaoteste} 
-          underlayColor="#795833">
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <IconImage
-                source={require("../../../Components/img/IconeUsuario.png")}
-              />
-
+          <ButtonCursoTudo key={index}>
+            <ButtonCursoRankNun>
               <ButtonText>{curso.rank}</ButtonText>
-              <ButtonText>{curso.nome}</ButtonText>
-            </View>
-          </ButtonCurso>
+            </ButtonCursoRankNun>
+            <ButtonCurso onPress={botaoteste} underlayColor="#795833">
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <IconImage
+                  source={require("../../../Components/img/IconeUsuario.png")}
+                />
+
+                <ButtonText>{curso.nome}</ButtonText>
+              </View>
+            </ButtonCurso>
+          </ButtonCursoTudo>
         ))}
-      </ScrollView>
+      </ScrollViewTudo>
     </Container>
   );
 }
