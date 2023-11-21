@@ -53,6 +53,10 @@ export default function App() {
     navigation.navigate("Perguntas");
   }
 
+  // function navigateToCadastro() {
+  //   navigation.navigate("Cadastro");
+  // }
+
   // function handleAula() {
   //   navigation.reset({
   //     routes: [{ name: "BotonTab" }]
@@ -160,6 +164,12 @@ export default function App() {
               Esqueci a senha.
             </SendButtontextEsqueciSenha>
           </SendButton>
+          {/* trocar dpois */}
+           <SendButton onPress={navigateToEsqueciSenha}>
+            <SendButtontextEsqueciSenha>
+              cadastre-se
+            </SendButtontextEsqueciSenha>
+          </SendButton> 
           <SendButtontextBorda onPress={handleLogin}>
             <SendButtonEntrar>Entrar</SendButtonEntrar>
           </SendButtontextBorda>
