@@ -2,13 +2,20 @@ import React from "react";
 import styled from "styled-components/native";
 
 export const Container = styled.SafeAreaView`
-  flex: 1;
+  flex: 2;
   background-color: #303030;
-  justify-content: center;
-  align-items: center;
-  padding-horizontal: 5%;
-  padding-vertical: 5%;
-  flex-direction: row;
+  text-align: left;
+  flex-direction: rows;
+  border: 2px;
+  border-color: white;
+  flex-direction: column;
+`;
+
+export const PerfilText = styled.Text`
+  text-align: left;
+  color: white;
+  padding-left: 5%;
+  font-size: 25px;
 `;
 
 export const Textbotao = styled.Text`
@@ -62,6 +69,5 @@ export const TextEscrita = styled.Text`
 export const View = styled.View`
   flex: 1;
   justifycontent: "top";
-  alignitems: "center";
-  color: #303030;
+  background-color: #303030;
 `;

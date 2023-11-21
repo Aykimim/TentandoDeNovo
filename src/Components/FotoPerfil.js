@@ -37,7 +37,6 @@ function navigateConfig() {
     );
   };
 
-
   const styles = StyleSheet.create({
       container: {
         flexDirection: 'row',
