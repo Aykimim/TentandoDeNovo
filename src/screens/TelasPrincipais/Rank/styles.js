@@ -1,108 +1,67 @@
 import styled from "styled-components/native";
 
+export const Container = styled.SafeAreaView`
+  flex: 1;
+  background-color: #303030;
+`;
+export const ScrollViewTudo = styled.ScrollView`
+  padding-horizontal: 1%;
+`;
+//justify-content: space-between;
+export const ButtonCursoTudo = styled.View`
+  flex-direction: row;
+  padding-horizontal: 10%;
+  
+  
+`;
+// border-radius: 10px;
+// padding: 5px;
+// flex-direction: row; /* Define a direção como "row" para alinhar os elementos horizontalmente */
+// align-items: center;
+// margin-top: 15px;
+// margin-right: 30px;
+// margin-left: 30px;
+
 export const ButtonCurso = styled.TouchableHighlight`
   background-color: #e16539;
-  border-radius: 10px;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row; /* Define a direção como "row" para alinhar os elementos horizontalmente */
-  padding: 20px;
-  margin-top: 15px;
-  margin-right: 30px;
-  margin-left: 30px;
-`;
-
-export const ButtonText = styled.Text`
-  color: #f0dfc8;
-  font-size: 20px;
-  text-align: center;
-  flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
-  font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
-`;
-
-export const IconImage = styled.Image`
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-`;
-
-// Adicione um estilo de pressionamento
-export const ButtonCursoPressed = styled.TouchableHighlight`
-  background-color: #e16539; /* Cor diferente quando pressionado */
   border-radius: 10px;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
   padding: 20px;
   margin-top: 15px;
-  margin-right: 30px;
-  margin-left: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
 `;
 
-export const ButtonTextPressed = styled.Text`
-  color: #fff; /* Cor do texto quando pressionado */
-  font-size: 20px;
-  text-align: center;
-  flex: 1;
-`;
-
-export const Header = styled.View`
-  background-color: #e16539;
-`;
-export const Container = styled.SafeAreaView`
-  flex: 1;
-  background-color: #303030;
-`;
-
-export const TextBotao = styled.Text`
-  font-size: 25px;
-  text-align: center;
-  color: #f0dfc8;
-`;
-
-export const SendButton = styled.Text`
-  font-size: 25px;
-  text-align: center;
-  color: #f0dfc8;
-  margin-top: 20px;
-`;
-
-export const SendButtonText = styled.Text`
-  font-size: 25px;
-  text-align: center;
-  color: #f0dfc8;
-  margin-top: 20px;
-`;
-
-export const CampoNome = styled.Text`
-  font-size: 25px;
-  text-align: center;
-  color: #f0dfc8;
-`;
-
-export const TextEntrada = styled.TextInput`
-  font-size: 20px;
-  width: 80%;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  color: #000;
+export const ButtonCursoRankNun = styled.TouchableHighlight`
   background-color: #795833;
+  width: 40px;
+  height: 40px;
   border-radius: 50px;
-  margin-top: 20px;
-`;
+  padding: 5px;
 
-export const Text = styled.Text`
-  font-size: 25px;
-  text-align: center;
-  color: #f0dfc8;
+  margin-top: 40px;
 `;
+//
+//margin-top: 50px;
+// margin-top: 15px;
+// margin-low: 15px;
+// margin-right: 10px;
+// margin-left: 10px;
 
-export const TextEscrita = styled.Text`
-  font-size: 15px;
-  text-align: center;
+// align-items: center;
+export const ButtonText = styled.Text`
   color: #f0dfc8;
-  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+  flex: 1; 
+  font-weight: bold; 
+  `;
+export const IconImage = styled.Image`
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
 `;
 
 export const View = styled.View`

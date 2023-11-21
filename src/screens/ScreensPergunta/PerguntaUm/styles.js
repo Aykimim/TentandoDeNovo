@@ -14,7 +14,7 @@ export const ButtonCurso = styled.TouchableHighlight`
 
 export const ButtonText = styled.Text`
   color: #000;
-  font-size: 15px;
+  font-size: 12px;
   text-align: center;
   border-radius: 15px;
   flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
