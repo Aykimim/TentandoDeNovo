@@ -1,12 +1,15 @@
 import React from "react";
-
-import { StyleSheet, Text } from "react-native";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { Container, SendButton, SendButtontext, View } from "./styles";
+import { 
+  Container,
+  View,
+  PerfilText,
+  Text
+} from "./styles";
 
 //components
 import HeaderPerfil from "../../../Components/FotoPerfil";
-// import ScreenNameHeader from "../../../Components/ScreenNameHeader";
+import ScreenNameHeader from "../../../Components/ScreenNameHeader";
 
 //imagens
 import coxinha from "../../../Components/img/coxinha.png";
@@ -21,15 +24,24 @@ export default function App() {
     navigation.goBack();
   }
 
+  const userName = "Nome Usuário";
+  const userEmail = "usuário@gmail.com";
+  const userPhone = "28 999425652";
+  const userPlan = "Básico";
+
   return (
     <View>
-      {/* <ScreenNameHeader headerName="Perfil" /> */}
+      <ScreenNameHeader headerName="Perfil" />
       <HeaderPerfil
         source={(require = coxinha)}
         username={nomeUsuario}
       ></HeaderPerfil>
-
-      <Container></Container>
+      <Container>
+        <PerfilText>Nome: {userName}</PerfilText>
+        <PerfilText>E-mail: {userEmail}</PerfilText>
+        <PerfilText>Celular: {userPhone}</PerfilText>
+        <PerfilText>Plano: {userPlan}</PerfilText>
+      </Container>
     </View>
   );
 }

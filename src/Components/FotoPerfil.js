@@ -7,6 +7,9 @@ import { useNavigation } from "@react-navigation/native";
 const HeaderPerfil = ({ username, source, onSettingsPress }) => {
   const navigation = useNavigation(); // Mova useNavigation para dentro do componente
 
+  // placeholder
+  const playerLevel = 60;
+  const progressionLevel = "30%";
 
 function navigateConfig() {
   navigation.navigate("Configpage");
@@ -19,18 +22,10 @@ function navigateConfig() {
            <Image source={source} style={styles.perfil}/>
         </View>
         <View style={styles.row2}>
-           <Text style={styles.userName}>{'Player'}</Text>
-           <Text style={styles.userName}>{'Nível 60'}</Text>
-           <Progress.Bar progress={0.3} width={200} />
-     
-          
-          
-           {/* <ProgressBarAndroid
-              styleAttr="Horizontal" // Estilo da barra de progresso (Horizontal é o padrão)
-              indeterminate={false}  // Define se é indeterminada ou não (false para determinada)
-              progress={0.6}        // Progresso atual (0.6 = 60%)
-              style={{ width: 100, height: 25}}
-          /> */}
+           <Text style={styles.userName}>{'Nome do Jogador'}</Text>
+           <Text style={styles.userName}>{'Nível: ' + playerLevel}</Text>
+           <Progress.Bar progress={0.3} width={100} color={'white'} />
+           <Text style={styles.userName}>{progressionLevel}</Text>
         </View>
         <View style={styles.row3}>
             <TouchableOpacity onPress={navigateConfig}>
@@ -41,7 +36,6 @@ function navigateConfig() {
       </View>
     );
   };
-
 
   const styles = StyleSheet.create({
       container: {
@@ -63,7 +57,8 @@ function navigateConfig() {
         flexDirection: 'column',
         alignItems: 'left',
         textAlign: 'left',
-        margin: 10,
+        padding: 10,
+        paddingLeft: 15
       },
       perfil: {
           width: 100, 
@@ -75,13 +70,13 @@ function navigateConfig() {
       userName: {
         fontSize: 18,
         fontWeight: 'bold',
-        marginTop: 10,
+        justifyContent: 'space-evenly',
         color: 'white',
       },
       row3:{
         position: 'absolute',
-        top: 40, // Ajuste essa altura conforme necessário
-        right: 20,
+        top: 10, // Ajuste essa altura conforme necessário
+        right: 9
       },
       
   });

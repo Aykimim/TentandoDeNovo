@@ -9,6 +9,7 @@ import Second from "../screens/AreaDeTests/pages/Second";
 import Test from "../screens/AreaDeTests/Test";
 import Prot from "../screens/AreaDeTests/Prot";
 import Configpage from "../screens/ConfiguracaoDoUsuario/Configpage";
+// import Cadastro from "../screens/AreaDeTests/Cadastro";
 
 import Fatori from "../screens/AreaDeTests/Fatori";
 import Finanças from "../screens/AreaDeTests/Finanças";
@@ -42,6 +43,7 @@ export default () => (
     <Stack.Screen name="MainTab" component={MainTab} />
 
     <Stack.Screen name="Login" component={Login} />
+    {/* <Stack.Screen name="Cadastro" component={Cadastro} /> */}
     <Stack.Screen name="Second" component={Second} />
     <Stack.Screen name="First" component={First} />
     <Stack.Screen name="Test" component={Test} />
