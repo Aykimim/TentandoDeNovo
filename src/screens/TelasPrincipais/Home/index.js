@@ -9,15 +9,13 @@ import {
   ButtonCursoEsquerda,
   ButtonCursoDireita,
   Container,
-  ButtonCurso,
   ButtonText,
-  CampoNome,
-  Textentrada,
-  SendButtontext,
-  SendButtontextEsqueciSenha,
-  SendButtontextBorda,
-  TextEscrita,
-  IconImage
+  IconImage,
+  ContainerPrimeiro,
+  LineWrapper,
+  LineWrapperDireita,
+  LineWrapperHorizontal,
+  LineWrapperEsquerda
 } from "./styles";
 
 //components
@@ -30,22 +28,20 @@ export default function App() {
     alert("Teste");
   };
 
-  const LineWrapper = styled.View`
-    align-items: center;
-  `;
+
 
   const CustomLine = styled(Line)`
     stroke: #fff;
     stroke-width: 4px;
   `;
 
-//   const StyledSvg = styled(Svg)`
-//   transform: translateY(25px) rotate(90deg) translateX(45px) translateY(35px);
-// `;
+  //   const StyledSvg = styled(Svg)`
+  //   transform: translateY(25px) rotate(90deg) translateX(45px) translateY(35px);
+  // `;
 
-const StyledSvg = styled(Svg)`
-  transform: translateY(20px) rotate(90deg) translateX(40px) translateY(25px);
-`;
+  const StyledSvg = styled(Svg)`
+    transform: translateY(20px) rotate(90deg) translateX(40px) translateY(25px);
+  `;
 
   // Adicione funções específicas para cada botão
   function Curso1() {
@@ -80,25 +76,37 @@ const StyledSvg = styled(Svg)`
 
   return (
     <Container>
+      {/* <ContainerPrimeiro></ContainerPrimeiro> */}
       <ScreenNameHeader headerName="Finanças" />
       <View style={{ flexDirection: "row", alignItems: "center" }}>
         <IconImage
           source={require("../../../Components/img/LogoQuadrada.png")}
         />
       </View>
+
       <ScrollView>
         <ButtonCursoDireita onPress={Curso1} underlayColor="#e16539">
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <ButtonText>Fundamentos de finanças empresariais.</ButtonText>
           </View>
         </ButtonCursoDireita>
-
-        <LineWrapper>
-          <StyledSvg height="40" width="25">
+        <LineWrapperDireita>
+          <Svg height="40" width="5">
             <CustomLine x1="0" y1="0" x2="0" y2="100" />
+          </Svg>
+        </LineWrapperDireita>
+        
+        <LineWrapperHorizontal>
+          <StyledSvg height="5" width="50">
+            <CustomLine x1="0" y1="0" x2="0" y2="1000" />
           </StyledSvg>
-        </LineWrapper>
+        </LineWrapperHorizontal>
 
+        <LineWrapperEsquerda>
+          <Svg height="40" width="5">
+            <CustomLine x1="0" y1="0" x2="0" y2="100" />
+          </Svg>
+        </LineWrapperEsquerda>
         <ButtonCursoEsquerda onPress={Curso2} underlayColor="#e16539">
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <ButtonText>

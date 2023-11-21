@@ -92,7 +92,7 @@ export default function App() {
     <Container>
       {loggedIn ? (
         <>
-          <View
+          {/* <View
             style={{
               width: 100,
               height: 100,
@@ -121,7 +121,7 @@ export default function App() {
           </SendButton>
           <SendButton onPress={navigateToPerguntas}>
             <SendButtontext>Perguntas</SendButtontext>
-          </SendButton>
+          </SendButton> */}
         </>
       ) : (
         <>

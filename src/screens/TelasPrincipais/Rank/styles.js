@@ -11,7 +11,7 @@ export const ScrollViewTudo = styled.ScrollView`
 export const ButtonCursoTudo = styled.View`
   flex-direction: row;
   padding-horizontal: 10%;
-  
+  padding-right: 10%;
   
 `;
 // border-radius: 10px;

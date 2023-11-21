@@ -5,23 +5,28 @@ export const SendButtonEntrar = styled.Text`
   font-size: 25px;
   text-align: center;
   color: #f0dfc8;
-  padding-horizontal: 10%;
+  padding-horizontal: 12%;
   
 `;
 
 export const SendButtontextBorda = styled.TouchableHighlight`
   border-radius: 20px;
   background-color: #795833;
-  margin-top: 20px;
-  padding: 5px;
+  margin-top: 25px;
+  padding: 1px;
   color: #ffffff;
+  
 `;
 export const SendButton = styled.Text`
   font-size: 25px;
   text-align: center;
   color: #f0dfc8;
-  margin-top: 20px;
+  margin-top: 3px;
+  
+  
+  padding-right: 35%;
 `;
+// background-color: #0fff;
 export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #303030;
