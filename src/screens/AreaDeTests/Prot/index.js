@@ -1,24 +1,56 @@
-import React from "react";
-
-import { StyleSheet, Text, View } from "react-native";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { Container, SendButton, SendButtontext } from "./styles";
+import React, { useState } from "react";
+import { StatusBar } from 'expo-status-bar';
+import { useNavigation } from '@react-navigation/native';
+import {
+  Container,
+  Textentrada,
+  CustomButton,
+  ButtonText
+} from './styles';
 
 export default function App() {
   const navigation = useNavigation();
+  const [isPressed, setIsPressed] = useState(false);
 
-  function navigateToLogin() {
-    navigation.navigate("Login");
+  function goToNextScreen(tela) {
+    navigation.navigate(tela);
   }
+
+  const handleText = () => {
+    setIsPressed(!isPressed);
+  }
+
   return (
     <Container>
-      <View>
-        <Text>Hello world!</Text>
-      </View>
+      <Textentrada
+        isPressed={isPressed}
+        onPress={handleText} // Certifique-se de que isso seja tratado corretamente
+        placeholder='Nome'
+      />
+                <Textentrada
+                    placeholder='Email'
+                >
+                </Textentrada>
 
-      <SendButton onPress={navigateToLogin}>
-        <SendButtontext>login</SendButtontext>
-      </SendButton>
-    </Container>
-  );
+                <Textentrada
+                    placeholder='Celular'
+                >
+                </Textentrada>
+
+                <Textentrada
+                    placeholder='Senha'
+                    secureTextEntry = {true}
+                >
+                </Textentrada>
+                <Textentrada
+                    placeholder='Confirma Senha'
+                    secureTextEntry = {true}
+                >
+                </Textentrada>
+
+                <CustomButton onPress={()=>{goToNextScreen('Login')}}>
+                    <ButtonText>cadastrar</ButtonText>
+                </CustomButton>
+        </Container>
+    );
 }
