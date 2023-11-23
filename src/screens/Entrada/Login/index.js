@@ -37,7 +37,10 @@ export default function App() {
   function navigateToEsqueciSenha() {
     navigation.navigate("Esquecisenha");
   }
-
+  function TelaCadastro() {
+    navigation.navigate("TelaDeCadastro");
+  }
+  TelaCadastro
   const navigateToHome = () => {
     navigation.reset({
       index: 0,
@@ -165,7 +168,7 @@ export default function App() {
             </SendButtontextEsqueciSenha>
           </SendButton>
           {/* trocar dpois */}
-           <SendButton onPress={navigateToEsqueciSenha}>
+           <SendButton onPress={TelaCadastro}>
             <SendButtontextEsqueciSenha>
               cadastre-se
             </SendButtontextEsqueciSenha>
