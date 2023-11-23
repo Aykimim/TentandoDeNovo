@@ -7,8 +7,9 @@ import Login from "../screens/Entrada/Login";
 import First from "../screens/AreaDeTests/pages/First";
 import Second from "../screens/AreaDeTests/pages/Second";
 import Test from "../screens/AreaDeTests/Test";
-import Prot from "../screens/AreaDeTests/Prot";
+import TelaDeCadastro from "../screens/AreaDeTests/TelaDeCadastro";
 import Configpage from "../screens/ConfiguracaoDoUsuario/Configpage";
+
 // import Cadastro from "../screens/AreaDeTests/Cadastro";
 
 import Fatori from "../screens/AreaDeTests/Fatori";
@@ -43,11 +44,13 @@ export default () => (
     <Stack.Screen name="MainTab" component={MainTab} />
 
     <Stack.Screen name="Login" component={Login} />
+
     {/* <Stack.Screen name="Cadastro" component={Cadastro} /> */}
+
     <Stack.Screen name="Second" component={Second} />
     <Stack.Screen name="First" component={First} />
     <Stack.Screen name="Test" component={Test} />
-    <Stack.Screen name="Prot" component={Prot} />
+    <Stack.Screen name="TelaDeCadastro" component={TelaDeCadastro} />
     <Stack.Screen name="Configpage" component={Configpage} />
 
     <Stack.Screen name="Fatori" component={Fatori} />

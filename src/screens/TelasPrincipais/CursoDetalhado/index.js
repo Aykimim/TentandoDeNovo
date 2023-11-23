@@ -23,7 +23,7 @@ function MyCustomLeftComponent() {
     // navigation.navigate("Cursos");
     navigation.reset({
       index: 0,
-      routes: [{ name: "MainTab" }]
+      routes: [{ name: "MainTab" }]//,screen
     });
   }
 

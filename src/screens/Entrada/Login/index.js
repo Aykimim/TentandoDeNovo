@@ -45,8 +45,8 @@ export default function App() {
     });
   };
 
-  function navigateProt() {
-    navigation.navigate("Prot");
+  function navigateTest() {
+    navigation.navigate("Configpage");
   }
 
   function navigateToPerguntas() {
@@ -165,7 +165,7 @@ export default function App() {
             </SendButtontextEsqueciSenha>
           </SendButton>
           {/* trocar dpois */}
-           <SendButton onPress={navigateProt}>
+           <SendButton onPress={navigateToEsqueciSenha}>
             <SendButtontextEsqueciSenha>
               cadastre-se
             </SendButtontextEsqueciSenha>
