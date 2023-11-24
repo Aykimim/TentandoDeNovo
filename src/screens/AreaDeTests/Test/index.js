@@ -1,82 +1,113 @@
-import * as React from "react";
-import { StyleSheet, Text, View } from "react-native";
-// import { useNavigation } from "@react-navigation/native";
-import { Container, SendButton, SendButtontext } from "./styles";
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { useNavigation } from "@react-navigation/native";
-import { Ionicons } from "@expo/vector-icons";
+import React, { useState } from "react";
+import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import Rsa from 'react-native-rsa-native';
 
-function Pagina1Screen() {
+export default function App() {
+  const [inputText, setInputText] = useState("");
+  const [privateKey, setPrivateKey] = useState("");
+  const [publicKey, setPublicKey] = useState("");
+  const [encryptedText, setEncryptedText] = useState("");
+  const [decryptedText, setDecryptedText] = useState("");
+
+  const generateKeyPair = async () => {
+    try {
+      const keys = await Rsa.generateKeys(69); // Você pode ajustar o tamanho da chave conforme necessário
+      setPrivateKey(keys.private);
+      setPublicKey(keys.public);
+    } catch (error) {
+      console.error("Erro ao gerar o par de chaves:", error.message);
+    }r
+  };
+
+  const encryptText = async () => {
+    if (inputText && publicKey) {
+      try {
+        const encrypted = await Rsa.encrypt(inputText, publicKey);
+        setEncryptedText(encrypted);
+      } catch (error) {
+        console.error("Erro ao criptografar:", error.message);
+      }
+    }
+  };
+
+  const decryptText = async () => {
+    if (encryptedText && privateKey) {
+      try {
+        const decrypted = await Rsa.decrypt(encryptedText, privateKey);
+        setDecryptedText(decrypted);
+      } catch (error) {
+        console.error("Erro ao descriptografar:", error.message);
+      }
+    }
+  };
+
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>test1!</Text>
+    <View style={styles.container}>
+      <Button title="Gerar Par de Chaves" onPress={generateKeyPair} />
+
+      <Text style={styles.label}>Chave Privada:</Text>
+      <TextInput
+        style={styles.input}
+        multiline
+        editable={false}
+        value={privateKey}
+      />
+
+      <Text style={styles.label}>Chave Pública:</Text>
+      <TextInput
+        style={styles.input}
+        multiline
+        editable={false}
+        value={publicKey}
+      />
+
+      <Text style={styles.label}>Texto Original:</Text>
+      <TextInput
+        style={styles.input}
+        multiline
+        value={inputText}
+        onChangeText={(text) => setInputText(text)}
+      />
+
+      <Button title="Criptografar" onPress={encryptText} />
+
+      <Text style={styles.label}>Texto Criptografado:</Text>
+      <TextInput
+        style={styles.input}
+        multiline
+        editable={false}
+        value={encryptedText}
+      />
+
+      <Button title="Descriptografar" onPress={decryptText} />
+
+      <Text style={styles.label}>Texto Descriptografado:</Text>
+      <TextInput
+        style={styles.input}
+        multiline
+        editable={false}
+        value={decryptedText}
+      />
     </View>
   );
 }
 
-// function Pagina2Screen() {
-//   return (
-//     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-//       <Text>test2!</Text>
-//     </View>
-//   );
-// }
-
-
-const Tab = createBottomTabNavigator();
-
-export default function App() {
-  const navigation = useNavigation();
-
-  // function HomeScreen() {
-  //   navigation.navigate("Home");
-  // }
-  function RankScreen() {
-    navigation.navigate("Rank");
-  }
-  function CursosScreen() {
-    navigation.navigate("Cursos");
-  }
-  function PerfilScreen() {
-    navigation.navigate("Perfil");
-  }
-
-
-
-
-
-  return (
-    // <NavigationContainer>
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
-
-          if (route.name === "Home") {
-            iconName = focused
-              ? "ios-information-circle"
-              : "ios-information-circle-outline";
-          } else if (route.name === "Rank") {
-            iconName = focused ? "ios-list-box" : "ios-list";
-          } else if (route.name === "Cursos") {
-            iconName = focused ? "ios-list-box" : "ios-list";
-          } else if (route.name === "Perfil") {
-            iconName = focused ? "ios-list-box" : "ios-list";
-          }
-
-          // You can return any component that you like here!
-          return <Ionicons name={iconName} size={size} color={color} />;
-        },
-        tabBarActiveTintColor: "tomato",
-        tabBarInactiveTintColor: "gray"
-      })}
-    >
-      <Tab.Screen name="Home" component={Pagina1Screen} />
-      <Tab.Screen name="Rank" component={RankScreen} />
-      <Tab.Screen name="Cursos" component={CursosScreen} />
-      <Tab.Screen name="Perfil" component={PerfilScreen} />
-    </Tab.Navigator>
-    // </NavigationContainer>
-  );
-}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+    justifyContent: 'center',
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginVertical: 8,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    padding: 8,
+    marginBottom: 16,
+  },
+});

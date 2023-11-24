@@ -46,9 +46,11 @@ export default function App() {
   };
 
   function navigateTest() {
-    navigation.navigate("Configpage");
+    navigation.navigate("TelaDeCadastro");
   }
-
+  function navigateTestCript() {
+    navigation.navigate("Test");
+  }
   function navigateToPerguntas() {
     navigation.navigate("Perguntas");
   }
@@ -165,11 +167,18 @@ export default function App() {
             </SendButtontextEsqueciSenha>
           </SendButton>
           {/* trocar dpois */}
-           <SendButton onPress={navigateToEsqueciSenha}>
+           <SendButton onPress={navigateTest}>
             <SendButtontextEsqueciSenha>
               cadastre-se
             </SendButtontextEsqueciSenha>
           </SendButton> 
+
+          <SendButton onPress={navigateTestCript}>
+            <SendButtontextEsqueciSenha>
+              Crip
+            </SendButtontextEsqueciSenha>
+          </SendButton>
+
           <SendButtontextBorda onPress={handleLogin}>
             <SendButtonEntrar>Entrar</SendButtonEntrar>
           </SendButtontextBorda>

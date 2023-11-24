@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import { StatusBar } from 'expo-status-bar';
-import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity, Text } from "react-native";
+import styled from "styled-components/native";
+import { useNavigation } from "@react-navigation/native";
 import {
+  ChangeableButtonContainer,
+  ChangeableButton,
+  ChangeableButtonText,
   Container,
   Textentrada,
   CustomButton,
   ButtonText
-} from './styles';
+} from "./styles";
 
 export default function App() {
   const navigation = useNavigation();
@@ -18,39 +22,35 @@ export default function App() {
 
   const handleText = () => {
     setIsPressed(!isPressed);
-  }
+  };
+
+  const [isSquare, setIsSquare] = useState(true);
+
+  const handlePress = () => {
+    setIsSquare((prev) => !prev);
+  };
 
   return (
     <Container>
       <Textentrada
         isPressed={isPressed}
-        onPress={handleText} // Certifique-se de que isso seja tratado corretamente
-        placeholder='Nome'
+        onPress={handleText}
+        placeholder="Nome"
       />
-                <Textentrada
-                    placeholder='Email'
-                >
-                </Textentrada>
+      <Textentrada placeholder="Email" />
+      <Textentrada placeholder="Celular" />
+      <Textentrada placeholder="Senha" secureTextEntry={true} />
+      <Textentrada placeholder="Confirma Senha" secureTextEntry={true} />
 
-                <Textentrada
-                    placeholder='Celular'
-                >
-                </Textentrada>
+      <CustomButton onPress={() => goToNextScreen("Login")}>
+        <ButtonText>cadastrar</ButtonText>
+      </CustomButton>
 
-                <Textentrada
-                    placeholder='Senha'
-                    secureTextEntry = {true}
-                >
-                </Textentrada>
-                <Textentrada
-                    placeholder='Confirma Senha'
-                    secureTextEntry = {true}
-                >
-                </Textentrada>
-
-                <CustomButton onPress={()=>{goToNextScreen('Login')}}>
-                    <ButtonText>cadastrar</ButtonText>
-                </CustomButton>
-        </Container>
-    );
+      <ChangeableButtonContainer>
+        <ChangeableButton isSquare={isSquare} onPress={handlePress}>
+          <ChangeableButtonText>Clique</ChangeableButtonText>
+        </ChangeableButton>
+      </ChangeableButtonContainer>
+    </Container>
+  );
 }
