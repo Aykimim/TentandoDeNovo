@@ -19,7 +19,11 @@ import {
   SendButtontextEsqueciSenha,
   SendButtontextBorda,
   TextEscrita,
-  SendButtonEntrar
+  SendButtonEntrar,
+  SendButtontextInscrever,
+  SendButtontextPadrão,
+  TextEscrita2,
+  Container2
 } from "./styles";
 
 // import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -167,11 +171,7 @@ export default function App() {
             </SendButtontextEsqueciSenha>
           </SendButton>
           {/* trocar dpois */}
-           <SendButton onPress={navigateTest}>
-            <SendButtontextEsqueciSenha>
-              cadastre-se
-            </SendButtontextEsqueciSenha>
-          </SendButton> 
+
 
           <SendButton onPress={navigateTestCript}>
             <SendButtontextEsqueciSenha>
@@ -209,6 +209,22 @@ export default function App() {
               />
             </TouchableWithoutFeedback>
           </View>
+
+
+<Container2>
+            <SendButtontextPadrão>
+            Não tem uma conta?
+            </SendButtontextPadrão>          
+           <TextEscrita2 onPress={navigateTest}>
+            <SendButtontextInscrever>
+             Inscreva-se
+            </SendButtontextInscrever>
+          </TextEscrita2> 
+</Container2>
+
+
+
+
 
           {/* <SendButton onPress={handleAula}>
             <SendButtontext>Aula</SendButtontext>

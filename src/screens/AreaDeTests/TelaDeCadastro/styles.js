@@ -18,15 +18,19 @@ export const ChangeableButtonText = styled.Text`
   font-weight: bold;
 `;
 
+export const ContainerPai = styled.SafeAreaView`
+  background-color: #303030;
+`;
+
 export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #303030;
-  justify-content: center;
-  align-items: center;
-  padding-horizontal: 5%;
-  padding-vertical: 5%;
-`;
 
+  align-items: center;
+`;
+//justify-content: center;
+// padding-horizontal: 5%;
+// padding-vertical: 5%;
 export const Textentrada = styled.TextInput`
   font-size: 20px;
   width: 80%;

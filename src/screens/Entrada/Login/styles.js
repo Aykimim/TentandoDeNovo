@@ -60,6 +60,30 @@ export const SendButtontextEsqueciSenha = styled.Text`
   margin-top: 1px;
   padding-left: 10px;
 `;
+export const SendButtontextPadrão = styled.Text`
+  font-size: 15px;
+  text-align: left;
+  color: #f0dfc8;
+  margin-top: 1px;
+  padding-left: 10px;
+`;
+
+export const SendButtontextInscrever = styled.Text`
+font-size: 15px;
+text-align: left;
+color: #e16539;
+margin-top: 1px;
+padding-left: 10px;
+`;
+export const TextEscrita2 = styled.Text`
+font-size: 25px;
+text-align: center;
+color: #f0dfc8;
+`;
+export const Container2 = styled.SafeAreaView`
+flex-direction: row;
+padding: 10px;
+`;
 export const CampoNome = styled.Text`
   font-size: 25px;
   text-align: center;
@@ -118,3 +142,4 @@ export const TextEscrita = styled.Text`
   color: #f0dfc8;
   margin-top: 20px;
 `;
+
