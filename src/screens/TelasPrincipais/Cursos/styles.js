@@ -1,4 +1,28 @@
 import styled from "styled-components/native";
+import * as Progress from 'react-native-progress';
+
+export const ProgressBarContainer = styled.View`
+  width: 100%;
+  margin-top: 10px;
+`;
+export const ProgressBar = styled(Progress.Bar).attrs({
+  color: '#E16539',
+  height: 10,
+  width: null, // Defina null para ocupar toda a largura do componente pai
+})``;
+
+
+export const ButtonCursoContainer = styled.TouchableHighlight`
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 20px;
+  margin-top: 15px;
+  margin-right: 30px;
+  margin-left: 30px;
+  background-color: #795833;
+  border-radius: 10px;
+`;
 
 export const ButtonCurso = styled.TouchableHighlight`
   background-color: #795833;
@@ -27,6 +51,8 @@ export const IconImage = styled.Image`
   border-radius: 50px;
 `;
 
+
+
 // Adicione um estilo de pressionamento
 export const ButtonCursoPressed = styled.TouchableHighlight`
   background-color: #E16539; /* Cor diferente quando pressionado */
@@ -46,21 +72,6 @@ export const ButtonTextPressed = styled.Text`
   text-align: center;
   flex: 1;
 `;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export const Header = styled.View`
   background-color: #e16539;

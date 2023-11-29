@@ -98,7 +98,7 @@ export default function App() {
         
         <LineWrapperHorizontal>
           <StyledSvg height="5" width="50">
-            <CustomLine x1="0" y1="0" x2="0" y2="1000" />
+            <CustomLine x1="0" y1="0" x2="0" y2="100" />
           </StyledSvg>
         </LineWrapperHorizontal>
 

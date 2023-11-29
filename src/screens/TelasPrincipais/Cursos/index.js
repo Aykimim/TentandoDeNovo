@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { ScrollView, TouchableOpacity, View } from "react-native";
 import { Header } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
+import * as Progress from 'react-native-progress';
 
 import {
   TextEscrita,
@@ -13,11 +14,16 @@ import {
   SendButtontext,
   IconImage,
   ButtonCursoPressed,
-  ButtonTextPressed
+  ButtonTextPressed,
+  ProgressBar,
+  ProgressBarContainer
 } from "./styles";
 
 //components
 import ScreenNameHeader from "../../../Components/ScreenNameHeader";
+
+
+
 
 export default function App() {
   const navigation = useNavigation();
@@ -41,6 +47,7 @@ return (
   <Container>
     <ScreenNameHeader headerName="Cursos" />
     <ScrollView>
+      
       {cursos.map((curso, index) => (
         <ButtonCurso
           key={index}
@@ -52,10 +59,16 @@ return (
               source={require("../../../Components/img/LogoQuadrada.png")}
             />
             <ButtonText>{curso.nome}</ButtonText>
+
           </View>
+
         </ButtonCurso>
       ))}
     </ScrollView>
   </Container>
 );
-}
+}    
+            //  <Progress.Bar progress={0.5} height={100} width={100} color={'white'}
+            
+            // />
+            // <ButtonText>oi</ButtonText>

@@ -173,11 +173,11 @@ export default function App() {
           {/* trocar dpois */}
 
 
-          <SendButton onPress={navigateTestCript}>
+          {/* <SendButton onPress={navigateTestCript}>
             <SendButtontextEsqueciSenha>
               Crip
             </SendButtontextEsqueciSenha>
-          </SendButton>
+          </SendButton> */}
 
           <SendButtontextBorda onPress={handleLogin}>
             <SendButtonEntrar>Entrar</SendButtonEntrar>
