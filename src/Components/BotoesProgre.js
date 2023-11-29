@@ -21,21 +21,23 @@ export default class Animations extends Component {
     }).start();
 
     // Introduza um atraso antes de redefinir a animação
-    // Animated.delay(2000).start(() => {
-    //   this.state.animation.setValue(0);
-    // });
+    Animated.delay(2000).start(() => {
+      this.state.animation.setValue(0);
+    });
   };
 
   render() {
+    const { progress, color, buttonText } = this.props; // Obtenha os parâmetros
+
     const progressInterpolate = this.state.animation.interpolate({
       inputRange: [0, 1],
-      outputRange: ["0%", "60%"],
+      outputRange: ["0%", progress || "60%"], // Use progress ou um valor padrão de "60%"
       extrapolate: "clamp",
     });
 
     const colorInterpolate = this.state.animation.interpolate({
       inputRange: [0, 1],
-      outputRange: ["rgb(71,255,99)", "rgb(99,71,255)"],
+      outputRange: ["rgb(71,255,99)", color || "rgb(99,71,255)"], // Use color ou um valor padrão
     });
 
     const progressStyle = {
@@ -51,7 +53,7 @@ export default class Animations extends Component {
             <View style={StyleSheet.absoluteFill}>
               <Animated.View style={[styles.progress, progressStyle]} />
             </View>
-            <Text style={styles.buttonText}>Get it!</Text>
+            <Text style={styles.buttonText}>{buttonText || "Get it!"}</Text>
           </View>
         </TouchableWithoutFeedback>
       </View>
@@ -59,29 +61,32 @@ export default class Animations extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  button: {
-    backgroundColor: "#e6537d",
-    borderRadius: 2,
-    alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 60,
-    paddingVertical: 10,
-    overflow: "hidden",
-  },
-  buttonText: {
-    color: "#FFF",
-    fontSize: 24,
-    backgroundColor: "transparent",
-  },
-  progress: {
-    position: "absolute",
-    left: 0,
-    top: 0,
-  },
-});
+// Função que cria os estilos
+export const createButtonStyles = ({ backgroundColor, textColor }) => {
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    button: {
+      backgroundColor: backgroundColor || "#e6537d", // Use backgroundColor ou um valor padrão
+      borderRadius: 2,
+      alignItems: "center",
+      justifyContent: "center",
+      paddingHorizontal: 60,
+      paddingVertical: 10,
+      overflow: "hidden",
+    },
+    buttonText: {
+      color: textColor || "#FFF", // Use textColor ou um valor padrão
+      fontSize: 24,
+      backgroundColor: "transparent",
+    },
+    progress: {
+      position: "absolute",
+      left: 0,
+      top: 0,
+    },
+  });
+};

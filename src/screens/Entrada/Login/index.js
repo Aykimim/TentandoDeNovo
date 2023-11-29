@@ -49,10 +49,10 @@ export default function App() {
     });
   };
 
-  function navigateTest() {
+  function navigateTelaCadastro() {
     navigation.navigate("TelaDeCadastro");
   }
-  function navigateTestCript() {
+  function navigateTest() {
     navigation.navigate("Test");
   }
   function navigateToPerguntas() {
@@ -170,6 +170,11 @@ export default function App() {
               Esqueci a senha.
             </SendButtontextEsqueciSenha>
           </SendButton>
+          <TextEscrita2 onPress={navigateTest}>
+            <SendButtontextInscrever>
+            Teste
+            </SendButtontextInscrever>
+          </TextEscrita2> 
           {/* trocar dpois */}
 
 
@@ -215,7 +220,7 @@ export default function App() {
             <SendButtontextPadrão>
             Não tem uma conta?
             </SendButtontextPadrão>          
-           <TextEscrita2 onPress={navigateTest}>
+           <TextEscrita2 onPress={navigateTelaCadastro}>
             <SendButtontextInscrever>
              Inscreva-se
             </SendButtontextInscrever>
