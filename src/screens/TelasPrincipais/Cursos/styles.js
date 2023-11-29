@@ -42,7 +42,6 @@ export const ButtonText = styled.Text`
   text-align: center;
   flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
-
 `;
 
 export const IconImage = styled.Image`
