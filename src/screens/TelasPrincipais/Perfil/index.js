@@ -1,6 +1,6 @@
 import React from "react";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { 
+import {
   Container,
   View,
   PerfilText,
@@ -21,7 +21,6 @@ import coxinha from "../../../Components/img/coxinha.png";
 import nomeUsuario from "../../Entrada/Login/index";
 import { ScrollView } from "react-native-gesture-handler";
 
-
 export default function App() {
   const navigation = useNavigation();
 
@@ -33,12 +32,12 @@ export default function App() {
     navigation.navigate("CursoDetalhado");
   }
 
-  const userName = "Nome Usuário";
-  const userEmail = "usuário@gmail.com";
+  const userName = "Fulano";
+  const userEmail = "Fulano@gmail.com";
   const userPhone = "28 999425652";
   const userPlan = "Básico";
 
-  const cursos = [ 
+  const cursos = [
     { nome: "Empreendedorismo" },
     { nome: "Finanças" },
     { nome: "Marketing" },
@@ -47,42 +46,36 @@ export default function App() {
     { nome: "eyk" }
   ];
 
-  
-
   return (
     <View>
-        <ScreenNameHeader headerName="Perfil" />
-        <HeaderPerfil
-          source={(require = coxinha)}
-          username={nomeUsuario}
-        ></HeaderPerfil>
-        <Container>
-          <Title>Informações</Title>
-          <PerfilText>Nome: {userName}</PerfilText>
-          <PerfilText>E-mail: {userEmail}</PerfilText>
-          <PerfilText>Celular: {userPhone}</PerfilText>
-          <PerfilText>Plano: {userPlan}</PerfilText>
-        </Container>
- 
-        <Container>
-          <Title>Status de cursos</Title>
-          <ScrollView>
-            {cursos.map((curso, index) => (
-              <ButtonCurso
-                key={index}
-                onPress={() => navigateToCursoDetalhado()} 
-                underlayColor="#E16539"
-              >
-                <View style={{ flexDirection: "row", alignItems: "center" }}>
-                  <IconImage
-                    source={"../../../Components/img/LogoQuadrada.png"}
-                  />
-                  <ButtonText>{curso.nome}</ButtonText>
-                </View>
-              </ButtonCurso>
-            ))}
-          </ScrollView>
-        </Container>
+      <ScreenNameHeader headerName="Perfil" />
+      <HeaderPerfil source={coxinha} username={nomeUsuario}></HeaderPerfil>
+
+      <Container>
+        <Title>Informações</Title>
+        <PerfilText>Nome: {userName}</PerfilText>
+        <PerfilText>E-mail: {userEmail}</PerfilText>
+        <PerfilText>Celular: {userPhone}</PerfilText>
+        <PerfilText>Plano: {userPlan}</PerfilText>
+      </Container>
+
+      <Container>
+        <Title>Status de cursos</Title>
+        <ScrollView>
+          {cursos.map((curso, index) => (
+            <ButtonCurso
+              key={index}
+              onPress={() => navigateToCursoDetalhado()}
+              underlayColor="#E16539"
+            >
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <IconImage source={require("../../../Components/img/LogoQuadrada.png")} />
+                <ButtonText>{curso.nome}</ButtonText>
+              </View>
+            </ButtonCurso>
+          ))}
+        </ScrollView>
+      </Container>
     </View>
   );
 }
