@@ -1,15 +1,11 @@
 import styled from "styled-components/native";
 import * as Progress from 'react-native-progress';
 
-export const ProgressBarContainer = styled.View`
-  width: 100%;
-  margin-top: 10px;
+export const progress = styled.TouchableHighlight`
+position: "absolute";
+left: 0;
+top: 0;
 `;
-export const ProgressBar = styled(Progress.Bar).attrs({
-  color: '#E16539',
-  height: 10,
-  width: null, // Defina null para ocupar toda a largura do componente pai
-})``;
 
 
 export const ButtonCursoContainer = styled.TouchableHighlight`

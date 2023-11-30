@@ -49,11 +49,11 @@ export default class Animations extends Component {
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.handlePress}>
-          <View style={styles.button}>
+          <View style={[styles.button, { backgroundColor: color }]}>
             <View style={StyleSheet.absoluteFill}>
               <Animated.View style={[styles.progress, progressStyle]} />
             </View>
-            <Text style={styles.buttonText}>{buttonText || "Get it!"}</Text>
+            <Text style={[styles.buttonText, { color: buttonText }]}>{buttonText}</Text>
           </View>
         </TouchableWithoutFeedback>
       </View>

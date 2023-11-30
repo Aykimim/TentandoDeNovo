@@ -55,6 +55,10 @@ export default function App() {
   function navigateTest() {
     navigation.navigate("Test");
   }
+
+  function navigateTest2() {
+    navigation.navigate("Fatori");
+  }
   function navigateToPerguntas() {
     navigation.navigate("Perguntas");
   }
@@ -175,6 +179,12 @@ export default function App() {
             Teste
             </SendButtontextInscrever>
           </TextEscrita2> 
+          <TextEscrita2 onPress={navigateTest2}>
+            <SendButtontextInscrever>
+            Teste2
+            </SendButtontextInscrever>
+          </TextEscrita2> 
+
           {/* trocar dpois */}
 
 

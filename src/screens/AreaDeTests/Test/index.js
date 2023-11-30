@@ -35,9 +35,9 @@ export default class Animations extends Component {
 
     const colorInterpolate = this.state.animation.interpolate({
       inputRange: [0, 1],
-      outputRange: ["rgb(71,255,99)", "rgb(99,71,255)"],
+      outputRange: ["rgb(225, 101, 57)", "rgb(225, 101, 57)"],
     });
-
+    // rgb(121, 88, 51)
     const progressStyle = {
       width: progressInterpolate,
       bottom: 0,
