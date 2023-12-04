@@ -32,8 +32,8 @@ export default function App() {
     navigation.navigate("CursoDetalhado");
   }
 
-  const userName = "Fulano";
-  const userEmail = "Fulano@gmail.com";
+  const userName = "Adam Levi";
+  const userEmail = "AdamLevi@gmail.com";
   const userPhone = "28 999425652";
   const userPlan = "Básico";
 
@@ -43,7 +43,7 @@ export default function App() {
     { nome: "Marketing" },
     { nome: "Gestão de RH" },
     { nome: "Planejamento" },
-    { nome: "eyk" }
+    { nome: "Carreira" }
   ];
 
   return (
@@ -53,7 +53,6 @@ export default function App() {
       <ScroolView>
         <Title>Informações</Title>
         <Container>
-          
           <PerfilText>Nome: {userName}</PerfilText>
           <PerfilText>E-mail: {userEmail}</PerfilText>
           <PerfilText>Celular: {userPhone}</PerfilText>
