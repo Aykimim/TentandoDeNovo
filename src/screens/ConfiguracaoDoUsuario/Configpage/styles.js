@@ -22,10 +22,9 @@ export const ButtonText = styled.Text`
   `;
 
 export const IconImage = styled.Image`
-  width: 50px;
-  height: 50px;
+  max-width: 50px;
+  max-height: 50px;
   border-radius: 50px;
-  position: absolute; /* Define a posição como absoluta*/
   top: 0;
   left: 0;
 `;
@@ -100,9 +99,10 @@ export const TextEntrada = styled.TextInput`
 `;
 
 export const Text = styled.Text`
-  font-size: 25px;
-  text-align: center;
   color: #f0dfc8;
+  font-size: 20px;
+  font-weight: bold;
+  flex-direction: space-between;
 `;
 
 export const TextEscrita = styled.Text`

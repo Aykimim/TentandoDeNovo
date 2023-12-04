@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  StyleSheet,
+  
   View,
   TouchableOpacity,
   TouchableWithoutFeedback,
@@ -12,7 +12,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import {
-  TextEscrita,
+  Text,
   Container,
   ButtonText,
   ButtonCurso,
@@ -25,15 +25,12 @@ import {
 function MyCustomLeftComponent() {
   const navigation = useNavigation();
 
-  function navigateToVoltar() {
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'MainTab' }],
-    });
+  function goBack(){
+    navigation.navigate('Perfil')
   }
 
   return (
-    <ButtonText onPress={navigateToVoltar}>
+    <ButtonText onPress={goBack}>
       <Icon name="arrow-left" size={20} color="#fff" />
     </ButtonText>
   );
@@ -41,21 +38,15 @@ function MyCustomLeftComponent() {
 
 function MyCustomCenterComponent() {
   return (
-    <View style={{ flexDirection: "row", alignItems: "center" }}>
+    <View style={{ flexDirection: "space-between", alignItems: "center", padding: "2%", }}>
       <IconImage source={require("../../../Components/img/IconeUsuario.png")} />
-      <ButtonText>Adam Levi</ButtonText>
+      <Text>Adam Levi</Text>
     </View>
   );
 }
 
-function MyCustomRightComponent() {
-  return <ButtonText></ButtonText>;
-}
-
 export default function App() {
   const navigation = useNavigation();
-
-
 
   // Adicione funções específicas para cada botão
   function editarNome() {
@@ -80,7 +71,6 @@ export default function App() {
         backgroundColor="#303030"
         leftComponent={<MyCustomLeftComponent />}
         centerComponent={<MyCustomCenterComponent />}
-        rightComponent={<MyCustomRightComponent />}
       />
 
       <ScrollView>

@@ -15,7 +15,6 @@ function navigateConfig() {
   navigation.navigate("Configpage");
 }
 
-  
     return (
       <View style={styles.container}>
         <View style={styles.row1}>
