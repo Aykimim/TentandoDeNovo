@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 
 export const Container = styled.SafeAreaView`
   flex: 2;
-  background-color: #303020;
+  background-color: #313131;
   text-align: left;
   flex-direction: rows;
   border: 1px;
@@ -12,7 +12,6 @@ export const Container = styled.SafeAreaView`
   flex-direction: column;
   justify-content: space-between;
   padding: 10px;
-  
 `;
 
 export const PerfilText = styled.Text`
@@ -27,7 +26,8 @@ export const Title = styled.Text`
   color: white;
   padding-left: 5%;
   font-size: 30px;
-  padding-top: 2%
+  padding: 3%;
+  font-weight: bold;
 `;
 
 export const Text = styled.Text`

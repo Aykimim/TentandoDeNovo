@@ -41,7 +41,7 @@ function navigateConfig() {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'left',
-        padding: 16,
+        padding: 10,
         borderBottomWidth: 3,
         borderColor: 'orange',
         height: 150,
@@ -63,12 +63,11 @@ function navigateConfig() {
           width: 100, 
           height: 100, 
           borderRadius: 50, 
-          borderWidth: 4, 
+          borderWidth: 2, 
           borderColor: 'white'
       },
       userName: {
         fontSize: 18,
-        fontWeight: 'bold',
         justifyContent: 'space-evenly',
         color: 'white',
       },

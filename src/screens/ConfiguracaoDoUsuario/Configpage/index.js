@@ -26,7 +26,7 @@ function MyCustomLeftComponent() {
   const navigation = useNavigation();
 
   function goBack(){
-    navigation.navigate('Perfil')
+    navigation.goBack()
   }
 
   return (

@@ -33,7 +33,9 @@ export default () => (
       tabBarActiveTintColor: "#E16539", // Cor da guia ativa
       tabBarInactiveTintColor: "gray", // Cor da guia inativa
       tabBarStyle: {
-        backgroundColor: "#303030" // Cor de fundo da barra
+        backgroundColor: "#303030", // Cor de fundo da barra
+        paddingBottom: 5,
+        height: 52
       }
     })}
   >
