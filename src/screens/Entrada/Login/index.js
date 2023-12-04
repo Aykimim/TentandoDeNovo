@@ -228,11 +228,11 @@ export default function App() {
 
 <Container2>
             <SendButtontextPadrão>
-            Não tem uma conta?
+            Não tem uma conta? 
             </SendButtontextPadrão>          
            <TextEscrita2 onPress={navigateTelaCadastro}>
             <SendButtontextInscrever>
-             Inscreva-se
+              Inscreva-se
             </SendButtontextInscrever>
           </TextEscrita2> 
 </Container2>

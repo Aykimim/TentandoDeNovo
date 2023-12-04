@@ -76,9 +76,11 @@ margin-top: 1px;
 padding-left: 10px;
 `;
 export const TextEscrita2 = styled.Text`
+margin-left: 5px;
 font-size: 25px;
 text-align: center;
 color: #f0dfc8;
+font-weight: bold;
 `;
 export const Container2 = styled.SafeAreaView`
 flex-direction: row;
