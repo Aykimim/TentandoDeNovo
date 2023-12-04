@@ -12,6 +12,7 @@ export const Container = styled.SafeAreaView`
   flex-direction: column;
   justify-content: space-between;
   padding: 10px;
+  margin: 1px;
 `;
 
 export const PerfilText = styled.Text`

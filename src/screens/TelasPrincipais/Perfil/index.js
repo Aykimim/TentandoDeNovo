@@ -61,7 +61,7 @@ export default function App() {
 
           <Title>Meus cursos</Title>
         <Container>
-          
+
             {cursos.map((curso, index) => (
               <ButtonCurso
                 key={index}
