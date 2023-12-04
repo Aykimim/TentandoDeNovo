@@ -3,13 +3,16 @@ import styled from "styled-components/native";
 
 export const Container = styled.SafeAreaView`
   flex: 2;
-  background-color: #303030;
+  background-color: #303020;
   text-align: left;
   flex-direction: rows;
-  border: 2px;
-  border-color: white;
+  border: 1px;
+  border-color: #303030;
+  border-radius: 10px;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 10px;
+
 `;
 
 export const PerfilText = styled.Text`
@@ -17,15 +20,14 @@ export const PerfilText = styled.Text`
   color: white;
   padding-left: 5%;
   font-size: 20px;
-  
 `;
 
 export const Title = styled.Text`
-  text-align: center;
+  text-align: left;
   color: white;
   padding-left: 5%;
   font-size: 30px;
-  
+  padding-top: 2%
 `;
 
 export const Text = styled.Text`
@@ -36,8 +38,6 @@ export const Text = styled.Text`
 
 export const View = styled.View`
   flex: 1;
-  justifycontent: "top";
-  background-color: #303030;
 `;
 
 export const ButtonCurso = styled.TouchableHighlight`
@@ -64,4 +64,9 @@ export const ButtonText = styled.Text`
   text-align: center;
   flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
+`;
+
+export const ScroolView = styled.ScrollView`
+  background-color: #303030;
+  border-color: #303030;
 `;
