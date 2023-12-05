@@ -1,41 +1,51 @@
 import styled from "styled-components/native";
 
 export const ButtonCurso = styled.TouchableHighlight`
-  background-color: #E16539;
+  background-color: #e16539;
   border-radius: 20px;
   align-items: center;
   justify-content: space-between;
   flex-direction: row; /* Define a direção como "row" para alinhar os elementos horizontalmente */
   padding: 20px;
   margin-top: 15px;
-  margin-right: 30px;
-  margin-left: 30px;
+  margin-right: 50px;
+  margin-left: 50px;
 `;
 
 export const ButtonText = styled.Text`
   color: #000;
   font-size: 12px;
   text-align: center;
+
   border-radius: 15px;
-  flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
+   /* Isso faz o texto ocupar todo o espaço vertical */
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
   padding: 10px;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-right: 30px;
   margin-left: 30px;
 `;
-// 
-export const ButtonTextPergunta = styled.Text`
-  color: #000;
+//
+export const ButtonTextTitulo = styled.Text`
+  color: #fff;
   font-size: 20px;
+  padding-horizontal: 5%;
+
   text-align: center;
   flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
 `;
-
+export const ButtonTextPergunta = styled.Text`
+  color: #fff;
+  font-size: 20px;
+  padding-top: 20px;
+  text-align: center;
+  /* Isso faz o texto ocupar todo o espaço vertical */
+  font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
+`;
 export const ButtonTextGrande = styled.Text`
-  color: #000;
-  font-size: 30px;
+  color: #fff;
+  font-size: 25px;
   text-align: center;
   flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
@@ -72,13 +82,17 @@ export const Header = styled.View`
 `;
 export const Container = styled.SafeAreaView`
   flex: 1;
-  background-color: #f0dfc8;
-  justify-content: center;
-  align-items: center;
+  background-color: #303030;
+
   padding-horizontal: 5%;
   padding-vertical: 5%;
 `;
-
+export const ContainerPerguntas = styled.SafeAreaView`
+  flex: 3;
+  padding-horizontal: 5%;
+  padding-vertical: 5%;
+  
+`;
 export const TextBotao = styled.Text`
   font-size: 25px;
   text-align: center;
@@ -111,7 +125,7 @@ export const TextEntrada = styled.TextInput`
   text-align: center;
   justify-content: center;
   align-items: center;
-  color: #000;
+  color: #fff;
   background-color: #795833;
   border-radius: 50px;
   margin-top: 20px;
