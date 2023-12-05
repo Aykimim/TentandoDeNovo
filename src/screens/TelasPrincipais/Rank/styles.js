@@ -36,8 +36,8 @@ export const ButtonCurso = styled.TouchableHighlight`
 
 export const ButtonCursoRankNun = styled.TouchableHighlight`
   background-color: #795833;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 35px;
   border-radius: 50px;
   padding: 5px;
 

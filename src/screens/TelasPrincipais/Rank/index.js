@@ -38,12 +38,12 @@ export default function App() {
   }
   // Defina o número de rank para cada botão de curso
   const cursos = [
-    { nome: "Yuji Kamada", rank: "1º" },
-    { nome: "Raphael Lima", rank: "2º" },
-    { nome: "Carlos Massa", rank: "3º" },
-    { nome: "Igor Guimarães", rank: "4º" },
-    { nome: "Robert Val", rank: "5º" },
-    { nome: "eyk", rank: "6º" }
+    { nome: "Yuji Kamada", rank: " 1º " },
+    { nome: "Raphael Lima", rank: " 2º " },
+    { nome: "Carlos Massa", rank: " 3º" },
+    { nome: "Igor Guimarães", rank: " 4º " },
+    { nome: "Robert Val", rank: " 5º " },
+    { nome: "eyk", rank: " 6º " }
   ];
   return (
     <Container>
