@@ -14,10 +14,7 @@ import {
   Container,
   ButtonText,
   ButtonCurso, // Importe ButtonCurso do styles.js
- 
   IconImage,
-
-  
   ButtonCursoTudo,
   ButtonCursoRankNun,
   ScrollViewTudo
@@ -31,7 +28,7 @@ const botaoteste = () => {
 
 function navigateToVoltar() {
   navigation.navigate("Login");
-}
+};
 
 export default function App() {
   const navigation = useNavigation();
