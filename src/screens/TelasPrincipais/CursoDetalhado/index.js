@@ -83,7 +83,7 @@ export default function App() {
         }}
       >
         <Image
-          source={require("../../../Components/img/LogoQuadrada.png")} // Substitua pelo caminho da sua imagem
+          source={require("../../../Components/img/PensaDinheiro.png")} // Substitua pelo caminho da sua imagem
           style={{ width: "100%", height: "100%" }}
         />
       </View>

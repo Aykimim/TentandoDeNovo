@@ -67,7 +67,7 @@ export default function App() {
       <ScrollViewLista>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <IconImage
-            source={require("../../../Components/img/LogoQuadrada.png")}
+            source={require("../../../Components/img/PensaDinheiro.png")}
           />
         </View>
 

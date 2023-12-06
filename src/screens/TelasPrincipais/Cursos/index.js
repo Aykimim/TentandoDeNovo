@@ -48,7 +48,7 @@ class CourseItem extends Component {
   
 
   render() {
-    const { progress } = this.props.course;
+    const { progress, imagem } = this.props.course;
 
     const progressInterpolate = this.state.animation.interpolate({
       inputRange: [0, 1],
@@ -71,9 +71,7 @@ class CourseItem extends Component {
       <ButtonCurso onPress={this.props.onPressNavigate} underlayColor="#E16539">
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Animated.View style={[styles.progress, progressStyle]} />
-          <IconImage
-            source={require("../../../Components/img/LogoQuadrada.png")}
-          />
+          <IconImage source={imagem} />
           <ButtonText>{this.props.course.nome}</ButtonText>
           <Text style={styles.progressText}>{`${progress}%`}</Text>
         </View>
@@ -90,19 +88,19 @@ const CoursesPage = () => {
   }
 
   const cursos = [
-    { nome: "Empreendedorismo", progress: 100 },
-    { nome: "Finanças", progress: 40 },
-    { nome: "Marketing", progress: 60 },
-    { nome: "Gestão de RH", progress: 20 },
-    { nome: "Planejamento", progress: 90 },
-    { nome: "eyk", progress: 75 },
-    { nome: "eyk", progress: 75 },
-    { nome: "eyk", progress: 75 },
-    { nome: "eyk", progress: 75 },
-    { nome: "eyk", progress: 75 },
-    { nome: "eyk", progress: 75 },
-    { nome: "eyk", progress: 75 },
-    { nome: "eyk", progress: 75 }
+    { nome: "Empreendedorismo", progress: 100, imagem: require("../../../Components/img/LogoQuadrada.png") },
+    { nome: "Finanças", progress: 40, imagem: require("../../../Components/img/PensaDinheiro.png") },
+    { nome: "Marketing", progress: 60, imagem: require("../../../Components/img/AltoFalante.png") },
+    { nome: "Gestão de RH", progress: 20, imagem: require("../../../Components/img/LogoQuadrada.png") },
+    { nome: "Planejamento", progress: 90, imagem: require("../../../Components/img/Prancheta.png") },
+    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") },
+    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png")},
+    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") },
+    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") },
+    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") },
+    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") },
+    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") },
+    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") }
   ];
 
   return (
