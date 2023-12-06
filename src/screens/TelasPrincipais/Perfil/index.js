@@ -8,7 +8,8 @@ import {
   ButtonCurso,
   IconImage,
   ButtonText,
-  ScroolView
+  ScroolView,
+  ViewButao
 } from "./styles";
 
 //components
@@ -48,7 +49,7 @@ export default function App() {
 
   return (
     <View>
-      <ScreenNameHeader headerName="Perfil" />
+      
       <HeaderPerfil source={coxinha} username={nomeUsuario}></HeaderPerfil>
       <ScroolView>
         <Title>Informações</Title>
@@ -66,12 +67,12 @@ export default function App() {
               <ButtonCurso
                 key={index}
                 onPress={() => navigateToCursoDetalhado()}
-                underlayColor="#E16539"
+                underlayColor="#FFC61A"
               >
-                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <ViewButao style={{ flexDirection: "row", alignItems: "center" }}>
                   <IconImage source={require("../../../Components/img/LogoQuadrada.png")} />
                   <ButtonText>{curso.nome}</ButtonText>
-                </View>
+                </ViewButao>
               </ButtonCurso>
             ))} 
         </Container>

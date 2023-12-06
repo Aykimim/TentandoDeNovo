@@ -10,6 +10,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import * as Progress from "react-native-progress";
+import Video from "react-native-video";
 
 import {
   ProgressContainer,
@@ -78,6 +79,7 @@ class CourseItem extends Component {
       </ButtonCurso>
     );
   }
+  
 }
 
 const CoursesPage = () => {
@@ -91,7 +93,7 @@ const CoursesPage = () => {
     { nome: "Empreendedorismo", progress: 100, imagem: require("../../../Components/img/Blocos.png") },
     { nome: "Finanças", progress: 40, imagem: require("../../../Components/img/PensaDinheiro.png") },
     { nome: "Marketing", progress: 60, imagem: require("../../../Components/img/AltoFalante.png") },
-    { nome: "Gestão de RH", progress: 20, imagem: require("../../../Components/img/LogoQuadrada.png") },
+    { nome: "Gestão de RH", progress: 20, video: require("../../../Components/img/Pessoas.mp4") },
     { nome: "Planejamento", progress: 90, imagem: require("../../../Components/img/Prancheta.png") },
     { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") },
     { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png")},

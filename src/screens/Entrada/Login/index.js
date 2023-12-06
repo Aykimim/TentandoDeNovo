@@ -174,7 +174,7 @@ export default function App() {
               Esqueci a senha.
             </SendButtontextEsqueciSenha>
           </SendButton>
-          <TextEscrita2 onPress={navigateTest}>
+          {/* <TextEscrita2 onPress={navigateTest}>
             <SendButtontextInscrever>
             Teste
             </SendButtontextInscrever>
@@ -183,7 +183,7 @@ export default function App() {
             <SendButtontextInscrever>
             Teste2
             </SendButtontextInscrever>
-          </TextEscrita2> 
+          </TextEscrita2>  */}
 
           {/* trocar dpois */}
 

@@ -20,7 +20,7 @@ export const LineWrapperEsquerda = styled.View`
   margin-right: 50px;
 `;
 export const ButtonCursoDireita = styled.TouchableHighlight`
-  background-color: #795833;
+  background-color:#3034;
   border-radius: 20px;
   align-items: center;
   justify-content: space-between;
@@ -32,7 +32,7 @@ export const ButtonCursoDireita = styled.TouchableHighlight`
 `;
 // margin-top: 15px;
 export const ButtonCursoEsquerda = styled.TouchableHighlight`
-  background-color: #795833;
+  background-color: #3034;
   border-radius: 20px;
   align-items: center;
   justify-content: space-between;
@@ -82,7 +82,7 @@ align-items: center;
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  background-color: #303030;
+  background-color: #fff;
 `;
 
 

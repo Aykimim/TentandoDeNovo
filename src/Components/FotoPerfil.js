@@ -45,7 +45,7 @@ function navigateConfig() {
         borderBottomWidth: 3,
         borderColor: 'orange',
         height: 150,
-        backgroundColor: '#303030',
+        backgroundColor: '#FFC61A',
       },
       row1:{
         alignItems: 'left',

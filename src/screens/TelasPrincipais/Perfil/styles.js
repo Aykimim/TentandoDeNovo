@@ -3,14 +3,14 @@ import styled from "styled-components/native";
 
 export const Container = styled.SafeAreaView`
   flex: 2;
-  background-color: #313131;
+  background-color: #EAE8E9;
   text-align: left;
   flex-direction: rows;
   border: 1px;
-  border-color: #303030;
+
   border-radius: 10px;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: spacebetween;
   padding: 10px;
   margin: 1px;
 `;
@@ -20,6 +20,7 @@ export const PerfilText = styled.Text`
   color: white;
   padding-left: 5%;
   font-size: 20px;
+  color: #372A28;
 `;
 
 export const Title = styled.Text`
@@ -29,20 +30,26 @@ export const Title = styled.Text`
   font-size: 30px;
   padding: 3%;
   font-weight: bold;
+  color: #372A28;
 `;
 
 export const Text = styled.Text`
   font-size: 25px;
   text-align: center;
-  color: #f0dfc8;
+  color: #372A28;
 `;
 
 export const View = styled.View`
+margin-top: 25px;
+  flex: 1;
+`;
+export const ViewButao = styled.View`
+
   flex: 1;
 `;
 
 export const ButtonCurso = styled.TouchableHighlight`
-  background-color: #795833;
+  background-color: #FFC61A;
   border-radius: 10px; 
   align-items: center;
   justify-content: space-between;
@@ -60,7 +67,7 @@ export const IconImage = styled.Image`
 `;
 
 export const ButtonText = styled.Text`
-  color: #f0dfc8;
+  color:#372A28;
   font-size: 20px;
   text-align: center;
   flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
@@ -68,6 +75,6 @@ export const ButtonText = styled.Text`
 `;
 
 export const ScroolView = styled.ScrollView`
-  background-color: #303030;
+  background-color: #EAE8E9;
   border-color: #303030;
 `;
