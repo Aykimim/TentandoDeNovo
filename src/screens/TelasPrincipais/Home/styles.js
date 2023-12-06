@@ -42,6 +42,17 @@ export const ButtonCursoEsquerda = styled.TouchableHighlight`
   margin-right: 75px;
   margin-left: 25px;
 `;
+export const ButtonCursoFim = styled.TouchableHighlight`
+  background-color: #795833;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 10px;
+  margin-bottom: 50px;
+  margin-right: 75px;
+  margin-left: 25px;
+`;
 //  margin-top: 15px;
 export const ButtonText = styled.Text`
   color: #fff;

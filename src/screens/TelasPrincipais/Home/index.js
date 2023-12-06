@@ -17,7 +17,8 @@ import {
   LineWrapper,
   LineWrapperDireita,
   LineWrapperHorizontal,
-  LineWrapperEsquerda
+  LineWrapperEsquerda,
+  ButtonCursoFim
 } from "./styles";
 
 //components
@@ -149,9 +150,17 @@ export default function App() {
             />
           </Svg>
         </ContainerSeta>
-
+        <ButtonCursoFim onPress={Curso4} underlayColor="#e16539">
+          <View style={{ flexDirection: "row", alignItems: "center",}}>
+            <ButtonText>
+              Fim
+            </ButtonText>
+          </View>
+        </ButtonCursoFim>
 
       </ScrollViewLista>
+
+      
     </Container>
   );
 }
