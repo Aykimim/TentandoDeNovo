@@ -88,7 +88,7 @@ const CoursesPage = () => {
   }
 
   const cursos = [
-    { nome: "Empreendedorismo", progress: 100, imagem: require("../../../Components/img/LogoQuadrada.png") },
+    { nome: "Empreendedorismo", progress: 100, imagem: require("../../../Components/img/Blocos.png") },
     { nome: "Finanças", progress: 40, imagem: require("../../../Components/img/PensaDinheiro.png") },
     { nome: "Marketing", progress: 60, imagem: require("../../../Components/img/AltoFalante.png") },
     { nome: "Gestão de RH", progress: 20, imagem: require("../../../Components/img/LogoQuadrada.png") },
