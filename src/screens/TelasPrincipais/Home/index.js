@@ -63,7 +63,7 @@ export default function App() {
 
   return (
     <Container>
-      <ScreenNameHeader headerName="Finanças" />
+      <ScreenNameHeader headerName="Trilha de conteúdo" />
       <ScrollViewLista>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <IconImage

@@ -7,7 +7,7 @@ background-color: #f0dfc8;
   align-items: center;
   justify-content: space-between;
   flex-direction: row; /* Define a direção como "row" para alinhar os elementos horizontalmente */
-  padding-top: 10px;
+  padding-top: 15px;
  
   margin-top: 15px;
  
