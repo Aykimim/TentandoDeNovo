@@ -1,32 +1,30 @@
 import styled from "styled-components/native";
 
-export const LineWrapper = styled.View`
-align-items: center;
-
-
+export const ScrollViewLista = styled.ScrollView`
+flex: 1;
 `;
-export const LineWrapperDireita = styled.View`
-align-items: center;
-margin-left: 50px;
+export const LineWrapper = styled.View`
+  align-items: center;
+`;
 
+export const LineWrapperDireita = styled.View`
+  align-items: center;
+  margin-left: 50px;
 `;
 export const LineWrapperHorizontal = styled.View`
-
-background-color: #fff;
-padding-vertical-rl: 5px;
-
+  align-items: center;
+  margin-left: 50px;
 `;
 export const LineWrapperEsquerda = styled.View`
-align-items: center;
-margin-right: 50px;
-
+  align-items: center;
+  margin-right: 50px;
 `;
 export const ButtonCursoDireita = styled.TouchableHighlight`
   background-color: #795833;
   border-radius: 20px;
   align-items: center;
   justify-content: space-between;
-  flex-direction: row; /* Define a direção como "row" para alinhar os elementos horizontalmente */
+
   padding: 10px;
 
   margin-right: 25px;
@@ -65,23 +63,17 @@ export const IconImage = styled.Image`
 export const ScreenNameHeader = styled.View`
   background-color: #e16539;
 `;
-
-export const Header = styled.View`
-  background-color: #e16539;
+export const ContainerSeta = styled.SafeAreaView`
+align-items: center;
+  
 `;
+
+
 export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #303030;
-  
 `;
-export const ContainerPrimeiro = styled.SafeAreaView`
-  flex: 1;
-  background-color: #303030;
-  
-`;
-export const View = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  color: #f0dfc8;
-`;
+
+
+
+

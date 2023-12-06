@@ -1,87 +1,23 @@
-import React, { Component } from "react";
-import { StyleSheet, Text, View, Animated, TouchableWithoutFeedback } from "react-native";
+import * as React from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Animated,
+  TouchableWithoutFeedback,
+  ScrollView
+} from "react-native";
+import Svg, { Path } from 'react-native-svg';
+import { Container } from '../../TelasPrincipais/Home/styles';
 
-export default class Animations extends Component {
-  state = {
-    animation: new Animated.Value(0),
-  };
-
-  componentDidMount() {
-    // Acione o método handlePress após o componente ser montado
-    this.handlePress();
-  }
-
-  handlePress = () => {
-    this.state.animation.setValue(0);
-
-    Animated.timing(this.state.animation, {
-      duration: 1500,
-      toValue: 1,
-      useNativeDriver: false, // ou true dependendo da sua animação
-    }).start();
-
-    // Introduza um atraso antes de redefinir a animação
-    // Animated.delay(2000).start(() => {
-    //   this.state.animation.setValue(0);
-    // });
-  };
-
-  render() {
-    const progressInterpolate = this.state.animation.interpolate({
-      inputRange: [0, 1],
-      outputRange: ["0%", "60%"],
-      extrapolate: "clamp",
-    });
-
-    const colorInterpolate = this.state.animation.interpolate({
-      inputRange: [0, 1],
-      outputRange: ["rgb(225, 101, 57)", "rgb(225, 101, 57)"],
-    });
-    // rgb(121, 88, 51)
-    const progressStyle = {
-      width: progressInterpolate,
-      bottom: 0,
-      backgroundColor: colorInterpolate,
-    };
-
-    return (
-      <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={this.handlePress}>
-          <View style={styles.button}>
-            <View style={StyleSheet.absoluteFill}>
-              <Animated.View style={[styles.progress, progressStyle]} />
-            </View>
-            <Text style={styles.buttonText}>Get it!</Text>
-          </View>
-        </TouchableWithoutFeedback>
-      </View>
-    );
-  }
+export default function SvgComponent({ customPath }) {
+  return (
+    <Container>
+    <Svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style={{ enableBackground: 'new 0 0 100 100' }} xmlSpace="preserve">
+      <Path d={customPath} fill="#fff" />
+      <Text x="0" y="115" fill="#fff" fontSize="5px" fontWeight="bold" fontFamily="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by João Gabriel Mendes Corrêa</Text>
+      <Text x="0" y="120" fill="#fff" fontSize="5px" fontWeight="bold" fontFamily="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</Text>
+    </Svg>
+    </Container>
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  button: {
-    backgroundColor: "#e6537d",
-    borderRadius: 2,
-    alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 60,
-    paddingVertical: 10,
-    overflow: "hidden",
-  },
-  buttonText: {
-    color: "#FFF",
-    fontSize: 24,
-    backgroundColor: "transparent",
-  },
-  progress: {
-    position: "absolute",
-    left: 0,
-    top: 0,
-  },
-});

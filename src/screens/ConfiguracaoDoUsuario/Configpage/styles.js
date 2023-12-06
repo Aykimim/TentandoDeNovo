@@ -4,7 +4,7 @@ export const ButtonCurso = styled.TouchableHighlight`
   background-color: #795833;
   border-radius: 10px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: spacebetween;
   flex-direction: row; /* Define a direção como "row" para alinhar os elementos horizontalmente */
   padding: 20px;
   margin-top: 15px;

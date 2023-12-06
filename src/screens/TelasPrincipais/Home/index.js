@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { ScrollView, View, Text } from "react-native";
-import Svg, { Line } from "react-native-svg";
+import Svg, { Line, Path } from "react-native-svg";
 import styled from "styled-components/native";
 
 import {
@@ -11,6 +11,8 @@ import {
   Container,
   ButtonText,
   IconImage,
+  ContainerSeta,
+  ScrollViewLista,
   ContainerPrimeiro,
   LineWrapper,
   LineWrapperDireita,
@@ -28,16 +30,10 @@ export default function App() {
     alert("Teste");
   };
 
-
-
   const CustomLine = styled(Line)`
     stroke: #fff;
     stroke-width: 4px;
   `;
-
-  //   const StyledSvg = styled(Svg)`
-  //   transform: translateY(25px) rotate(90deg) translateX(45px) translateY(35px);
-  // `;
 
   const StyledSvg = styled(Svg)`
     transform: translateY(20px) rotate(90deg) translateX(40px) translateY(25px);
@@ -64,49 +60,30 @@ export default function App() {
     navigation.navigate("CursoDetalhado");
   }
 
-  // function HomeScreen({ navigation }) {
-  //   const cursos = [
-  //     { nome: "Empreendedorismo" },
-  //     { nome: "Finanças" },
-  //     { nome: "Marketing" },
-  //     { nome: "estão de RH" },
-  //     { nome: "Planejamento" },
-  //     { nome: "eyk" }
-  //   ];
-
   return (
     <Container>
-      {/* <ContainerPrimeiro></ContainerPrimeiro> */}
       <ScreenNameHeader headerName="Finanças" />
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <IconImage
-          source={require("../../../Components/img/LogoQuadrada.png")}
-        />
-      </View>
+      <ScrollViewLista>
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <IconImage
+            source={require("../../../Components/img/LogoQuadrada.png")}
+          />
+        </View>
 
-      <ScrollView>
         <ButtonCursoDireita onPress={Curso1} underlayColor="#e16539">
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <ButtonText>Fundamentos de finanças empresariais.</ButtonText>
           </View>
         </ButtonCursoDireita>
-        <LineWrapperDireita>
-          <Svg height="40" width="5">
-            <CustomLine x1="0" y1="0" x2="0" y2="100" />
+        <ContainerSeta>
+          <Svg width="63" height="101" viewBox="0 0 53 101" fill="none">
+            <Path
+              d="M2.09898 100.367L1.68451 57.6078C1.65776 54.8473 3.87325 52.5875 6.63371 52.5596L46.6384 52.155C49.3989 52.1271 51.6144 49.8672 51.5876 47.1068L51.1346 0.367452"
+              stroke="white"
+              strokeWidth="4"
+            />
           </Svg>
-        </LineWrapperDireita>
-        
-        <LineWrapperHorizontal>
-          <StyledSvg height="5" width="50">
-            <CustomLine x1="0" y1="0" x2="0" y2="100" />
-          </StyledSvg>
-        </LineWrapperHorizontal>
-
-        <LineWrapperEsquerda>
-          <Svg height="40" width="5">
-            <CustomLine x1="0" y1="0" x2="0" y2="100" />
-          </Svg>
-        </LineWrapperEsquerda>
+        </ContainerSeta>
         <ButtonCursoEsquerda onPress={Curso2} underlayColor="#e16539">
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <ButtonText>
@@ -114,11 +91,16 @@ export default function App() {
             </ButtonText>
           </View>
         </ButtonCursoEsquerda>
-        <LineWrapper>
-          <Svg height="40" width="5">
-            <CustomLine x1="0" y1="0" x2="0" y2="100" />
+        <ContainerSeta>
+          <Svg width="63" height="101" viewBox="0 0 53 101" fill="none">
+            <Path
+              d="M1.60515 0.612833L1.61405 43.3745C1.61463 46.1351 3.85239 48.3729 6.61299 48.3735L46.6198 48.382C49.3804 48.3826 51.6181 50.6203 51.6187 53.3809L51.6284 100.122"
+              stroke="white"
+              strokeWidth="4"
+            />
           </Svg>
-        </LineWrapper>
+        </ContainerSeta>
+
         <ButtonCursoDireita onPress={Curso3} underlayColor="#e16539">
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <ButtonText>
@@ -126,11 +108,15 @@ export default function App() {
             </ButtonText>
           </View>
         </ButtonCursoDireita>
-        <LineWrapper>
-          <Svg height="40" width="5">
-            <CustomLine x1="0" y1="0" x2="0" y2="100" />
+        <ContainerSeta>
+          <Svg width="63" height="101" viewBox="0 0 53 101" fill="none">
+            <Path
+              d="M2.09898 100.367L1.68451 57.6078C1.65776 54.8473 3.87325 52.5875 6.63371 52.5596L46.6384 52.155C49.3989 52.1271 51.6144 49.8672 51.5876 47.1068L51.1346 0.367452"
+              stroke="white"
+              strokeWidth="4"
+            />
           </Svg>
-        </LineWrapper>
+        </ContainerSeta>
         <ButtonCursoEsquerda onPress={Curso4} underlayColor="#e16539">
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <ButtonText>
@@ -138,11 +124,15 @@ export default function App() {
             </ButtonText>
           </View>
         </ButtonCursoEsquerda>
-        <LineWrapper>
-          <Svg height="40" width="5">
-            <CustomLine x1="0" y1="0" x2="0" y2="100" />
+        <ContainerSeta>
+          <Svg width="63" height="101" viewBox="0 0 53 101" fill="none">
+            <Path
+              d="M1.60515 0.612833L1.61405 43.3745C1.61463 46.1351 3.85239 48.3729 6.61299 48.3735L46.6198 48.382C49.3804 48.3826 51.6181 50.6203 51.6187 53.3809L51.6284 100.122"
+              stroke="white"
+              strokeWidth="4"
+            />
           </Svg>
-        </LineWrapper>
+        </ContainerSeta>
         <ButtonCursoDireita onPress={Curso5} underlayColor="#e16539">
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <ButtonText>
@@ -150,39 +140,18 @@ export default function App() {
             </ButtonText>
           </View>
         </ButtonCursoDireita>
-      </ScrollView>
+        <ContainerSeta>
+          <Svg width="63" height="101" viewBox="0 0 53 101" fill="none">
+            <Path
+              d="M2.09898 100.367L1.68451 57.6078C1.65776 54.8473 3.87325 52.5875 6.63371 52.5596L46.6384 52.155C49.3989 52.1271 51.6144 49.8672 51.5876 47.1068L51.1346 0.367452"
+              stroke="white"
+              strokeWidth="4"
+            />
+          </Svg>
+        </ContainerSeta>
+
+
+      </ScrollViewLista>
     </Container>
   );
 }
-//     <Container>
-
-//       <ScreenNameHeader headerName="Home" />
-//       <ScrollView>
-//                           <LineWrapper>
-//         <Svg height="10" width="10">
-//           <CustomLine x1="0" y1="0" x2="0" y2="10" />
-//         </Svg>
-//       </LineWrapper>
-//         {cursos.map((curso, index) => (
-//           <ButtonCurso key={index} onPress={botaoteste} underlayColor="#E16539">
-
-//             <View style={{ flexDirection: "row", alignItems: "center" }}>
-//               <ButtonText>{curso.nome}</ButtonText>
-//             </View>
-//           </ButtonCurso>
-//         ))}
-//       </ScrollView>
-
-//     </Container>
-//   );
-// }
-
-// export default function App() {
-//   return (
-//     <Container>
-//       <Stack.Navigator screenOptions={{ headerShown: false }}>
-//         <Stack.Screen name=" " component={HomeScreen} />
-//       </Stack.Navigator>
-//     </Container>
-//   );
-// }
