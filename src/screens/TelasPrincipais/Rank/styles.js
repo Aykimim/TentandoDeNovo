@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
-
+import { colors } from "../../../Components/Theme";
 export const Container = styled.SafeAreaView`
   flex: 1;
-  background-color: #303030;
+  background-color:${colors.fundo};
 `;
 export const ScrollViewTudo = styled.ScrollView`
   padding-horizontal: 1%;
@@ -23,7 +23,7 @@ export const ButtonCursoTudo = styled.View`
 // margin-left: 30px;
 
 export const ButtonCurso = styled.TouchableHighlight`
-  background-color: #e16539;
+  background-color: ${colors.secundaria};;
   border-radius: 10px;
   align-items: center;
   justify-content: space-between;
@@ -35,7 +35,7 @@ export const ButtonCurso = styled.TouchableHighlight`
 `;
 
 export const ButtonCursoRankNun = styled.TouchableHighlight`
-  background-color: #795833;
+  background-color: ${colors.primaria};
   width: 38px;
   height: 35px;
   border-radius: 50px;
@@ -52,7 +52,7 @@ export const ButtonCursoRankNun = styled.TouchableHighlight`
 
 // align-items: center;
 export const ButtonText = styled.Text`
-  color: #f0dfc8;
+  color: ${colors.textoPreto};
   font-size: 20px;
   text-align: center;
   flex: 1; 
@@ -68,5 +68,5 @@ export const View = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  color: #f0dfc8;
+  color: ${colors.secundaria};
 `;

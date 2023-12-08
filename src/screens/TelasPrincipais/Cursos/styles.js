@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
 import * as Progress from "react-native-progress";
-
+import { colors } from "../../../Components/Theme";
 export const ButtonCurso = styled.TouchableHighlight`
-background-color: #f0dfc8;
+background-color: ${colors.secundaria};
   border-radius: 10px;
   align-items: center;
   justify-content: space-between;
@@ -14,13 +14,13 @@ background-color: #f0dfc8;
   margin-right: 30px;
   margin-left: 30px;
   border-width: 2px; /* Adicione esta linha para definir a largura da borda */
-  border-color: #e16539; /* Adicione esta linha para definir a cor da borda */
+  border-color: ${colors.secundaria}; /* Adicione esta linha para definir a cor da borda */
 `;
 
 export const ButtonText = styled.Text`
 
 padding-bottom: 10px;
-  color: #000;
+  color: ${colors.textoPreto};
   font-size: 20px;
   text-align: center;
   flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
@@ -37,10 +37,10 @@ padding-bottom: 10px;
 `;
 
 export const Header = styled.View`
-  background-color: #e16539;
+  background-color: ${colors.primaria};
 `;
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  background-color: #303030;
+  background-color: ${colors.fundo};
 `;

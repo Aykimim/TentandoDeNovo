@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
-
+import { colors } from "../../../Components/Theme";
 export const ButtonCurso = styled.TouchableHighlight`
-  background-color: #795833;
+  background-color: ${colors.secundaria};
   border-radius: 10px;
   align-items: center;
   justify-content: spacebetween;
@@ -13,7 +13,7 @@ export const ButtonCurso = styled.TouchableHighlight`
 `;
 
 export const ButtonText = styled.Text`
-  color: #f0dfc8;
+  color: ${colors.textoPreto};
   font-size: 20px;
   text-align: center;
   flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
@@ -29,86 +29,54 @@ export const IconImage = styled.Image`
   left: 0;
 `;
 
-// Adicione um estilo de pressionamento
-export const ButtonCursoPressed = styled.TouchableHighlight`
-  background-color: #e16539; /* Cor diferente quando pressionado */
-  border-radius: 10px;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  padding: 20px;
-  margin-top: 15px;
-  margin-right: 30px;
-  margin-left: 30px;
-`;
 
-export const ButtonTextPressed = styled.Text`
-  color: #fff; /* Cor do texto quando pressionado */
-  font-size: 20px;
-  text-align: center;
-  flex: 1;
-`;
 
-export const Header = styled.View`
-  background-color: #e16539;
-  padding-top: 20px;
-  border-bottom-width: 2px; /* Adicione esta linha para criar uma borda na parte inferior */
-  border-bottom-color: #e16539;
-`;
+
+
 export const Container = styled.SafeAreaView`
   flex: 1;
-  background-color: #303030;
+  background-color: ${colors.fundo};
 `;
 
 export const TextBotao = styled.Text`
   font-size: 25px;
   text-align: center;
-  color: #f0dfc8;
+  color: ${colors.textoPreto};
 `;
 
 export const SendButton = styled.Text`
   font-size: 25px;
   text-align: center;
-  color: #f0dfc8;
+  color: ${colors.textoPreto};
   margin-top: 20px;
 `;
 
 export const SendButtonText = styled.Text`
   font-size: 25px;
   text-align: center;
-  color: #f0dfc8;
+  color: ${colors.textoPreto};
   margin-top: 20px;
 `;
 
 export const CampoNome = styled.Text`
   font-size: 25px;
   text-align: center;
-  color: #f0dfc8;
+  color: ${colors.textoPreto};
 `;
 
-export const TextEntrada = styled.TextInput`
-  font-size: 20px;
-  width: 80%;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  color: #000;
-  background-color: #795833;
-  border-radius: 50px;
-  margin-top: 20px;
-`;
+
 
 export const Text = styled.Text`
-  color: #f0dfc8;
+  color: ${colors.textoPreto};
   font-size: 20px;
   font-weight: bold;
-  flex-direction: space-between;
+  
 `;
 
 export const TextEscrita = styled.Text`
   font-size: 15px;
   text-align: center;
-  color: #f0dfc8;
+  color:${colors.textoPreto};
   margin-top: 20px;
 `;
 
@@ -116,5 +84,5 @@ export const View = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  color: #f0dfc8;
+  color: ${colors.primaria};
 `;

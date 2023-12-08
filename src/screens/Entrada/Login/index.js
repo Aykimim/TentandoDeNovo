@@ -1,21 +1,12 @@
 import React, { useState } from "react";
 import { View, Image, TouchableWithoutFeedback } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import LottieView from "lottie-react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
-
+import { useNavigation } from "@react-navigation/native";
+import { colors } from "../../../Components/Theme";
 import {
-  CustomButton,
-  TouchableOpacity,
   Text,
   Container,
-  Textbotao,
   SendButton,
-  CampoNome,
   Textentrada,
-  SendButtontext,
   SendButtontextEsqueciSenha,
   SendButtontextBorda,
   TextEscrita,
@@ -45,7 +36,7 @@ export default function App() {
   const navigateToHome = () => {
     navigation.reset({
       index: 0,
-      routes: [{ name: 'MainTab' }],
+      routes: [{ name: "MainTab" }]
     });
   };
 
@@ -63,15 +54,6 @@ export default function App() {
     navigation.navigate("Perguntas");
   }
 
-  // function navigateToCadastro() {
-  //   navigation.navigate("Cadastro");
-  // }
-
-  // function handleAula() {
-  //   navigation.reset({
-  //     routes: [{ name: "BotonTab" }]
-  //   });
-  // }
   const handleLoginWithGoogle = () => {
     // Adicione a lógica de login com o Google aqui
     alert("Login com o Google");
@@ -85,17 +67,13 @@ export default function App() {
   const handleLogin = () => {
     // Simule uma autenticação bem-sucedida
     // Substitua esta lógica pela sua lógica de autenticação real
-    if (nomeUser === '' && senha === '') {
+    if (nomeUser === "" && senha === "") {
       setLoggedIn(true);
       navigateToHome();
     } else {
-      alert('Credenciais incorretas. Tente novamente.');
+      alert("Credenciais incorretas. Tente novamente.");
     }
   };
-
-  // const menunavi = () => {
-  //   "../screens/menu";
-  // };
 
   const handleLogout = () => {
     setLoggedIn(false);
@@ -146,7 +124,6 @@ export default function App() {
               borderRadius: 50,
               margin: 20,
               overflow: "hidden"
-              
             }}
           >
             <Image
@@ -157,14 +134,14 @@ export default function App() {
 
           <Textentrada
             placeholder="Email:"
-            placeholderTextColor={"#fff"}
+            placeholderTextColor={colors.textoPreto}
             value={nomeUser}
             onChangeText={(text) => setNomeUser(text)}
           />
 
           <Textentrada
             placeholder="Senha:"
-            placeholderTextColor={"#fff"}
+            placeholderTextColor={colors.textoPreto}
             secureTextEntry={true}
             value={senha}
             onChangeText={(text) => setSenha(text)}
@@ -174,25 +151,6 @@ export default function App() {
               Esqueci a senha.
             </SendButtontextEsqueciSenha>
           </SendButton>
-          {/* <TextEscrita2 onPress={navigateTest}>
-            <SendButtontextInscrever>
-            Teste
-            </SendButtontextInscrever>
-          </TextEscrita2> 
-          <TextEscrita2 onPress={navigateTest2}>
-            <SendButtontextInscrever>
-            Teste2
-            </SendButtontextInscrever>
-          </TextEscrita2>  */}
-
-          {/* trocar dpois */}
-
-
-          {/* <SendButton onPress={navigateTestCript}>
-            <SendButtontextEsqueciSenha>
-              Crip
-            </SendButtontextEsqueciSenha>
-          </SendButton> */}
 
           <SendButtontextBorda onPress={handleLogin}>
             <SendButtonEntrar>Entrar</SendButtonEntrar>
@@ -225,21 +183,12 @@ export default function App() {
             </TouchableWithoutFeedback>
           </View>
 
-
-<Container2>
-            <SendButtontextPadrão>
-            Não tem uma conta? 
-            </SendButtontextPadrão>          
-           <TextEscrita2 onPress={navigateTelaCadastro}>
-            <SendButtontextInscrever>
-              Inscreva-se
-            </SendButtontextInscrever>
-          </TextEscrita2> 
-</Container2>
-
-
-
-
+          <Container2>
+            <SendButtontextPadrão>Não tem uma conta?</SendButtontextPadrão>
+            <TextEscrita2 onPress={navigateTelaCadastro}>
+              <SendButtontextInscrever>Inscreva-se</SendButtontextInscrever>
+            </TextEscrita2>
+          </Container2>
 
           {/* <SendButton onPress={handleAula}>
             <SendButtontext>Aula</SendButtontext>

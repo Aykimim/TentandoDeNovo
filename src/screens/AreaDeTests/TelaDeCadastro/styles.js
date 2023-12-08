@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components/native";
 
+import { colors } from "../../../Components/Theme";
+
+
 export const ChangeableButtonContainer = styled.View`
   align-items: center;
   margin-top: 20px;
@@ -14,17 +17,19 @@ export const ChangeableButton = styled.TouchableOpacity`
 `;
 
 export const ChangeableButtonText = styled.Text`
-  color: #fff;
+  color: ${colors.textoBranco};
   font-weight: bold;
+
+
 `;
 
 export const ContainerPai = styled.SafeAreaView`
-  background-color: #303030;
+  background-color: ${colors.fundo};
 `;
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  background-color: #303030;
+  background-color: ${colors.fundo};
 
   align-items: center;
 `;
@@ -37,10 +42,11 @@ export const Textentrada = styled.TextInput`
   text-align: left;
   justify-content: center;
   align-items: center;
-  color: #000;
-  background-color: ${({ isPressed }) => (isPressed ? "#303030" : "#f0dfc8")};
+  color: ${colors.textoPreto};
+  background-color: ${({ isPressed }) => (isPressed ? colors.textoPreto : colors.secundaria)};
   border-width: ${({ isPressed }) => (isPressed ? "0px" : "2px")};
-  border-color: ${({ isPressed }) => (isPressed ? "#000" : "#fff")};
+  border-color: ${({ isPressed }) => (isPressed ? colors.textoPreto : colors.primaria)};
+
   border-radius: 20px;
   margin-top: 20px;
   margin-right: 5px;
@@ -51,13 +57,13 @@ export const Textentrada = styled.TextInput`
 export const Text = styled.Text`
   font-size: 25px;
   text-align: center;
-  color: #f0dfc8;
+  color: ${colors.textoBranco};
 `;
 
 export const CustomButton = styled.TouchableOpacity`
   width: 70%;
   max-width: 100px;
-  background-color: #795833;
+  background-color: ${colors.primaria};
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -65,9 +71,13 @@ export const CustomButton = styled.TouchableOpacity`
   margin-top: 10px;
   border-radius: 8px;
 `;
-
+export const ButtonTextTopo = styled.Text`
+  max-width: 100px;
+  font-size: 20px;
+  color: ${colors.textoBranco};
+`;
 export const ButtonText = styled.Text`
   max-width: 100px;
-  font-size: 16px;
-  color: #fff;
+  font-size: 15px;
+  color: ${colors.textoBranco};
 `;

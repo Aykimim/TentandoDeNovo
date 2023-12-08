@@ -7,7 +7,7 @@ import {
   Image,
   ScrollView
 } from "react-native";
-
+import { colors } from "../../../Components/Theme";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import {
   
@@ -54,7 +54,7 @@ export default function App() {
             <ButtonCursoRankNun>
               <ButtonText>{curso.rank}</ButtonText>
             </ButtonCursoRankNun>
-            <ButtonCurso onPress={botaoteste} underlayColor="#795833">
+            <ButtonCurso onPress={botaoteste} underlayColor= {colors.primaria}>
               <View style={{ flexDirection: "row", alignItems: "center" }}>
                 <IconImage
                   source={require("../../../Components/img/IconeUsuario.png")}

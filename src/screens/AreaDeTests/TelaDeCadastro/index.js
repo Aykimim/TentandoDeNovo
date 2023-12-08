@@ -10,10 +10,13 @@ import {
   Textentrada,
   CustomButton,
   ButtonText,
-  ContainerPai
+  ContainerPai,
+  ButtonTextTopo
 } from "./styles";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { Header } from "react-native-elements";
+import { colors } from "../../../Components/Theme";
+
 function MyCustomLeftComponent() {
   const navigation = useNavigation();
 
@@ -23,7 +26,7 @@ function MyCustomLeftComponent() {
 
   return (
     <ButtonText onPress={navigateToVoltar}>
-      <Icon name="arrow-left" size={20} color="#fff" />
+      <Icon name="arrow-left" size={20} color={colors.branco}/>
     </ButtonText>
   );
 }
@@ -31,7 +34,7 @@ function MyCustomLeftComponent() {
 function MyCustomCenterComponent() {
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <ButtonText>Cadastro</ButtonText>
+      <ButtonTextTopo>Cadastro</ButtonTextTopo>
     </View>
   );
 }
@@ -61,7 +64,7 @@ export default function App() {
   return (
     <Container>
       <Header
-        backgroundColor="#E16539"
+        backgroundColor={colors.primaria}
         leftComponent={<MyCustomLeftComponent />}
         centerComponent={<MyCustomCenterComponent />}
         rightComponent={<MyCustomRightComponent />}
@@ -78,7 +81,7 @@ export default function App() {
       <Textentrada placeholder="Confirma Senha" secureTextEntry={true} />
 
       <CustomButton onPress={() => goToNextScreen("Login")}>
-        <ButtonText>cadastrar</ButtonText>
+        <ButtonText>Cadastrar</ButtonText>
       </CustomButton>
 
       <ChangeableButtonContainer>

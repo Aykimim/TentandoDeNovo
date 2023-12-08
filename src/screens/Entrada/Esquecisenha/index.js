@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { Container, SendButton, SendButtontext, StyledInput,TextEscrita,CustomButton } from "./styles";
+import { Container, SendButton, SendButtontext, StyledInput,TextEscrita,ContainerMenor,ButtonText,SetaVoltar } from "./styles";
+import { colors } from "../../../Components/Theme";
+
+import Icon from "react-native-vector-icons/FontAwesome";
+
+
 
 export default function App() {
   const navigation = useNavigation();
@@ -25,8 +30,10 @@ export default function App() {
 
   return (
     <Container>
-      <StatusBar />
-      {/* <Text>{email}</Text> */}
+      <ContainerMenor>
+      <SetaVoltar onPress={navigateToVoltar}>
+      <Icon name="arrow-left" size={30} color="#fff" />
+    </SetaVoltar>
 
       <TextEscrita style={{ flex: 0 }}>
         Recuperação de senha{" "} 
@@ -50,10 +57,10 @@ export default function App() {
         <SendButtontext>Enviar</SendButtontext>
       </SendButton>
 
-      <SendButton onPress={navigateToVoltar} >
+      {/* <SendButton onPress={navigateToVoltar} >
         <SendButtontext>Voltar</SendButtontext>
-      </SendButton>
-
+      </SendButton> */}
+      </ContainerMenor>
     </Container>
   );
 }

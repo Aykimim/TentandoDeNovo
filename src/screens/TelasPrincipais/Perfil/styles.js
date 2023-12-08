@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components/native";
-
+import { colors } from "../../../Components/Theme";
 export const Container = styled.SafeAreaView`
   flex: 2;
-  background-color: #EAE8E9;
+  background-color: ${colors.fundo};
   text-align: left;
   flex-direction: rows;
   border: 1px;
@@ -20,7 +20,7 @@ export const PerfilText = styled.Text`
   color: white;
   padding-left: 5%;
   font-size: 20px;
-  color: #372A28;
+  color: ${colors.textoPreto};
 `;
 
 export const Title = styled.Text`
@@ -30,13 +30,13 @@ export const Title = styled.Text`
   font-size: 30px;
   padding: 3%;
   font-weight: bold;
-  color: #372A28;
+  color: ${colors.textoPreto};
 `;
 
 export const Text = styled.Text`
   font-size: 25px;
   text-align: center;
-  color: #372A28;
+  color: ${colors.textoPreto};
 `;
 
 export const View = styled.View`
@@ -49,7 +49,7 @@ export const ViewButao = styled.View`
 `;
 
 export const ButtonCurso = styled.TouchableHighlight`
-  background-color: #FFC61A;
+  background-color: ${colors.secundaria};
   border-radius: 10px; 
   align-items: center;
   justify-content: space-between;
@@ -67,7 +67,7 @@ export const IconImage = styled.Image`
 `;
 
 export const ButtonText = styled.Text`
-  color:#372A28;
+  color:${colors.textoPreto};
   font-size: 20px;
   text-align: center;
   flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
@@ -75,6 +75,6 @@ export const ButtonText = styled.Text`
 `;
 
 export const ScroolView = styled.ScrollView`
-  background-color: #EAE8E9;
-  border-color: #303030;
+  background-color: ${colors.fundo};
+  border-color: ${colors.textoPreto};
 `;

@@ -11,7 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import * as Progress from "react-native-progress";
 import Video from "react-native-video";
-
+import { colors } from "../../../Components/Theme";
 import {
   ProgressContainer,
   Container,
@@ -59,7 +59,7 @@ class CourseItem extends Component {
 
     const colorInterpolate = this.state.animation.interpolate({
       inputRange: [0, 1],
-      outputRange: ["rgb(225, 101, 57)", "rgb(225, 101, 57)"]
+      outputRange: [colors.barraDeProgresso, colors.barraDeProgresso]
     });
 
     const progressStyle = {
@@ -69,7 +69,7 @@ class CourseItem extends Component {
     };
 
     return (
-      <ButtonCurso onPress={this.props.onPressNavigate} underlayColor="#E16539">
+      <ButtonCurso onPress={this.props.onPressNavigate} underlayColor= "colors.textoPreto" >
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Animated.View style={[styles.progress, progressStyle]} />
           <IconImage source={imagem} />
@@ -124,12 +124,12 @@ const CoursesPage = () => {
 const styles = StyleSheet.create({
   // Adicione os estilos necessários aqui
   progress: {
-    backgroundColor: "#f0dfc8",
+    backgroundColor: colors.secundaria,
     position: "absolute",
 
     borderRadius: 10,
     borderWidth: 2,
-    borderColor: "#e16539"
+    borderColor: colors.barraDeProgresso
   },
   progressText: {
     color: "#000",

@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { Header } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { colors } from "../../../Components/Theme";
 import {
   Container,
   ButtonText,
@@ -10,7 +11,10 @@ import {
   ButtonCurso,
   ButtonTextPergunta,
   ContainerPerguntas,
-  ButtonTextTitulo
+  ButtonTextTitulo,
+  ButtonConfirmar,
+  ButtonTextConfirmar,
+  ContainerQuestao
 } from "./styles";
 
 function MyCustomLeftComponent() {
@@ -19,13 +23,13 @@ function MyCustomLeftComponent() {
   function navigateToVoltar() {
     navigation.reset({
       index: 0,
-      routes: [{ name: "MainTab" }],
+      routes: [{ name: "MainTab" }]
     });
   }
 
   return (
     <ButtonTextTitulo onPress={navigateToVoltar}>
-    <Icon name="arrow-left" size={20} color="#fff" />
+      <Icon name="arrow-left" size={20} color={colors.branco} />
     </ButtonTextTitulo>
   );
 }
@@ -63,80 +67,90 @@ export default function App() {
   return (
     <Container>
       <Header
-        backgroundColor="#303030"
+        backgroundColor={colors.primaria}
         leftComponent={<MyCustomLeftComponent />}
         centerComponent={<MyCustomCenterComponent />}
         rightComponent={<MyCustomRightComponent />}
       />
-      
-
+<ContainerQuestao>
       <ButtonTextPergunta>
         Sobre a impressão do dinheiro, qual alternativa está correta?
       </ButtonTextPergunta>
-<ContainerPerguntas>
-      <ButtonText
-        onPress={() => setRespostaSelecionada("correta")}
-        style={{
-          backgroundColor:
-            respostaSelecionada === "correta" ? "#e16539" : "#f0dfc8",
-        }}
-      >
-        Podemos imprimir dinheiro à vontade, vários países adotam essa técnica
-        para sair de crises e aumentar a economia do país."
-      </ButtonText>
+      <ContainerPerguntas>
+        <ButtonText
+          onPress={() => setRespostaSelecionada("correta")}
+          style={{
+            backgroundColor:
+              respostaSelecionada === "correta"
+                ? colors.primaria
+                : colors.secundaria
+          }}
+        >
+          Podemos imprimir dinheiro à vontade, vários países adotam essa técnica
+          para sair de crises e aumentar a economia do país."
+        </ButtonText>
 
-      <ButtonText
-        onPress={() => setRespostaSelecionada("incorreta1")}
-        style={{
-          backgroundColor:
-            respostaSelecionada === "incorreta1" ? "#e16539" : "#f0dfc8",
-        }}
-      >
-        O Brasil não imprime dinheiro pois não há papel e impressoras suficientes
-        para tal ação."
-      </ButtonText>
+        <ButtonText
+          onPress={() => setRespostaSelecionada("incorreta1")}
+          style={{
+            backgroundColor:
+              respostaSelecionada === "incorreta1"
+                ? colors.primaria
+                : colors.secundaria
+          }}
+        >
+          O Brasil não imprime dinheiro pois não há papel e impressoras
+          suficientes para tal ação."
+        </ButtonText>
 
-      <ButtonText
-        onPress={() => setRespostaSelecionada("incorreta2")}
-        style={{
-          backgroundColor:
-            respostaSelecionada === "incorreta2" ? "#e16539" : "#f0dfc8",
-        }}
-      >
-        Países comunistas não imprimem dinheiro, diferente dos países capitalistas."
-      </ButtonText>
+        <ButtonText
+          onPress={() => setRespostaSelecionada("incorreta2")}
+          style={{
+            backgroundColor:
+              respostaSelecionada === "incorreta2"
+                ? colors.primaria
+                : colors.secundaria
+          }}
+        >
+          Países comunistas não imprimem dinheiro, diferente dos países
+          capitalistas."
+        </ButtonText>
 
-      <ButtonText
-        onPress={() => setRespostaSelecionada("incorreta3")}
-        style={{
-          backgroundColor:
-            respostaSelecionada === "incorreta3" ? "#e16539" : "#f0dfc8",
-        }}
-      >
-        Dinheiros impressos são doados para moradores de rua e pessoas em extrema
-        miséria."
-      </ButtonText>
+        <ButtonText
+          onPress={() => setRespostaSelecionada("incorreta3")}
+          style={{
+            backgroundColor:
+              respostaSelecionada === "incorreta3"
+                ? colors.primaria
+                : colors.secundaria
+          }}
+        >
+          Dinheiros impressos são doados para moradores de rua e pessoas em
+          extrema miséria."
+        </ButtonText>
 
-      <ButtonText
-        onPress={() => setRespostaSelecionada("incorreta4")}
-        style={{
-          backgroundColor:
-            respostaSelecionada === "incorreta4" ? "#e16539" : "#f0dfc8",
-        }}
-      >
-        Não pode imprimir dinheiro porque isso resultaria em diversos problemas.
-        Exemplo: A inflação dispararia."
-      </ButtonText>
-</ContainerPerguntas>
-      <ButtonCurso
+        <ButtonText
+          onPress={() => setRespostaSelecionada("incorreta4")}
+          style={{
+            backgroundColor:
+              respostaSelecionada === "incorreta4"
+                ? colors.primaria
+                : colors.secundaria
+          }}
+        >
+          Não pode imprimir dinheiro porque isso resultaria em diversos
+          problemas. Exemplo: A inflação dispararia."
+        </ButtonText>
+      </ContainerPerguntas>
+
+      <ButtonConfirmar
         onPress={() => PerguntaCerta()}
-        underlayColor="#fff"
+        underlayColor={colors.secundaria}
         disabled={!respostaSelecionada}
       >
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <ButtonTextTitulo>Prosseguir</ButtonTextTitulo>
-        </View>
-      </ButtonCurso>
+        <ButtonTextConfirmar>Prosseguir</ButtonTextConfirmar>
+      </ButtonConfirmar>
+      </ContainerQuestao>
     </Container>
   );
 }

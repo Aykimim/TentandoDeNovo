@@ -1,26 +1,12 @@
 import styled from "styled-components/native";
+import { colors } from "../../../Components/Theme";
 
 export const ScrollViewLista = styled.ScrollView`
 flex: 1;
 `;
-export const LineWrapper = styled.View`
-  align-items: center;
-`;
 
-export const LineWrapperDireita = styled.View`
-  align-items: center;
-  margin-left: 50px;
-`;
-export const LineWrapperHorizontal = styled.View`
-  align-items: center;
-  margin-left: 50px;
-`;
-export const LineWrapperEsquerda = styled.View`
-  align-items: center;
-  margin-right: 50px;
-`;
 export const ButtonCursoDireita = styled.TouchableHighlight`
-  background-color:#3034;
+  background-color:${colors.primaria};
   border-radius: 20px;
   align-items: center;
   justify-content: space-between;
@@ -32,7 +18,7 @@ export const ButtonCursoDireita = styled.TouchableHighlight`
 `;
 // margin-top: 15px;
 export const ButtonCursoEsquerda = styled.TouchableHighlight`
-  background-color: #3034;
+  background-color: ${colors.primaria};
   border-radius: 20px;
   align-items: center;
   justify-content: space-between;
@@ -42,8 +28,19 @@ export const ButtonCursoEsquerda = styled.TouchableHighlight`
   margin-right: 75px;
   margin-left: 25px;
 `;
+export const ButtonCursoComeco = styled.TouchableHighlight`
+  background-color: ${colors.primaria};
+  border-radius: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 10px;
+  margin-top: 50px;
+  margin-right: 75px;
+  margin-left: 25px;
+`;
 export const ButtonCursoFim = styled.TouchableHighlight`
-  background-color: #795833;
+  background-color: ${colors.primaria};
   border-radius: 20px;
   align-items: center;
   justify-content: space-between;
@@ -55,7 +52,7 @@ export const ButtonCursoFim = styled.TouchableHighlight`
 `;
 //  margin-top: 15px;
 export const ButtonText = styled.Text`
-  color: #fff;
+  color: ${colors.textoBranco};
   font-size: 15px;
   text-align: center;
   flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
@@ -72,7 +69,7 @@ export const IconImage = styled.Image`
 `;
 
 export const ScreenNameHeader = styled.View`
-  background-color: #e16539;
+  background-color: ${colors.primaria};
 `;
 export const ContainerSeta = styled.SafeAreaView`
 align-items: center;
@@ -82,7 +79,7 @@ align-items: center;
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  background-color: #fff;
+  background-color: ${colors.fundo};
 `;
 
 

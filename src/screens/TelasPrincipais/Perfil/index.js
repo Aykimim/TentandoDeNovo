@@ -11,7 +11,7 @@ import {
   ScroolView,
   ViewButao
 } from "./styles";
-
+import { colors } from "../../../Components/Theme";
 //components
 import HeaderPerfil from "../../../Components/FotoPerfil";
 import ScreenNameHeader from "../../../Components/ScreenNameHeader";
@@ -67,7 +67,7 @@ export default function App() {
               <ButtonCurso
                 key={index}
                 onPress={() => navigateToCursoDetalhado()}
-                underlayColor="#FFC61A"
+                underlayColor={colors.primaria}
               >
                 <ViewButao style={{ flexDirection: "row", alignItems: "center" }}>
                   <IconImage source={require("../../../Components/img/LogoQuadrada.png")} />

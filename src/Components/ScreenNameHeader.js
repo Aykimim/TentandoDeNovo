@@ -2,7 +2,7 @@ import React from "react";
 import { TouchableOpacity, StyleSheet, View, Text } from "react-native";
 import { Header } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
-
+import { colors } from "../Components/Theme";
 const Custumizavel = () => {
     alert("Voltar");
   };
@@ -36,7 +36,7 @@ function MyCustomLeftComponent() {
     const ScreenNameHeader = ({headerName}) => {
       return (
         <View>
-            <Header backgroundColor="#E16539" 
+            <Header backgroundColor={colors.primaria}
                 leftComponent={<MyCustomLeftComponent />}
                 centerComponent={<MyCustomCenterComponent headerName={headerName} />}
                 rightComponent={<MyCustomRightComponent />}
@@ -50,7 +50,7 @@ function MyCustomLeftComponent() {
             fontSize: 24,
             fontFamily:'Roboto',
             fontWeight: 'bold',
-            color: '#dff' 
+            color: colors.textoBranco
         }            
     })
 

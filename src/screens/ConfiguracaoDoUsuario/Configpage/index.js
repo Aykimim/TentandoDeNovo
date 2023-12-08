@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { Header } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
-
+import { colors } from "../../../Components/Theme";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import {
   Text,
@@ -31,7 +31,7 @@ function MyCustomLeftComponent() {
 
   return (
     <ButtonText onPress={goBack}>
-      <Icon name="arrow-left" size={20} color="#fff" />
+      <Icon name="arrow-left" size={20} color={colors.branco} />
     </ButtonText>
   );
 }
@@ -68,31 +68,31 @@ export default function App() {
   return (
     <Container>
       <Header
-        backgroundColor="#303030"
+        backgroundColor={colors.primaria}
         leftComponent={<MyCustomLeftComponent />}
         centerComponent={<MyCustomCenterComponent />}
       />
 
       <ScrollView>
-        <ButtonCurso key="1" onPress={editarNome} underlayColor="#e16539">
+        <ButtonCurso key="1" onPress={editarNome} underlayColor={colors.primaria}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <ButtonText>Editar Nome</ButtonText>
           </View>
         </ButtonCurso>
 
-        <ButtonCurso key="2" onPress={editarFotoPerfil} underlayColor="#e16539">
+        <ButtonCurso key="2" onPress={editarFotoPerfil} underlayColor={colors.primaria}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <ButtonText>Editar Foto de Perfil</ButtonText>
           </View>
         </ButtonCurso>
 
-        <ButtonCurso key="3" onPress={alterarSenha} underlayColor="#e16539">
+        <ButtonCurso key="3" onPress={alterarSenha} underlayColor={colors.primaria}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <ButtonText>Alterar Senha</ButtonText>
           </View>
         </ButtonCurso>
 
-        <ButtonCurso key="5" onPress={navigateToSair} underlayColor="#e16539">
+        <ButtonCurso key="5" onPress={navigateToSair} underlayColor={colors.primaria}>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <ButtonText>Sair</ButtonText>
           </View>
