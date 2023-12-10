@@ -10,7 +10,6 @@ import {
 import { colors } from "../../../Components/Theme";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import {
-  
   Container,
   ButtonText,
   ButtonCurso, // Importe ButtonCurso do styles.js
@@ -28,7 +27,7 @@ const botaoteste = () => {
 
 function navigateToVoltar() {
   navigation.navigate("Login");
-};
+}
 
 export default function App() {
   const navigation = useNavigation();
@@ -38,12 +37,12 @@ export default function App() {
   }
   // Defina o número de rank para cada botão de curso
   const cursos = [
-    { nome: "Yuji Kamada", rank: " 1º " },
-    { nome: "Raphael Lima", rank: " 2º " },
-    { nome: "Carlos Massa", rank: " 3º" },
-    { nome: "Igor Guimarães", rank: " 4º " },
-    { nome: "Robert Val", rank: " 5º " },
-    { nome: "eyk", rank: " 6º " }
+    { nome: "Yuji Kamada", rank: "1º" },
+    { nome: "Raphael Lima", rank: "2º" },
+    { nome: "Carlos Massa", rank: "3º" },
+    { nome: "Igor Guimarães", rank: "4º" },
+    { nome: "Robert Val", rank: "5º" },
+    { nome: "eyk", rank: "6º" }
   ];
   return (
     <Container>
@@ -54,7 +53,7 @@ export default function App() {
             <ButtonCursoRankNun>
               <ButtonText>{curso.rank}</ButtonText>
             </ButtonCursoRankNun>
-            <ButtonCurso onPress={botaoteste} underlayColor= {colors.primaria}>
+            <ButtonCurso onPress={botaoteste} underlayColor={colors.primaria}>
               <View style={{ flexDirection: "row", alignItems: "center" }}>
                 <IconImage
                   source={require("../../../Components/img/IconeUsuario.png")}
