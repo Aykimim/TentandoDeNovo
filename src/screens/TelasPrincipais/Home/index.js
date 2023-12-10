@@ -14,7 +14,7 @@ import {
 import Svg, { Circle, Path, Line } from "react-native-svg";
 import styled from "styled-components/native";
 import { colors } from "../../../Components/Theme";
-
+import EggWithSpot from '../../../Components/EggWithSpot';
 import {
   ButtonTextTitulo,
   ButtonTextSubTitulo,
@@ -177,7 +177,9 @@ export default function App() {
   };
 
   return (
+    
     <ContainerTudo>
+      
       <Modal
         animationType="fate"
         transparent={true}
@@ -217,7 +219,9 @@ export default function App() {
       />
 
       <ContainerFilho>
+        
         <ScrollViewTudo>
+          
           <ButtonCursoComeco underlayColor={colors.primaria}>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <ButtonTextTopo>Empreendedorismo</ButtonTextTopo>
@@ -225,7 +229,7 @@ export default function App() {
               <SvgCircle />
             </View>
           </ButtonCursoComeco>
-
+       
           <Meiocubo>
             <ButtonCursoMeio
               style={{ backgroundColor: colors.tarefaFeita }}
@@ -263,7 +267,7 @@ export default function App() {
                 d="M0 2H70C75.5228 2 80 6.47715 80 12V15.8967V82"
                 stroke={colors.trilha}
                 strokeWidth={5}
-              />
+              /><EggWithSpot />
             </Svg>
           </Esquerdacima>
 
@@ -339,7 +343,7 @@ export default function App() {
               </View>
             </ButtonCursoMeio>
           </Meiocubo>
-
+          <EggWithSpot />
           <Direitacima>
             <Svg width="82" height="81" viewBox="0 0 82 81" fill="none">
               <Path
@@ -445,7 +449,7 @@ export default function App() {
                     fill={colors.icone}
                   />
                 </Svg>
-
+                <EggWithSpot />
                 {/* {pathVisible && (
                   <CheckIcon
                     width="115"
@@ -505,6 +509,7 @@ export default function App() {
               </View>
             </ButtonCursoMeio>
           </Meiocubo>
+          <EggWithSpot />
           <Direitacima>
             <Svg width="82" height="81" viewBox="0 0 82 81" fill="none">
               <Path

@@ -1,25 +1,26 @@
 import React, { useState } from "react";
-import { View } from "react-native";
+import { View, Modal,  StyleSheet,TouchableWithoutFeedback } from "react-native";
 import { Header } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { colors } from "../../../Components/Theme";
-import { Alert } from "react-native";
 import {
   Container,
   ButtonText,
   ButtonTextGrande,
   ButtonCurso,
+  IconImage,
   ButtonTextPergunta,
   ContainerPerguntas,
   ButtonTextTitulo,
   ButtonConfirmar,
   ButtonTextConfirmar,
   ContainerQuestao,
-  caixaDestino,
-  caixaOpcao
+  ButtonModal,
+  
+  ButtonTextSubTitulo,
 } from "./styles";
-
+import EggWithSpot from '../../../Components/EggWithSpot';
 function MyCustomLeftComponent() {
   const navigation = useNavigation();
 
@@ -41,7 +42,7 @@ function MyCustomCenterComponent() {
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
       <ButtonTextGrande numberOfLines={1}>
-      Questão de Ligar os Pontos
+        Questão de Múltipla Escolha:
       </ButtonTextGrande>
     </View>
   );
@@ -53,35 +54,38 @@ function MyCustomRightComponent() {
 
 export default function App() {
   const navigation = useNavigation();
-  
+  const [respostaSelecionada, setRespostaSelecionada] = useState(null);
+
+  const [modalVisible, setModalVisible] = useState(false);
+ 
+  function Material() {
+    // navigation.navigate("Cursos");
+    navigation.reset({
+      index: 0,
+      routes: [{ name: "MainTab" }] //,screen
+    });
+  }
+  function botaoteste(curso) {
+   
+    setModalVisible(true);
+  }
+
+  function closeModal() {
+    
+    setModalVisible(false);
+  }
 
   function navigateToPerguntaCerta() {
     navigation.navigate("PerguntaDois");
   }
-  const correspondencias = ["Tecnologias Verdes", "Inovação Social", "Educação e Conscientização"];
-  const [correspondenciaSelecionada, setCorrespondenciaSelecionada] = useState(Array(correspondencias.length).fill(null));
 
-  const verificarResposta = (opcao, index) => {
-    const novaCorrespondencia = [...correspondenciaSelecionada];
-    novaCorrespondencia[index] = opcao;
-    setCorrespondenciaSelecionada(novaCorrespondencia);
-
-    // Verificar se todas as correspondências foram feitas
-    if (!novaCorrespondencia.includes(null)) {
-      validarRespostas(novaCorrespondencia);
-    }
-  };
-
-  const validarRespostas = (respostas) => {
-    const respostasCorretas = ["Tecnologias Verdes", "Inovação Social", "Educação e Conscientização"];
-    
-    // Verificar se as respostas são corretas
-    if (JSON.stringify(respostas) === JSON.stringify(respostasCorretas)) {
-      Alert.alert("Respostas corretas!", "Parabéns!");
+  const PerguntaCerta = () => {
+    // Simule uma verificação de resposta correta
+    // Substitua esta lógica pela sua verificação real
+    if (respostaSelecionada === "correta") {
+      navigateToPerguntaCerta();
     } else {
-      Alert.alert("Respostas incorretas!", "Tente novamente.");
-      // Reiniciar as respostas
-      setCorrespondenciaSelecionada(Array(correspondencias.length).fill(null));
+      alert("Resposta incorreta. Tente novamente.");
     }
   };
 
@@ -93,33 +97,145 @@ export default function App() {
         centerComponent={<MyCustomCenterComponent />}
         rightComponent={<MyCustomRightComponent />}
       />
-      <View style={{ padding: 20 }}>
-        {correspondencias.map((correspondencia, index) => (
-          <caixaDestino key={index} >
-            <Text style={{ fontSize: 18 }}>{correspondencia}</Text>
-            <caixaOpcao
-             
-              onPress={() => verificarResposta(correspondencia, index)}
-              disabled={correspondenciaSelecionada[index] !== null}
-            >
-              <Text>{correspondenciaSelecionada[index] || "Arraste aqui"}</Text>
-            </caixaOpcao>
-          </caixaDestino>
-        ))}
-        <View style={{ marginTop: 20 }}>
-          {opcoes.map((opcao, opcaoIndex) => (
-            <caixaOpcao
-              key={opcaoIndex}
-              
-              onPress={() => verificarResposta(opcao, correspondenciaSelecionada.indexOf(null))}
-              disabled={correspondenciaSelecionada.includes(opcao)}
-            >
-              <Text>{opcao}</Text>
-            </caixaOpcao>
-          ))}
-        </View>
-      </View>
-      </Container>
+      <ContainerQuestao>
+        <ButtonTextPergunta>
+        O empreendedorismo sustentável busca não apenas o sucesso financeiro a curto prazo, mas também a criação de valor a longo prazo para a sociedade e o meio ambiente. Entre as estratégias inovadoras destacadas, qual delas envolve a transição de um modelo linear para uma abordagem mais sustentável, promovendo a reutilização e reciclagem para reduzir o desperdício e minimizar o impacto ambiental?
+        </ButtonTextPergunta>
+        <ContainerPerguntas>
+          <ButtonText
+            onPress={() => setRespostaSelecionada("correta")}
+            style={{
+              backgroundColor:
+                respostaSelecionada === "correta"
+                  ? colors.primaria
+                  : colors.secundaria
+            }}
+          >
+            a) Economia Circular.
+          </ButtonText>
+
+          <ButtonText
+            onPress={() => setRespostaSelecionada("incorreta1")}
+            style={{
+              backgroundColor:
+                respostaSelecionada === "incorreta1"
+                  ? colors.primaria
+                  : colors.secundaria
+            }}
+          >
+            b) Tecnologias Verdes.
+          </ButtonText>
+
+          <ButtonText
+            onPress={() => setRespostaSelecionada("incorreta2")}
+            style={{
+              backgroundColor:
+                respostaSelecionada === "incorreta2"
+                  ? colors.primaria
+                  : colors.secundaria
+            }}
+          >
+            c) Modelos de Negócios Sustentáveis.
+          </ButtonText>
+
+          <ButtonText
+            onPress={() => setRespostaSelecionada("incorreta3")}
+            style={{
+              backgroundColor:
+                respostaSelecionada === "incorreta3"
+                  ? colors.primaria
+                  : colors.secundaria
+            }}
+          >
+            d) Inovação Social.
+          </ButtonText>
+
+          <ButtonText
+            onPress={() => setRespostaSelecionada("incorreta4")}
+            style={{
+              backgroundColor:
+                respostaSelecionada === "incorreta4"
+                  ? colors.primaria
+                  : colors.secundaria
+            }}
+          >
+            e) Educação e Conscientização.
+          </ButtonText>
+        </ContainerPerguntas>
+
+        <ButtonConfirmar
+          onPress={() => botaoteste()}
+          underlayColor={colors.secundaria}
+          disabled={!respostaSelecionada}
+        >
+          <ButtonTextConfirmar>Prosseguir</ButtonTextConfirmar>
+        </ButtonConfirmar>
+    
+      </ContainerQuestao>
+      <Modal
+        animationType="slide"
+        transparent={false}
+        visible={modalVisible}
+        onRequestClose={closeModal}
+      >
+        <TouchableWithoutFeedback
+          onPress={() => setModalVisible(!modalVisible)}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+            <EggWithSpot />
+              <ButtonTextTitulo>Parabéns</ButtonTextTitulo>
+              <ButtonTextTitulo>Você acertou todas as questões</ButtonTextTitulo>
+              <ButtonModal
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => {
+                  Material(); // Chama a função Material
+                  setModalVisible(!modalVisible); // Fecha o modal
+                }}
+              >
+                <ButtonTextTitulo style={styles.textStyle}>Finalizar</ButtonTextTitulo>
+              </ButtonModal>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </Modal>
+    </Container>
   );
 }
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: colors.fundo,
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2
+  },
 
+  buttonClose: {
+    backgroundColor: colors.primaria
+  },
+  textStyle: {
+    color: colors.textoBranco,
+    fontWeight: "bold",
+    textAlign: "center"
+  }
+});

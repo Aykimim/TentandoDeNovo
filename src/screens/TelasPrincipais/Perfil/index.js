@@ -29,8 +29,8 @@ export default function App() {
     navigation.goBack();
   }
 
-  function navigateToCursoDetalhado() {
-    navigation.navigate("CursoDetalhado");
+  function navigateToAmigo() {
+    alert("Você é amigo dele(a)");
   }
 
   const userName = "Adam Levi";
@@ -38,13 +38,19 @@ export default function App() {
   const userPhone = "28 999425652";
   const userPlan = "Básico";
 
-  const cursos = [
-    { nome: "Empreendedorismo" },
-    { nome: "Finanças" },
-    { nome: "Marketing" },
-    { nome: "Gestão de RH" },
-    { nome: "Planejamento" },
-    { nome: "Carreira" }
+  const Pessoas = [
+
+    { nome: "Eykimim Aniceto", rank: "6º" },
+    { nome: "Alicia Mendes", rank: "7º" },
+    { nome: "Lucas Oliveira", rank: "8º" },
+    { nome: "Isabella Rocha", rank: "9º" },
+    { nome: "Felipe Silva", rank: "10º" },
+    { nome: "Gabriela Santos", rank: "11º" },
+    { nome: "Diego Pereira", rank: "12º" },
+    { nome: "Juliana Costa", rank: "13º" },
+    { nome: "Thiago Souza", rank: "14º" },
+    { nome: "Larissa Lima", rank: "15º" },
+    { nome: "Anderson Oliveira", rank: "16º" }
   ];
 
   return (
@@ -60,17 +66,17 @@ export default function App() {
           <PerfilText>Plano: {userPlan}</PerfilText>
         </Container>
 
-          <Title>Meus cursos</Title>
+          <Title>Meus Amigos</Title>
         <Container>
 
-            {cursos.map((curso, index) => (
+            {Pessoas.map((curso, index) => (
               <ButtonCurso
                 key={index}
-                onPress={() => navigateToCursoDetalhado()}
+                onPress={() => navigateToAmigo()}
                 underlayColor={colors.primaria}
               >
                 <ViewButao style={{ flexDirection: "row", alignItems: "center" }}>
-                  <IconImage source={require("../../../Components/img/LogoQuadrada.png")} />
+                  <IconImage source={require("../../../Components/img/IconeUsuario.png")} />
                   <ButtonText>{curso.nome}</ButtonText>
                 </ViewButao>
               </ButtonCurso>

@@ -47,7 +47,7 @@ export default function App() {
     navigation.navigate("Login");
   }
 
-  const cursos = [
+  const Pessoas = [
     { nome: "Yuji Kamada", rank: "1º" },
     { nome: "Raphael Lima", rank: "2º" },
     { nome: "Carlos Massa", rank: "3º" },
@@ -69,7 +69,7 @@ export default function App() {
     <Container>
       <ScreenNameHeader headerName="Rank" />
       <ScrollViewTudo justifyContent={"spaceBetween"}>
-        {cursos.map((curso, index) => (
+        {Pessoas.map((curso, index) => (
           <ButtonCursoTudo key={index}>
             <ButtonCursoRankNun>
               <ButtonText>{curso.rank}</ButtonText>

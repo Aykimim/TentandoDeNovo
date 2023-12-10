@@ -1,26 +1,30 @@
 import styled from "styled-components/native";
 import { colors } from "../../../Components/Theme";
-
-export const caixaDestino = styled.View`
-  borderWidth: 1;
-  borderColor: ${colors.primaria};
-  borderRadius: 5;
-  padding: 10;
-  marginVertical: 10;
+export const ButtonModal = styled.TouchableHighlight`
+  color: ${colors.textoPreto};
+  font-size: 15px;
+  text-align: center;
+  border-Radius: 20px;
+  padding: 5%;
+  elevation: 2;
+  margin-top: 10px;
 `;
 
-export const caixaOpcao = styled.TouchableHighlight`
-  backgroundColor: ${colors.fundo};
-  borderWidth: 1;
-  borderColor: colors.primaria;
-  borderRadius: 5;
-  padding: 10;
-  marginVertical: 5;
+export const ButtonTextTitulo = styled.Text`
+  color: ${colors.textoPreto};
+  font-size: 20px;
+  text-align: center;
+
+  font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
 `;
-
-
-
-
+export const ButtonTextSubTitulo  = styled.Text`
+margin-top: 10px;
+  color: ${colors.textoPreto};
+  font-size: 15px;
+  text-align: center;
+  
+  /* Adicione esta linha para tornar o texto em negrito */
+`;
 export const ButtonCurso = styled.TouchableHighlight`
   background-color: ${colors.primaria};
   border-radius: 20px;
@@ -63,14 +67,7 @@ export const ButtonText = styled.Text`
   margin-left: 30px;
 `;
 //
-export const ButtonTextTitulo = styled.Text`
-  color: ${colors.textoBranco};
-  font-size: 15px;
-  padding-horizontal: 5%; /* Corrigido o nome da propriedade */
-  text-align: center;
-  
-  font-weight: bold;
-`;
+
 export const ButtonTextPergunta = styled.Text`
   color: ${colors.textoPreto};
   font-size: 16px;
