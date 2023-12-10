@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from "@react-navigation/native";
  import * as Progress from 'react-native-progress';
-
+ import { colors } from "../Components/Theme";
 const HeaderPerfil = ({ username, source, onSettingsPress }) => {
   const navigation = useNavigation(); // Mova useNavigation para dentro do componente
 
@@ -43,9 +43,9 @@ function navigateConfig() {
         justifyContent: 'left',
         padding: 10,
         borderBottomWidth: 3,
-        borderColor: 'orange',
+        borderColor: colors.branco,
         height: 150,
-        backgroundColor: '#f2ce57',
+        backgroundColor: colors.primaria
       },
       row1:{
         alignItems: 'left',
@@ -64,12 +64,12 @@ function navigateConfig() {
           height: 100, 
           borderRadius: 50, 
           borderWidth: 2, 
-          borderColor: 'white'
+          borderColor: colors.textoBranco
       },
       userName: {
         fontSize: 18,
         justifyContent: 'space-evenly',
-        color: 'white',
+        color: colors.textoBranco
       },
       row3:{
         position: 'absolute',

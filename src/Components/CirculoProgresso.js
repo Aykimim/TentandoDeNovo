@@ -1,32 +1,42 @@
-import React, {useEffect} from 'react';
-import {SafeAreaView, View, TextInput} from 'react-native';
-import Svg, {Circle} from 'react-native-svg';
+import React, { useEffect } from "react";
+import { SafeAreaView, View, TextInput } from "react-native";
+import Svg, { Circle } from "react-native-svg";
 import Animated, {
+  interpolateColor,
   useAnimatedProps,
   useDerivedValue,
   useSharedValue,
   withTiming,
-} from 'react-native-reanimated';
+} from "react-native-reanimated";
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 const AnimatedText = Animated.createAnimatedComponent(TextInput);
 
-const radius = 34;
-const circumference = radius * Math.PI * 1;
+const radius = 45;
+const circumference = radius * Math.PI * 2;
+const duration = 3000;
 
-const SvgCircleCerto = () => {
+const SvgCircle = () => {
   const strokeOffset = useSharedValue(circumference);
-  
-  const percentage = useDerivedValue(() => {
-    const number =
-      ((circumference - strokeOffset.value) / (circumference)) * 75;
 
-    return withTiming(number, {duration: 2000});
+  const percentage = useDerivedValue(() => {
+    const number = ((circumference - strokeOffset.value) / circumference) * 100;
+
+    return withTiming(number, { duration: duration });
+  });
+
+  const strokeColor = useDerivedValue(() => {
+    return interpolateColor(
+      percentage.value,
+      [0, 50, 100],
+      ["rgb(246, 79, 89)", "rgb(246, 246, 89)", "rgb(79, 246, 89)"]
+    );
   });
 
   const animatedCircleProps = useAnimatedProps(() => {
     return {
-      strokeDashoffset: withTiming(strokeOffset.value, {duration: 2000}),
+      strokeDashoffset: withTiming(strokeOffset.value, { duration: duration }),
+      stroke: strokeColor.value,
     };
   });
 
@@ -44,16 +54,23 @@ const SvgCircleCerto = () => {
     <SafeAreaView
       style={{
         flex: 1,
-        backgroundColor: '#17021A',
-      }}>
+        backgroundColor: "#17021A",
+      }}
+    >
       <View
         style={{
-          justifyContent: 'center',
-          alignItems: 'center',
+          justifyContent: "center",
+          alignItems: "center",
           flex: 1,
-        }}>
+        }}
+      >
         <AnimatedText
-          style={{color: 'white', fontSize: 24, fontWeight: 'bold', position: 'absolute'}}
+          style={{
+            color: "white",
+            fontSize: 24,
+            fontWeight: "bold",
+            position: "absolute",
+          }}
           animatedProps={animatedTextProps}
         />
         <Svg height="50%" width="50%" viewBox="0 0 100 100">
@@ -73,4 +90,4 @@ const SvgCircleCerto = () => {
   );
 };
 
-export default SvgCircleCerto;
+export default SvgCircle;

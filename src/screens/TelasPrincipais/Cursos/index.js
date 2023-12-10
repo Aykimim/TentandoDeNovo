@@ -85,12 +85,17 @@ class CourseItem extends Component {
 const CoursesPage = () => {
   const navigation = useNavigation();
 
-  function navigateToCursoDetalhado() {
-    navigation.navigate("CursoDetalhado");
+  function navigateToVoltar() {
+    // navigation.navigate("Cursos");
+    navigation.reset({
+      index: 0,
+      routes: [{ name: "MainTab" }]//,screen
+    });
   }
 
+
   const cursos = [
-    { nome: "Empreendedorismo", progress: 100, imagem: require("../../../Components/img/Blocos.png") },
+    { nome: "Empreendedorismo", progress: 75, imagem: require("../../../Components/img/Blocos.png") },
     { nome: "Finanças", progress: 40, imagem: require("../../../Components/img/PensaDinheiro.png") },
     { nome: "Marketing", progress: 60, imagem: require("../../../Components/img/AltoFalante.png") },
     { nome: "Gestão de RH", progress: 20, video: require("../../../Components/img/Pessoas.mp4") },
@@ -113,7 +118,7 @@ const CoursesPage = () => {
           <CourseItem
             key={index}
             course={curso}
-            onPressNavigate={navigateToCursoDetalhado}
+            onPressNavigate={navigateToVoltar}
           />
         ))}
       </ScrollView>
@@ -132,7 +137,7 @@ const styles = StyleSheet.create({
     borderColor: colors.barraDeProgresso
   },
   progressText: {
-    color: "#000",
+    color: colors.textoPreto,
     fontSize: 18,
     marginLeft: 10,
     paddingRight: 10,

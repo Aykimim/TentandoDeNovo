@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   
   View,
@@ -9,7 +9,8 @@ import {
 } from "react-native";
 import { Header } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
-import { colors } from "../../../Components/Theme";
+import { colors, darkColors } from "../../../Components/Theme";  // Importe também o tema escuro
+
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import {
   Text,
@@ -65,12 +66,25 @@ export default function App() {
     navigation.navigate("Login");
   }
 
+  
+    
+    const [isDarkMode, setIsDarkMode] = useState(false);
+  
+    function toggleDarkMode() {
+      setIsDarkMode((prevMode) => !prevMode);
+    }
+
+
+
+  
   return (
     <Container>
       <Header
-        backgroundColor={colors.primaria}
+        backgroundColor={isDarkMode ? darkColors.primaria : colors.primaria}
         leftComponent={<MyCustomLeftComponent />}
         centerComponent={<MyCustomCenterComponent />}
+        // Adicione a propriedade onPress para alternar o modo escuro/claro
+        rightComponent={<TouchableOpacity onPress={toggleDarkMode}><Icon name="adjust" size={20} color={colors.branco} /></TouchableOpacity>}
       />
 
       <ScrollView>

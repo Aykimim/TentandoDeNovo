@@ -152,6 +152,22 @@ export default function App() {
             </SendButtontextEsqueciSenha>
           </SendButton>
 
+
+          <SendButton onPress={navigateTest}>
+            <SendButtontextEsqueciSenha>
+            navigateTest
+            </SendButtontextEsqueciSenha>
+          </SendButton>
+          <SendButton onPress={navigateTest2}>
+            <SendButtontextEsqueciSenha>
+            navigateTest2
+            </SendButtontextEsqueciSenha>
+          </SendButton>
+
+
+
+
+
           <SendButtontextBorda onPress={handleLogin}>
             <SendButtonEntrar>Entrar</SendButtonEntrar>
           </SendButtontextBorda>
