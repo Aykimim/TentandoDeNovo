@@ -8,6 +8,7 @@ import First from "../screens/AreaDeTests/pages/First";
 import Second from "../screens/AreaDeTests/pages/Second";
 import Test from "../screens/AreaDeTests/Test";
 import TelaDeCadastro from "../screens/AreaDeTests/TelaDeCadastro";
+import TelaVideo from "../screens/AreaDeTests/TelaVideo";
 import Configpage from "../screens/ConfiguracaoDoUsuario/Configpage";
 
 // import Cadastro from "../screens/AreaDeTests/Cadastro";
@@ -51,6 +52,7 @@ export default () => (
     <Stack.Screen name="First" component={First} />
     <Stack.Screen name="Test" component={Test} />
     <Stack.Screen name="TelaDeCadastro" component={TelaDeCadastro} />
+    <Stack.Screen name="TelaVideo" component={TelaVideo} />
     <Stack.Screen name="Configpage" component={Configpage} />
 
     <Stack.Screen name="Fatori" component={Fatori} />

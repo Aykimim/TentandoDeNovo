@@ -54,8 +54,8 @@ function MyCustomRightComponent() {
 export default function App() {
   const navigation = useNavigation();
 
-  function navigateToPerguntas() {
-    navigation.navigate("Login");
+  function navigateToTelaVideo() {
+    navigation.navigate("TelaVideo");
   }
 
   function navigateToPerguntasUm() {
@@ -135,11 +135,11 @@ export default function App() {
         </ContainerTexto>
         <ButtonCurso
           key="1"
-          onPress={() => navigateToPerguntasUm()}
+          onPress={() => navigateToTelaVideo()}
           underlayColor={colors.secundaria}
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <ButtonText>Videos</ButtonText>
+            <ButtonText>Video Aula</ButtonText>
           </View>
         </ButtonCurso>
 
@@ -155,7 +155,7 @@ export default function App() {
 
         <ButtonCurso
           key="3"
-          onPress={() => navigateToPerguntasTres()}
+          onPress={() => navigateToVoltar()}
           underlayColor={colors.secundaria}
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>
