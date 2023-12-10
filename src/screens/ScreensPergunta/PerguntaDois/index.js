@@ -14,7 +14,8 @@ import {
   ButtonTextTitulo,
   ButtonConfirmar,
   ButtonTextConfirmar,
-  ContainerQuestao
+  ContainerQuestao,
+  ButtonTextRsposta
 } from "./styles";
 
 function MyCustomLeftComponent() {
@@ -37,9 +38,7 @@ function MyCustomLeftComponent() {
 function MyCustomCenterComponent() {
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <ButtonTextGrande numberOfLines={1}>
-        Questão de Múltipla Escolha:
-      </ButtonTextGrande>
+      <ButtonTextGrande>Questão de Completar o Texto:</ButtonTextGrande>
     </View>
   );
 }
@@ -50,118 +49,116 @@ function MyCustomRightComponent() {
 
 export default function App() {
   const navigation = useNavigation();
-  const respostaCorreta = "reutilização e reciclagem";
-  const opcoes = ["sustentabilidade e redução", "custos e reutilização", "reutilização e reciclagem", "inovaçãoe e  reciclagem"];
-  const [respostaSelecionada, setRespostaSelecionada] = useState(null);
-  const [mostrarBotao, setMostrarBotao] = useState(false);
+  const respostaCorreta1 = "Reutilização";
+  const respostaCorreta2 = "Reciclagem";
+  const respostaErrada1 = "Lixo";
+  const respostaErrada2 = "Descarte";
+  const respostaErrada3 = "Sustentável";
+  const opcoes = [
+    respostaCorreta1,
+    respostaCorreta2,
+    respostaErrada1,
+    respostaErrada2,
+    respostaErrada3
+  ];
+  const [respostaSelecionada, setRespostaSelecionada] = useState(
+    Array(opcoes.length).fill(null)
+  );
 
   const verificarResposta = (opcao) => {
-    setRespostaSelecionada(opcao);
-    setMostrarBotao(true);
+    const indexPrimeiroEspacoVazio = respostaSelecionada.indexOf(null);
+
+    if (indexPrimeiroEspacoVazio !== -1) {
+      const novaResposta = [...respostaSelecionada];
+      novaResposta[indexPrimeiroEspacoVazio] = opcao;
+      setRespostaSelecionada(novaResposta);
+    }
   };
 
   const prosseguir = () => {
-    if (respostaSelecionada === respostaCorreta) {
-      alert("Resposta correta!");
-      // Adicione lógica adicional para lidar com a resposta correta
+    if (
+      respostaSelecionada[0] === respostaCorreta1 &&
+      respostaSelecionada[1] === respostaCorreta2
+    ) {
+      // alert("Resposta correta!");
       navigateToPerguntaCerta();
     } else {
       alert("Resposta incorreta. Tente novamente.");
+      // Resposta incorreta, resetar os campos
+      setRespostaSelecionada(Array(opcoes.length).fill(null));
     }
-    // Adicione qualquer lógica adicional necessária antes de prosseguir
   };
 
-
-
-  
-  function navigateToPerguntaCerta() {
+  const navigateToPerguntaCerta = () => {
     navigation.navigate("PerguntaTres");
-  }
-
-  
+  };
 
   return (
     <Container>
-      <Header
-        backgroundColor={colors.primaria}
-        leftComponent={<MyCustomLeftComponent />}
-        centerComponent={<MyCustomCenterComponent />}
-        rightComponent={<MyCustomRightComponent />}
-      />
-      <ContainerQuestao>
-      <View style={{ flex: 1, padding: 20 }}>
-      <Text style={{ fontSize: 20, textAlign: "center", marginBottom: 20 }}>
-        A economia circular visa promover a {respostaSelecionada || "__________"} e a {respostaSelecionada || "____________"}, reduzindo o desperdício e minimizando o impacto ambiental.
-      </Text>
-      {opcoes.map((opcao, index) => (
-        <ButtonCurso
-          key={index}
-          style={{
-            backgroundColor: respostaSelecionada === opcao ? colors.primaria : colors.fundo,
-          }}
-          onPress={() => verificarResposta(opcao)}
-        >
-          <Text>{opcao}</Text>
-        </ButtonCurso>
-      ))}
-      {mostrarBotao && (
-       
-<ButtonConfirmar
-         
-title="Prosseguir"
-          onPress={prosseguir}
+      <View>
+        <Header
+          backgroundColor={colors.primaria}
+          leftComponent={<MyCustomLeftComponent />}
+          centerComponent={<MyCustomCenterComponent />}
+          rightComponent={<MyCustomRightComponent />}
+        />
 
-          underlayColor={colors.secundaria}
-      
-        >
-          <ButtonTextConfirmar>Prosseguir</ButtonTextConfirmar>
-        </ButtonConfirmar>
+        <View style={{ padding: 20 }}>
+          <ButtonTextPergunta style={{ textAlign: "center" }}>
+            A economia circular visa promover a{" "}
+            <View style={{ flexDirection: "row" }}>
+              <ButtonTextRsposta
+                style={{
+                  backgroundColor: respostaSelecionada[0]
+                    ? colors.primaria
+                    : colors.fundo,
+                  width: 150,
+                  height: 25,
+                  padding: 0,
+                  margin: 0
+                }}
+              >
+                {respostaSelecionada[0] || "__________"}
+              </ButtonTextRsposta>
+              <ButtonTextPergunta> é </ButtonTextPergunta>
+              <ButtonTextRsposta
+                style={{
+                  backgroundColor: respostaSelecionada[1]
+                    ? colors.primaria
+                    : colors.fundo,
+                  width: 150,
+                  height: 25,
+                  padding: 0,
+                  margin: 0
+                }}
+              >
+                {respostaSelecionada[1] || "__________"}
+              </ButtonTextRsposta>
+            </View>
+            reduzindo o desperdício e minimizando o impacto ambiental.{" "}
+          </ButtonTextPergunta>
 
-      )}
-    </View>
-
-
-        
-    
-      </ContainerQuestao>
+          <ContainerPerguntas>
+            {opcoes.map((opcao, index) => (
+              <ButtonCurso
+                key={index}
+                onPress={() => verificarResposta(opcao)}
+                style={{
+                  backgroundColor:
+                  verificarResposta === "opcao"
+                      ? colors.primaria
+                      : colors.secundaria
+                }}
+              >
+                <ButtonText>{opcao}</ButtonText>
+              </ButtonCurso>
+            ))}
+          </ContainerPerguntas>
+          <ButtonConfirmar onPress={prosseguir}>
+            <ButtonTextConfirmar>Prosseguir</ButtonTextConfirmar>
+          </ButtonConfirmar>
+        </View>
+      </View>
     </Container>
   );
 }
-
-{/* <ContainerQuestao>
-<View style={{ flex: 1, padding: 20 }}>
-  <ButtonTextTitulo >
-    A economia circular visa promover a{" "}
-    {respostaSelecionada || "__________"} e a{" "}
-    {respostaSelecionada || "____________"}, reduzindo o desperdício e
-    minimizando o impacto ambiental.
-  </ButtonTextTitulo>
-  {opcoes.map((opcao, index) => (
-    <TouchableOpacity
-      key={index}
-      style={{
-        borderWidth: 1,
-        borderColor: "gray",
-        borderRadius: 5,
-        padding: 10,
-        marginBottom: 10,
-        alignItems: "center",
-        backgroundColor:
-          respostaSelecionada === opcao ? "yellow" : "white"
-      }}
-      onPress={() => verificarResposta(opcao)}
-    >
-      <Text>{opcao}</Text>
-    </TouchableOpacity>
-  ))}
-  {mostrarBotao && (
-    <ButtonConfirmar
-      title="Prosseguir"
-      onPress={prosseguir}
-      underlayColor={colors.secundaria}
-    >
-      <ButtonTextConfirmar>Prosseguir</ButtonTextConfirmar>
-    </ButtonConfirmar>
-  )}
-</View>
-</ContainerQuestao> */}

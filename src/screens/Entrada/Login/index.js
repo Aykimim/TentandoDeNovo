@@ -48,7 +48,7 @@ export default function App() {
   }
 
   function navigateTest2() {
-    navigation.navigate("Fatori");
+    navigation.navigate("PerguntaTres");
   }
   function navigateToPerguntas() {
     navigation.navigate("Perguntas");

@@ -1,58 +1,91 @@
 import React, { useState } from "react";
-import { View, TouchableOpacity, Text, Button } from "react-native";
+import { View, Text, TouchableOpacity, Alert, StyleSheet } from "react-native";
+import { Header } from "react-native-elements";
+import Icon from "react-native-vector-icons/FontAwesome";
+import { colors } from "../../../Components/Theme";
 
-const PerguntaCompletarTexto = () => {
-  const respostaCorreta = "reutilização e reciclagem";
-  const opcoes = ["sustentabilidade", "redução de custos", "reutilização e reciclagem", "inovação"];
-  const [respostaSelecionada, setRespostaSelecionada] = useState(null);
-  const [mostrarBotao, setMostrarBotao] = useState(false);
+const opcoes = ["Redução da pegada de carbono e otimização de recursos.", "Impacto positivo nas comunidades e responsabilidade social.", "Atração de consumidores comprometidos com práticas sustentáveis"];
+const correspondencias = ["Tecnologias Verdes", "Inovação Social", "Educação e Conscientização"];
 
-  const verificarResposta = (opcao) => {
-    setRespostaSelecionada(opcao);
-    setMostrarBotao(true);
+export default function App() {
+  const [correspondenciaSelecionada, setCorrespondenciaSelecionada] = useState(Array(correspondencias.length).fill(null));
+
+  const verificarResposta = (opcao, index) => {
+    const novaCorrespondencia = [...correspondenciaSelecionada];
+    novaCorrespondencia[index] = opcao;
+    setCorrespondenciaSelecionada(novaCorrespondencia);
+
+    // Verificar se todas as correspondências foram feitas
+    if (!novaCorrespondencia.includes(null)) {
+      validarRespostas(novaCorrespondencia);
+    }
   };
 
-  const prosseguir = () => {
-    if (respostaSelecionada === respostaCorreta) {
-      alert("Resposta correta!");
-      // Adicione lógica adicional para lidar com a resposta correta
+  const validarRespostas = (respostas) => {
+    const respostasCorretas = ["Tecnologias Verdes", "Inovação Social", "Educação e Conscientização"];
+    
+    // Verificar se as respostas são corretas
+    if (JSON.stringify(respostas) === JSON.stringify(respostasCorretas)) {
+      Alert.alert("Respostas corretas!", "Parabéns!");
     } else {
-      alert("Resposta incorreta. Tente novamente.");
+      Alert.alert("Respostas incorretas!", "Tente novamente.");
+      // Reiniciar as respostas
+      setCorrespondenciaSelecionada(Array(correspondencias.length).fill(null));
     }
-    // Adicione qualquer lógica adicional necessária antes de prosseguir
   };
 
   return (
-    <View style={{ flex: 1, padding: 20 }}>
-      <Text style={{ fontSize: 20, textAlign: "center", marginBottom: 20 }}>
-        A economia circular visa promover a {respostaSelecionada || "__________"} e a {respostaSelecionada || "____________"}, reduzindo o desperdício e minimizando o impacto ambiental.
-      </Text>
-      {opcoes.map((opcao, index) => (
-        <TouchableOpacity
-          key={index}
-          style={{
-            borderWidth: 1,
-            borderColor: "gray",
-            borderRadius: 5,
-            padding: 10,
-            marginBottom: 10,
-            alignItems: "center",
-            backgroundColor: respostaSelecionada === opcao ? "yellow" : "white",
-          }}
-          onPress={() => verificarResposta(opcao)}
-        >
-          <Text>{opcao}</Text>
-        </TouchableOpacity>
-      ))}
-      {mostrarBotao && (
-        <Button
-          title="Prosseguir"
-          onPress={prosseguir}
-          color="#841584"
-        />
-      )}
+    <View>
+      <Header
+        backgroundColor={colors.primaria}
+        leftComponent={<Icon name="arrow-left" size={20} color={colors.branco} />}
+        centerComponent={<Text style={{ fontSize: 20 }}>Questão de Ligar os Pontos</Text>}
+        rightComponent={<View />}
+      />
+      <View style={{ padding: 20 }}>
+        {correspondencias.map((correspondencia, index) => (
+          <View key={index} style={styles.caixaDestino}>
+            <Text style={{ fontSize: 18 }}>{correspondencia}</Text>
+            <TouchableOpacity
+              style={[styles.caixaOpcao, { opacity: correspondenciaSelecionada[index] ? 0.5 : 1 }]}
+              onPress={() => verificarResposta(correspondencia, index)}
+              disabled={correspondenciaSelecionada[index] !== null}
+            >
+              <Text>{correspondenciaSelecionada[index] || "Arraste aqui"}</Text>
+            </TouchableOpacity>
+          </View>
+        ))}
+        <View style={{ marginTop: 20 }}>
+          {opcoes.map((opcao, opcaoIndex) => (
+            <TouchableOpacity
+              key={opcaoIndex}
+              style={styles.caixaOpcao}
+              onPress={() => verificarResposta(opcao, correspondenciaSelecionada.indexOf(null))}
+              disabled={correspondenciaSelecionada.includes(opcao)}
+            >
+              <Text>{opcao}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </View>
     </View>
   );
-};
+}
 
-export default PerguntaCompletarTexto;
+const styles = StyleSheet.create({
+  caixaDestino: {
+    borderWidth: 1,
+    borderColor: colors.primaria,
+    borderRadius: 5,
+    padding: 10,
+    marginVertical: 10,
+  },
+  caixaOpcao: {
+    backgroundColor: colors.fundo,
+    borderWidth: 1,
+    borderColor: colors.primaria,
+    borderRadius: 5,
+    padding: 10,
+    marginVertical: 5,
+  },
+});

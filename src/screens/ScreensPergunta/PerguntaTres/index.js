@@ -1,25 +1,25 @@
-import React from "react";
-import {
-  StyleSheet,
-  View,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  Image,
-  ScrollView
-} from "react-native";
+import React, { useState } from "react";
+import { View } from "react-native";
 import { Header } from "react-native-elements";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { colors } from "../../../Components/Theme";
+import { Alert } from "react-native";
 import {
-  TextEscrita,
   Container,
   ButtonText,
-  ButtonCurso, // Importe ButtonCurso do styles.js
-  SendButtontext,
-  IconImage,
-  ButtonCursoPressed,
-  ButtonTextPressed
+  ButtonTextGrande,
+  ButtonCurso,
+  ButtonTextPergunta,
+  ContainerPerguntas,
+  ButtonTextTitulo,
+  ButtonConfirmar,
+  ButtonTextConfirmar,
+  ContainerQuestao,
+  caixaDestino,
+  caixaOpcao
 } from "./styles";
+
 function MyCustomLeftComponent() {
   const navigation = useNavigation();
 
@@ -31,16 +31,18 @@ function MyCustomLeftComponent() {
   }
 
   return (
-    <ButtonText onPress={navigateToVoltar}>
-      <Icon name="arrow-left" size={20} color="#000" />
-    </ButtonText>
+    <ButtonTextTitulo onPress={navigateToVoltar}>
+      <Icon name="arrow-left" size={20} color={colors.branco} />
+    </ButtonTextTitulo>
   );
 }
 
 function MyCustomCenterComponent() {
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <ButtonText>Atividades</ButtonText>
+      <ButtonTextGrande numberOfLines={1}>
+      Questão de Ligar os Pontos
+      </ButtonTextGrande>
     </View>
   );
 }
@@ -51,21 +53,73 @@ function MyCustomRightComponent() {
 
 export default function App() {
   const navigation = useNavigation();
+  
 
-  function navigateToLogin() {
-    navigation.navigate("Login");
+  function navigateToPerguntaCerta() {
+    navigation.navigate("PerguntaDois");
   }
-  // Defina o número de rank para cada botão de curso
+  const correspondencias = ["Tecnologias Verdes", "Inovação Social", "Educação e Conscientização"];
+  const [correspondenciaSelecionada, setCorrespondenciaSelecionada] = useState(Array(correspondencias.length).fill(null));
+
+  const verificarResposta = (opcao, index) => {
+    const novaCorrespondencia = [...correspondenciaSelecionada];
+    novaCorrespondencia[index] = opcao;
+    setCorrespondenciaSelecionada(novaCorrespondencia);
+
+    // Verificar se todas as correspondências foram feitas
+    if (!novaCorrespondencia.includes(null)) {
+      validarRespostas(novaCorrespondencia);
+    }
+  };
+
+  const validarRespostas = (respostas) => {
+    const respostasCorretas = ["Tecnologias Verdes", "Inovação Social", "Educação e Conscientização"];
+    
+    // Verificar se as respostas são corretas
+    if (JSON.stringify(respostas) === JSON.stringify(respostasCorretas)) {
+      Alert.alert("Respostas corretas!", "Parabéns!");
+    } else {
+      Alert.alert("Respostas incorretas!", "Tente novamente.");
+      // Reiniciar as respostas
+      setCorrespondenciaSelecionada(Array(correspondencias.length).fill(null));
+    }
+  };
 
   return (
     <Container>
-            <Header
-        backgroundColor="#f0dfc8"
+      <Header
+        backgroundColor={colors.primaria}
         leftComponent={<MyCustomLeftComponent />}
         centerComponent={<MyCustomCenterComponent />}
         rightComponent={<MyCustomRightComponent />}
       />
-<ButtonText>"Teste3"</ButtonText>
-    </Container>
+      <View style={{ padding: 20 }}>
+        {correspondencias.map((correspondencia, index) => (
+          <caixaDestino key={index} >
+            <Text style={{ fontSize: 18 }}>{correspondencia}</Text>
+            <caixaOpcao
+             
+              onPress={() => verificarResposta(correspondencia, index)}
+              disabled={correspondenciaSelecionada[index] !== null}
+            >
+              <Text>{correspondenciaSelecionada[index] || "Arraste aqui"}</Text>
+            </caixaOpcao>
+          </caixaDestino>
+        ))}
+        <View style={{ marginTop: 20 }}>
+          {opcoes.map((opcao, opcaoIndex) => (
+            <caixaOpcao
+              key={opcaoIndex}
+              
+              onPress={() => verificarResposta(opcao, correspondenciaSelecionada.indexOf(null))}
+              disabled={correspondenciaSelecionada.includes(opcao)}
+            >
+              <Text>{opcao}</Text>
+            </caixaOpcao>
+          ))}
+        </View>
+      </View>
+      </Container>
   );
 }
+

@@ -1,16 +1,14 @@
 import styled from "styled-components/native";
 import { colors } from "../../../Components/Theme";
 export const ButtonCurso = styled.TouchableOpacity`
-  border-width: 1px;
-  border-color: gray;
+color: ${colors.secundaria};
+border-width: 1px;
+
   border-radius: 5px;
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 5px;
   align-items: center;
-  background-color: ${({ respostaSelecionada, opcao }) =>
-    respostaSelecionada === opcao ? "yellow" : "white"};
 `;
-
 
 export const ButtonConfirmar = styled.TouchableHighlight`
   background-color: ${({ mostrarBotao }) =>
@@ -19,7 +17,7 @@ export const ButtonConfirmar = styled.TouchableHighlight`
   text-align: center;
   align-items: center;
   padding: 20px;
-  margin-bottom: 15px;
+  margin-top: 15px;
   margin-right: 50px;
   margin-left: 50px;
 `;
@@ -35,13 +33,11 @@ export const ButtonText = styled.Text`
   font-size: 12px;
   text-align: center;
 
-  border-radius: 15px;
-  /* Isso faz o texto ocupar todo o espaço vertical */
+ 
+  
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
   padding: 10px;
-  margin-top: 10px;
-  margin-right: 30px;
-  margin-left: 30px;
+ 
 `;
 //
 export const ButtonTextTitulo = styled.Text`
@@ -49,15 +45,24 @@ export const ButtonTextTitulo = styled.Text`
   font-size: 15px;
   padding-horizontal: 5%; /* Corrigido o nome da propriedade */
   text-align: center;
-  
+
   font-weight: bold;
 `;
 export const ButtonTextPergunta = styled.Text`
   color: ${colors.textoPreto};
   font-size: 16px;
-  padding-top: 0px;
   text-align: center;
+  
   /* Isso faz o texto ocupar todo o espaço vertical */
+  font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
+`;
+export const ButtonTextRsposta = styled.Text`
+  color: ${colors.textoPreto};
+  font-size: 16px;
+  width: 0px;
+  height: 0px;
+  text-align: center;
+  
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
 `;
 export const ButtonTextGrande = styled.Text`
@@ -65,8 +70,7 @@ export const ButtonTextGrande = styled.Text`
   font-size: 15px;
   text-align: center;
 
-   
-  font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
+  font-weight: bold;
 `;
 
 export const IconImage = styled.Image`
@@ -86,7 +90,7 @@ export const Header = styled.View`
   background-color: ${colors.textoPreto};
 `;
 
-export const ContainerQuestao = styled.SafeAreaView`
+export const ContainerQuestao = styled.View`
   flex: 1;
   background-color: ${colors.fundo};
   align-items: center;
@@ -99,7 +103,7 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const ContainerPerguntas = styled.SafeAreaView`
-  flex: 2;
+
 
   padding: 10%;
 `;
