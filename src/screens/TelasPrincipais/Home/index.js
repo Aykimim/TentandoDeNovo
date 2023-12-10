@@ -62,7 +62,7 @@ export default function App() {
   const navigation = useNavigation();
 
   function Material() {
-    navigation.navigate("PerguntaUm");
+    navigation.navigate("CursoDetalhado");
   }
 
   const Stack = createStackNavigator();

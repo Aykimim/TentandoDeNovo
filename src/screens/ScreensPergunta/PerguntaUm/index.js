@@ -37,7 +37,9 @@ function MyCustomLeftComponent() {
 function MyCustomCenterComponent() {
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <ButtonTextGrande numberOfLines={1}>Fundamentos</ButtonTextGrande>
+      <ButtonTextGrande numberOfLines={1}>
+        Questão de Múltipla Escolha:
+      </ButtonTextGrande>
     </View>
   );
 }
@@ -72,84 +74,81 @@ export default function App() {
         centerComponent={<MyCustomCenterComponent />}
         rightComponent={<MyCustomRightComponent />}
       />
-<ContainerQuestao>
-      <ButtonTextPergunta>
-        Sobre a impressão do dinheiro, qual alternativa está correta?
-      </ButtonTextPergunta>
-      <ContainerPerguntas>
-        <ButtonText
-          onPress={() => setRespostaSelecionada("correta")}
-          style={{
-            backgroundColor:
-              respostaSelecionada === "correta"
-                ? colors.primaria
-                : colors.secundaria
-          }}
-        >
-          Podemos imprimir dinheiro à vontade, vários países adotam essa técnica
-          para sair de crises e aumentar a economia do país."
-        </ButtonText>
+      <ContainerQuestao>
+        <ButtonTextPergunta>
+          Qual das seguintes estratégias é considerada uma abordagem inovadora
+          para o empreendedorismo sustentável?
+        </ButtonTextPergunta>
+        <ContainerPerguntas>
+          <ButtonText
+            onPress={() => setRespostaSelecionada("incorreta1")}
+            style={{
+              backgroundColor:
+                respostaSelecionada === "incorreta1"
+                  ? colors.primaria
+                  : colors.secundaria
+            }}
+          >
+            a) Aumentar a produção sem considerar o impacto ambiental.
+          </ButtonText>
 
-        <ButtonText
-          onPress={() => setRespostaSelecionada("incorreta1")}
-          style={{
-            backgroundColor:
-              respostaSelecionada === "incorreta1"
-                ? colors.primaria
-                : colors.secundaria
-          }}
-        >
-          O Brasil não imprime dinheiro pois não há papel e impressoras
-          suficientes para tal ação."
-        </ButtonText>
+          <ButtonText
+            onPress={() => setRespostaSelecionada("correta")}
+            style={{
+              backgroundColor:
+                respostaSelecionada === "correta"
+                  ? colors.primaria
+                  : colors.secundaria
+            }}
+          >
+            b) Adotar tecnologias verdes e ecoeficientes.
+          </ButtonText>
 
-        <ButtonText
-          onPress={() => setRespostaSelecionada("incorreta2")}
-          style={{
-            backgroundColor:
-              respostaSelecionada === "incorreta2"
-                ? colors.primaria
-                : colors.secundaria
-          }}
-        >
-          Países comunistas não imprimem dinheiro, diferente dos países
-          capitalistas."
-        </ButtonText>
+          <ButtonText
+            onPress={() => setRespostaSelecionada("incorreta2")}
+            style={{
+              backgroundColor:
+                respostaSelecionada === "incorreta2"
+                  ? colors.primaria
+                  : colors.secundaria
+            }}
+          >
+            c) Ignorar a reutilização e reciclagem para manter os custos baixos.
+          </ButtonText>
 
-        <ButtonText
-          onPress={() => setRespostaSelecionada("incorreta3")}
-          style={{
-            backgroundColor:
-              respostaSelecionada === "incorreta3"
-                ? colors.primaria
-                : colors.secundaria
-          }}
-        >
-          Dinheiros impressos são doados para moradores de rua e pessoas em
-          extrema miséria."
-        </ButtonText>
+          <ButtonText
+            onPress={() => setRespostaSelecionada("incorreta3")}
+            style={{
+              backgroundColor:
+                respostaSelecionada === "incorreta3"
+                  ? colors.primaria
+                  : colors.secundaria
+            }}
+          >
+            d) Minimizar a transparência sobre as práticas sustentáveis.
+          </ButtonText>
 
-        <ButtonText
-          onPress={() => setRespostaSelecionada("incorreta4")}
-          style={{
-            backgroundColor:
-              respostaSelecionada === "incorreta4"
-                ? colors.primaria
-                : colors.secundaria
-          }}
-        >
-          Não pode imprimir dinheiro porque isso resultaria em diversos
-          problemas. Exemplo: A inflação dispararia."
-        </ButtonText>
-      </ContainerPerguntas>
+          <ButtonText
+            onPress={() => setRespostaSelecionada("incorreta4")}
+            style={{
+              backgroundColor:
+                respostaSelecionada === "incorreta4"
+                  ? colors.primaria
+                  : colors.secundaria
+            }}
+          >
+            e) Focar exclusivamente no sucesso financeiro a curto prazo.
+          </ButtonText>
+        </ContainerPerguntas>
 
-      <ButtonConfirmar
-        onPress={() => PerguntaCerta()}
-        underlayColor={colors.secundaria}
-        disabled={!respostaSelecionada}
-      >
-        <ButtonTextConfirmar>Prosseguir</ButtonTextConfirmar>
-      </ButtonConfirmar>
+        <ButtonConfirmar
+          onPress={() => PerguntaCerta()}
+          underlayColor={colors.secundaria}
+          disabled={!respostaSelecionada}
+        >
+          <ButtonTextConfirmar>Prosseguir</ButtonTextConfirmar>
+        </ButtonConfirmar>
+    
       </ContainerQuestao>
     </Container>
   );

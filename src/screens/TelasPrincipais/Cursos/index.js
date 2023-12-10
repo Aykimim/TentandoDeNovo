@@ -12,18 +12,19 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import * as Progress from "react-native-progress";
 import Video from "react-native-video";
 import { colors } from "../../../Components/Theme";
+import Svg, { Circle, Path, Line, Rect, G } from "react-native-svg";
 import {
   ProgressContainer,
   Container,
   ButtonCurso,
   IconImage,
-  ButtonText
+  ButtonText,
+  IconeView,
+
 } from "./styles";
 
 //components
 import ScreenNameHeader from "../../../Components/ScreenNameHeader";
-
-
 
 class CourseItem extends Component {
   constructor(props) {
@@ -39,17 +40,16 @@ class CourseItem extends Component {
 
   handlePress = () => {
     this.state.animation.setValue(0);
-  
+
     Animated.timing(this.state.animation, {
       duration: 1500,
       toValue: 1,
       useNativeDriver: false
     }).start();
   };
-  
 
   render() {
-    const { progress, imagem } = this.props.course;
+    const { progress, svgIcon, imagem } = this.props.course;
 
     const progressInterpolate = this.state.animation.interpolate({
       inputRange: [0, 1],
@@ -69,23 +69,29 @@ class CourseItem extends Component {
     };
 
     return (
-      <ButtonCurso onPress={this.props.onPressNavigate} underlayColor= "colors.textoPreto" >
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
+      <ButtonCurso
+        onPress={this.props.onPressNavigate}
+        underlayColor={colors.primaria}
+      >
+        <View style={{ flexDirection: "row" }}>
           <Animated.View style={[styles.progress, progressStyle]} />
-          <IconImage source={imagem} />
+          {svgIcon ? (
+            <IconeView>{svgIcon}</IconeView>
+          ) : (
+            <IconImage source={imagem} />
+          )}
           <ButtonText>{this.props.course.nome}</ButtonText>
           <Text style={styles.progressText}>{`${progress}%`}</Text>
         </View>
       </ButtonCurso>
     );
   }
-  
 }
 
 const CoursesPage = () => {
   const navigation = useNavigation();
 
-  function navigateToVoltar() {
+  function Trilha() {
     // navigation.navigate("Cursos");
     navigation.reset({
       index: 0,
@@ -93,23 +99,49 @@ const CoursesPage = () => {
     });
   }
 
-
   const cursos = [
-    { nome: "Empreendedorismo", progress: 75, imagem: require("../../../Components/img/Blocos.png") },
-    { nome: "Finanças", progress: 40, imagem: require("../../../Components/img/PensaDinheiro.png") },
-    { nome: "Marketing", progress: 60, imagem: require("../../../Components/img/AltoFalante.png") },
-    { nome: "Gestão de RH", progress: 20, video: require("../../../Components/img/Pessoas.mp4") },
-    { nome: "Planejamento", progress: 90, imagem: require("../../../Components/img/Prancheta.png") },
-    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") },
-    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png")},
-    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") },
-    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") },
-    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") },
-    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") },
-    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") },
-    { nome: "eyk", progress: 75, imagem: require("../../../Components/img/coxinha.png") }
-  ];
+    {
+      nome: "Empreendedorismo",
+      progress: 75,
+      
+      svgIcon: <Icon name="briefcase" size={30} color={colors.icone} />
+    },
+    {
+      nome: "Finanças",
+      progress: 40,
 
+      svgIcon: <Icon name="money" size={30} color={colors.icone} />
+    },
+
+    {
+      nome: "Marketing",
+      progress: 60,
+      svgIcon: <Icon name="bullhorn" size={30} color={colors.icone} />
+    },
+    {
+      nome: "Gestão de RH",
+      progress: 20,
+      svgIcon: <Icon name="user" size={30} color={colors.icone} />
+    },
+    {
+      nome: "Planejamento",
+      progress: 90,
+      svgIcon: (
+        <Icon
+          
+          name="clipboard"
+          size={30}
+          color={colors.icone}
+        />
+      )
+    },
+
+    {
+      nome: "eyk",
+      progress: 75,
+      svgIcon: <Icon name="smile-o" size={30} color={colors.icone} />
+    }
+  ];
   return (
     <Container>
       <ScreenNameHeader headerName="Cursos" />
@@ -118,7 +150,7 @@ const CoursesPage = () => {
           <CourseItem
             key={index}
             course={curso}
-            onPressNavigate={navigateToVoltar}
+            onPressNavigate={Trilha}
           />
         ))}
       </ScrollView>

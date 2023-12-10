@@ -11,14 +11,14 @@ export const ButtonCurso = styled.TouchableHighlight`
   margin-right: 50px;
   margin-left: 50px;
 `;
-export const ButtonConfirmar = styled.View`
+export const ButtonConfirmar = styled.TouchableHighlight`
   background-color: ${colors.primaria};
   border-radius: 20px;
   text-align: center;
   align-items: center;
 
   padding: 20px;
-  margin-buttom: 15px;
+  margin-bottom: 15px; /* Corrigido o nome da propriedade */
   margin-right: 50px;
   margin-left: 50px;
 `;
@@ -44,26 +44,26 @@ export const ButtonText = styled.Text`
 //
 export const ButtonTextTitulo = styled.Text`
   color: ${colors.textoBranco};
-  font-size: 20px;
-  padding-horizontal: 5%;
-
+  font-size: 15px;
+  padding-horizontal: 5%; /* Corrigido o nome da propriedade */
   text-align: center;
-  flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
-  font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
+  
+  font-weight: bold;
 `;
 export const ButtonTextPergunta = styled.Text`
   color: ${colors.textoPreto};
-  font-size: 20px;
-  padding-top: 20px;
+  font-size: 16px;
+  padding-top: 0px;
   text-align: center;
   /* Isso faz o texto ocupar todo o espaço vertical */
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
 `;
 export const ButtonTextGrande = styled.Text`
   color: ${colors.textoBranco};
-  font-size: 25px;
+  font-size: 15px;
   text-align: center;
-  flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
+
+   
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
 `;
 
@@ -94,7 +94,6 @@ export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: ${colors.fundo};
   align-items: center;
-  
 `;
 
 export const ContainerPerguntas = styled.SafeAreaView`

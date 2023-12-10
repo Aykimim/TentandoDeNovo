@@ -1,76 +1,58 @@
-import React, {useEffect} from 'react';
-import {SafeAreaView, View, TextInput} from 'react-native';
-import Svg, {Circle} from 'react-native-svg';
-import Animated, {
-  useAnimatedProps,
-  useDerivedValue,
-  useSharedValue,
-  withTiming,
-} from 'react-native-reanimated';
+import React, { useState } from "react";
+import { View, TouchableOpacity, Text, Button } from "react-native";
 
-const AnimatedCircle = Animated.createAnimatedComponent(Circle);
-const AnimatedText = Animated.createAnimatedComponent(TextInput);
+const PerguntaCompletarTexto = () => {
+  const respostaCorreta = "reutilização e reciclagem";
+  const opcoes = ["sustentabilidade", "redução de custos", "reutilização e reciclagem", "inovação"];
+  const [respostaSelecionada, setRespostaSelecionada] = useState(null);
+  const [mostrarBotao, setMostrarBotao] = useState(false);
 
-const radius = 34;
-const circumference = radius * Math.PI * 1;
+  const verificarResposta = (opcao) => {
+    setRespostaSelecionada(opcao);
+    setMostrarBotao(true);
+  };
 
-const SvgCircleCerto = () => {
-  const strokeOffset = useSharedValue(circumference);
-  
-  const percentage = useDerivedValue(() => {
-    const number =
-      ((circumference - strokeOffset.value) / (circumference)) * 75;
-
-    return withTiming(number, {duration: 2000});
-  });
-
-  const animatedCircleProps = useAnimatedProps(() => {
-    return {
-      strokeDashoffset: withTiming(strokeOffset.value, {duration: 2000}),
-    };
-  });
-
-  const animatedTextProps = useAnimatedProps(() => {
-    return {
-      text: `${Math.round(percentage.value)}%`,
-    };
-  });
-  
-  useEffect(() => {
-    strokeOffset.value = 0;
-  }, []);
+  const prosseguir = () => {
+    if (respostaSelecionada === respostaCorreta) {
+      alert("Resposta correta!");
+      // Adicione lógica adicional para lidar com a resposta correta
+    } else {
+      alert("Resposta incorreta. Tente novamente.");
+    }
+    // Adicione qualquer lógica adicional necessária antes de prosseguir
+  };
 
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        backgroundColor: '#17021A',
-      }}>
-      <View
-        style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          flex: 1,
-        }}>
-        <AnimatedText
-          style={{color: 'white', fontSize: 24, fontWeight: 'bold', position: 'absolute'}}
-          animatedProps={animatedTextProps}
+    <View style={{ flex: 1, padding: 20 }}>
+      <Text style={{ fontSize: 20, textAlign: "center", marginBottom: 20 }}>
+        A economia circular visa promover a {respostaSelecionada || "__________"} e a {respostaSelecionada || "____________"}, reduzindo o desperdício e minimizando o impacto ambiental.
+      </Text>
+      {opcoes.map((opcao, index) => (
+        <TouchableOpacity
+          key={index}
+          style={{
+            borderWidth: 1,
+            borderColor: "gray",
+            borderRadius: 5,
+            padding: 10,
+            marginBottom: 10,
+            alignItems: "center",
+            backgroundColor: respostaSelecionada === opcao ? "yellow" : "white",
+          }}
+          onPress={() => verificarResposta(opcao)}
+        >
+          <Text>{opcao}</Text>
+        </TouchableOpacity>
+      ))}
+      {mostrarBotao && (
+        <Button
+          title="Prosseguir"
+          onPress={prosseguir}
+          color="#841584"
         />
-        <Svg height="50%" width="50%" viewBox="0 0 100 100">
-          <AnimatedCircle
-            animatedProps={animatedCircleProps}
-            cx="50"
-            cy="50"
-            r="45"
-            stroke="rgb(246, 79, 89)"
-            strokeWidth="5"
-            fill="rgba(255,255,255,0.2)"
-            strokeDasharray={`${radius * Math.PI * 2}`}
-          />
-        </Svg>
-      </View>
-    </SafeAreaView>
+      )}
+    </View>
   );
 };
 
-export default SvgCircleCerto;
+export default PerguntaCompletarTexto;

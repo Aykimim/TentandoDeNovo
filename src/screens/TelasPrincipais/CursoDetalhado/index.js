@@ -4,7 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { ScrollView, TouchableOpacity, View, Image } from "react-native";
 import { Header } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
-
+import { colors } from "../../../Components/Theme";
 import {
   TextEscrita,
   Container,
@@ -13,7 +13,12 @@ import {
   SendButtontext,
   IconImage,
   ButtonCursoPressed,
-  ButtonTextPressed
+  ButtonTextPressed,
+  ButtonTextSubTitulo,
+  ButtonTextTitulo,
+  ButtonTextParagrafo,
+  ContainerTexto,
+  IconTopo
 } from "./styles";
 
 function MyCustomLeftComponent() {
@@ -23,13 +28,13 @@ function MyCustomLeftComponent() {
     // navigation.navigate("Cursos");
     navigation.reset({
       index: 0,
-      routes: [{ name: "MainTab" }]//,screen
+      routes: [{ name: "MainTab" }] //,screen
     });
   }
 
   return (
     <ButtonText onPress={navigateToVoltar}>
-      <Icon name="arrow-left" size={20} color="#fff" />
+      <Icon name="arrow-left" size={20} color={colors.icone} />
     </ButtonText>
   );
 }
@@ -37,7 +42,7 @@ function MyCustomLeftComponent() {
 function MyCustomCenterComponent() {
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <ButtonText>Atividades</ButtonText>
+      <ButtonText>Material</ButtonText>
     </View>
   );
 }
@@ -62,52 +67,102 @@ export default function App() {
   function navigateToPerguntasTres() {
     navigation.navigate("PerguntaTres");
   }
- 
 
   return (
     <Container>
       <Header
-        backgroundColor="#E16539"
+        backgroundColor={colors.primaria}
         leftComponent={<MyCustomLeftComponent />}
         centerComponent={<MyCustomCenterComponent />}
         rightComponent={<MyCustomRightComponent />}
       />
 
-      <View
-        style={{
-          width: 100,
-          height: 100,
-          borderRadius: 50,
-          margin: 20,
-          overflow: "hidden"
-        }}
-      >
-        <Image
-          source={require("../../../Components/img/Blocos.png")} // Substitua pelo caminho da sua imagem
-          style={{ width: "100%", height: "100%" }}
-        />
-      </View>
-
       <ScrollView>
-<ButtonCurso key="1" onPress={() => navigateToPerguntasUm()} underlayColor="#e16539">
-  <View style={{ flexDirection: "row", alignItems: "center" }}>
-    <ButtonText>Básico grátis</ButtonText>
-  </View>
-</ButtonCurso>
+        <IconTopo>
+          <Icon
+            style={{ width: "100px", height: "100px" }}
+            name="briefcase"
+            size={100}
+            color={colors.icone}
+          />
+        </IconTopo>
+        <ContainerTexto>
+          <ButtonTextTitulo>
+            Estratégias Inovadoras para Empreendedorismo Sustentável
+          </ButtonTextTitulo>
+          <ButtonTextSubTitulo>
+            O empreendedorismo sustentável é uma abordagem que visa não apenas o
+            sucesso financeiro a curto prazo, mas também a criação de valor a
+            longo prazo para a sociedade e o meio ambiente. Implementar
+            estratégias inovadoras é essencial para empreendedores que buscam
+            alinhar seus negócios com práticas sustentáveis. Aqui estão algumas
+            estratégias inovadoras que podem impulsionar o empreendedorismo
+            sustentável: {"\n"}
+            <ButtonTextParagrafo>Economia Circular:</ButtonTextParagrafo> A
+            transição de um modelo linear para uma economia circular é uma
+            estratégia inovadora. Os empreendedores podem projetar produtos com
+            ciclos de vida mais longos, promover a reutilização e reciclagem,
+            reduzindo assim o desperdício e minimizando o impacto ambiental.{" "}
+            {"\n"}
+            <ButtonTextParagrafo>Tecnologias Verdes:</ButtonTextParagrafo>{" "}
+            Incorporar tecnologias verdes e ecoeficientes nos processos de
+            produção é crucial. Empreendedores podem adotar fontes de energia
+            renovável, otimizar o consumo de recursos naturais e investir em
+            inovações tecnológicas que reduzam a pegada de carbono. {"\n"}
+            <ButtonTextParagrafo>
+              Modelos de Negócios Sustentáveis:
+            </ButtonTextParagrafo>{" "}
+            {"\n"}
+            Desenvolver modelos de negócios que integrem a sustentabilidade como
+            um componente-chave é uma abordagem inovadora. Isso pode incluir
+            parcerias estratégicas com organizações ambientais, compensação de
+            emissões de carbono e a oferta de produtos/serviços que promovam
+            práticas sustentáveis. {"\n"}
+            <ButtonTextParagrafo>Inovação Social:</ButtonTextParagrafo> A
+            inovação social é fundamental para o empreendedorismo sustentável.
+            Criar soluções que abordem desafios sociais e ambientais pode não
+            apenas impactar positivamente as comunidades, mas também agregar
+            valor à marca e atrair consumidores comprometidos com a
+            responsabilidade social.{"\n"}
+            <ButtonTextParagrafo>
+              Educação e Conscientização:
+            </ButtonTextParagrafo>{" "}
+            Empreendedores podem adotar estratégias inovadoras para educar seus
+            clientes sobre práticas sustentáveis. Isso inclui campanhas de
+            conscientização, programas educacionais e a comunicação transparente
+            sobre as práticas sustentáveis adotadas pela empresa.
+          </ButtonTextSubTitulo>
+        </ContainerTexto>
+        <ButtonCurso
+          key="1"
+          onPress={() => navigateToPerguntasUm()}
+          underlayColor={colors.secundaria}
+        >
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <ButtonText>Videos</ButtonText>
+          </View>
+        </ButtonCurso>
 
-<ButtonCurso key="2" onPress={() => navigateToPerguntasDois()} underlayColor="#e16539">
-  <View style={{ flexDirection: "row", alignItems: "center" }}>
-    <ButtonText>Intermediário - pago</ButtonText>
-  </View>
-</ButtonCurso>
+        <ButtonCurso
+          key="2"
+          onPress={() => navigateToPerguntasUm()}
+          underlayColor={colors.secundaria}
+        >
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <ButtonText>Perguntas</ButtonText>
+          </View>
+        </ButtonCurso>
 
-<ButtonCurso key="3" onPress={() => navigateToPerguntasTres()} underlayColor="#e16539">
-  <View style={{ flexDirection: "row", alignItems: "center" }}>
-    <ButtonText>Avançado - pago</ButtonText>
-  </View>
-</ButtonCurso>
-
-</ScrollView>
+        <ButtonCurso
+          key="3"
+          onPress={() => navigateToPerguntasTres()}
+          underlayColor={colors.secundaria}
+        >
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <ButtonText>Avançado - pago</ButtonText>
+          </View>
+        </ButtonCurso>
+      </ScrollView>
     </Container>
   );
 }

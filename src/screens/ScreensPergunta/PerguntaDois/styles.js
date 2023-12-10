@@ -1,23 +1,71 @@
-
 import styled from "styled-components/native";
-
-export const ButtonCurso = styled.TouchableHighlight`
-  background-color: #795833;
-  border-radius: 10px;
+import { colors } from "../../../Components/Theme";
+export const ButtonCurso = styled.TouchableOpacity`
+  border-width: 1px;
+  border-color: gray;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
   align-items: center;
-  justify-content: space-between;
-  flex-direction: row; /* Define a direção como "row" para alinhar os elementos horizontalmente */
+  background-color: ${({ respostaSelecionada, opcao }) =>
+    respostaSelecionada === opcao ? "yellow" : "white"};
+`;
+
+
+export const ButtonConfirmar = styled.TouchableHighlight`
+  background-color: ${({ mostrarBotao }) =>
+    mostrarBotao ? colors.secundaria : colors.primaria};
+  border-radius: 20px;
+  text-align: center;
+  align-items: center;
   padding: 20px;
-  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 50px;
+  margin-left: 50px;
+`;
+
+export const ButtonTextConfirmar = styled.Text`
+  color: ${colors.textoBranco};
+  font-size: 20px;
+
+  font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
+`;
+export const ButtonText = styled.Text`
+  color: ${colors.textoPreto};
+  font-size: 12px;
+  text-align: center;
+
+  border-radius: 15px;
+  /* Isso faz o texto ocupar todo o espaço vertical */
+  font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
+  padding: 10px;
+  margin-top: 10px;
   margin-right: 30px;
   margin-left: 30px;
 `;
-
-export const ButtonText = styled.Text`
-  color: #000;
-  font-size: 20px;
+//
+export const ButtonTextTitulo = styled.Text`
+  color: ${colors.textoBranco};
+  font-size: 15px;
+  padding-horizontal: 5%; /* Corrigido o nome da propriedade */
   text-align: center;
-  flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
+  
+  font-weight: bold;
+`;
+export const ButtonTextPergunta = styled.Text`
+  color: ${colors.textoPreto};
+  font-size: 16px;
+  padding-top: 0px;
+  text-align: center;
+  /* Isso faz o texto ocupar todo o espaço vertical */
+  font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
+`;
+export const ButtonTextGrande = styled.Text`
+  color: ${colors.textoBranco};
+  font-size: 15px;
+  text-align: center;
+
+   
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
 `;
 
@@ -27,60 +75,58 @@ export const IconImage = styled.Image`
   border-radius: 50px;
 `;
 
-// Adicione um estilo de pressionamento
-export const ButtonCursoPressed = styled.TouchableHighlight`
-  background-color: #e16539; /* Cor diferente quando pressionado */
-  border-radius: 10px;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  padding: 20px;
-  margin-top: 15px;
-  margin-right: 30px;
-  margin-left: 30px;
-`;
-
 export const ButtonTextPressed = styled.Text`
-  color: #fff; /* Cor do texto quando pressionado */
-  font-size: 20px;
+  color: ${colors.textoPreto};
+  font-size: 15px;
   text-align: center;
   flex: 1;
 `;
 
 export const Header = styled.View`
-  background-color: #e16539;
+  background-color: ${colors.textoPreto};
+`;
+
+export const ContainerQuestao = styled.SafeAreaView`
+  flex: 1;
+  background-color: ${colors.fundo};
+  align-items: center;
+  padding-vertical: 10%;
 `;
 export const Container = styled.SafeAreaView`
   flex: 1;
-  background-color: #f0dfc8;
-  justify-content: center;
+  background-color: ${colors.fundo};
   align-items: center;
 `;
 
+export const ContainerPerguntas = styled.SafeAreaView`
+  flex: 2;
+
+  padding: 10%;
+`;
 export const TextBotao = styled.Text`
   font-size: 25px;
   text-align: center;
-  color: #f0dfc8;
+  color: ${colors.textoPreto};
 `;
 
 export const SendButton = styled.Text`
   font-size: 25px;
   text-align: center;
-  color: #f0dfc8;
+  color: ${colors.textoPreto};
   margin-top: 20px;
 `;
 
 export const SendButtonText = styled.Text`
   font-size: 25px;
   text-align: center;
-  color: #f0dfc8;
+  color: ${colors.textoPreto};
   margin-top: 20px;
 `;
 
 export const CampoNome = styled.Text`
   font-size: 25px;
   text-align: center;
-  color: #f0dfc8;
+  color: ${colors.textoPreto};
 `;
 
 export const TextEntrada = styled.TextInput`
@@ -89,8 +135,8 @@ export const TextEntrada = styled.TextInput`
   text-align: center;
   justify-content: center;
   align-items: center;
-  color: #000;
-  background-color: #795833;
+  color: ${colors.textoPreto};
+  background-color: ${colors.textoPreto};
   border-radius: 50px;
   margin-top: 20px;
 `;
@@ -98,19 +144,12 @@ export const TextEntrada = styled.TextInput`
 export const Text = styled.Text`
   font-size: 25px;
   text-align: center;
-  color: #f0dfc8;
+  color: ${colors.textoPreto};
 `;
 
 export const TextEscrita = styled.Text`
   font-size: 15px;
   text-align: center;
-  color: #f0dfc8;
+  color: ${colors.textoPreto};
   margin-top: 20px;
-`;
-
-export const View = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  color: #f0dfc8;
 `;
