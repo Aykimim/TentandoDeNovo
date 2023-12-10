@@ -603,6 +603,7 @@ export default function App() {
           </Esquerdacima>
 
           <Meiocubo>
+          <EggWithSpot />
             <ButtonCursoDireita
               style={{ backgroundColor: colors.tarefaNaoFeita }}
               underlayColor={colors.tarefaFeita}
@@ -632,8 +633,9 @@ export default function App() {
                 )} */}
               </View>
             </ButtonCursoDireita>
+           
           </Meiocubo>
-
+          
           <ButtonCursoFim underlayColor={colors.primaria}>
             <View
               style={{ alignItems: "center", justifyContent: "center" }}
@@ -644,6 +646,7 @@ export default function App() {
               style={{ alignItems: "center", justifyContent: "center" }}
             ></View>
           </ButtonCursoFim>
+        
         </ScrollViewTudo>
       </ContainerFilho>
     </ContainerTudo>
