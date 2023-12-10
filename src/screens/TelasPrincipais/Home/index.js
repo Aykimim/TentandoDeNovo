@@ -437,19 +437,21 @@ export default function App() {
           </Esquerdacima>
 
           <Meiocubo>
+          <EggWithSpot />
             <ButtonCursoDireita
               style={{ backgroundColor: colors.tarefaFeita }}
               underlayColor={colors.tarefaFeita}
               onPress={() => setPathVisible(!pathVisible)}
             >
               <View style={{ alignItems: "center", justifyContent: "center" }}>
+                
                 <Svg width={60} height={60} viewBox="0 0 24 24" fill="none">
                   <Path
                     d="M21.0001 4.89999L9.00012 16.9L3.00012 10.9L4.40012 9.5L9.00012 13.1L19.6001 2.49999L21.0001 4.89999Z"
                     fill={colors.icone}
                   />
                 </Svg>
-                <EggWithSpot />
+                
                 {/* {pathVisible && (
                   <CheckIcon
                     width="115"
