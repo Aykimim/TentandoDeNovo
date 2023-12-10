@@ -1,41 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import {
-  StyleSheet,
   View,
+  Text,
   TouchableOpacity,
-  TouchableWithoutFeedback,
   Image,
-  ScrollView
+  ScrollView,
+  Modal,
+  StyleSheet,
+  TouchableHighlight,
+  TouchableWithoutFeedback
 } from "react-native";
 import { colors } from "../../../Components/Theme";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
+import styled from "styled-components/native";
+
 import {
   Container,
   ButtonText,
-  ButtonCurso, // Importe ButtonCurso do styles.js
+  ButtonCurso,
   IconImage,
   ButtonCursoTudo,
   ButtonCursoRankNun,
-  ScrollViewTudo
+  ScrollViewTudo,
+  ButtonModal,
+  ButtonTextTitulo,
+  ButtonTextSubTitulo
 } from "./styles";
 
 import ScreenNameHeader from "../../../Components/ScreenNameHeader";
 
-const botaoteste = () => {
-  alert("Teste");
-};
-
-function navigateToVoltar() {
-  navigation.navigate("Login");
-}
-
 export default function App() {
   const navigation = useNavigation();
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedCurso, setSelectedCurso] = useState(null);
+
+  function botaoteste(curso) {
+    setSelectedCurso(curso);
+    setModalVisible(true);
+  }
+
+  function closeModal() {
+    setModalVisible(false);
+  }
 
   function navigateToLogin() {
     navigation.navigate("Login");
   }
-  // Defina o número de rank para cada botão de curso
+
   const cursos = [
     { nome: "Yuji Kamada", rank: "1º" },
     { nome: "Raphael Lima", rank: "2º" },
@@ -63,18 +74,88 @@ export default function App() {
             <ButtonCursoRankNun>
               <ButtonText>{curso.rank}</ButtonText>
             </ButtonCursoRankNun>
-            <ButtonCurso onPress={botaoteste} underlayColor={colors.primaria}>
+            <ButtonCurso
+              onPress={() => botaoteste(curso)}
+              underlayColor={colors.primaria}
+            >
               <View style={{ flexDirection: "row", alignItems: "center" }}>
                 <IconImage
                   source={require("../../../Components/img/IconeUsuario.png")}
                 />
-
                 <ButtonText>{curso.nome}</ButtonText>
               </View>
             </ButtonCurso>
           </ButtonCursoTudo>
         ))}
       </ScrollViewTudo>
+
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={closeModal}
+      >
+        <TouchableWithoutFeedback
+          onPress={() => setModalVisible(!modalVisible)}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <IconImage
+                source={require("../../../Components/img/IconeUsuario.png")}
+              />
+              <ButtonTextTitulo>{selectedCurso?.rank}</ButtonTextTitulo>
+              <ButtonTextTitulo>{selectedCurso?.nome}</ButtonTextTitulo>
+              <ButtonModal
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => {
+                  closeModal(); // Chama a função Material
+                  setModalVisible(!modalVisible); // Fecha o modal
+                }}
+              >
+                <Text style={styles.textStyle}>Enviar Pedido de Amizade</Text>
+              </ButtonModal>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </Modal>
     </Container>
   );
 }
+
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: colors.fundo,
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2
+  },
+
+  buttonClose: {
+    backgroundColor: colors.primaria
+  },
+  textStyle: {
+    color: colors.textoBranco,
+    fontWeight: "bold",
+    textAlign: "center"
+  }
+});

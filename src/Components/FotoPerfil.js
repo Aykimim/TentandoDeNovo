@@ -21,7 +21,7 @@ function navigateConfig() {
            <Image source={source} style={styles.perfil}/>
         </View>
         <View style={styles.row2}>
-           <Text style={styles.userName}>{'Fulano'}</Text>
+           <Text style={styles.userName}>{'Adam Levi'}</Text>
            <Text style={styles.userName}>{'Nível: ' + playerLevel}</Text>
            <Progress.Bar progress={0.3} width={100} color={'white'} />
            <Text style={styles.userName}>{progressionLevel}</Text>

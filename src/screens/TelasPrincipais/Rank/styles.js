@@ -1,5 +1,30 @@
 import styled from "styled-components/native";
 import { colors } from "../../../Components/Theme";
+export const ButtonModal = styled.TouchableHighlight`
+  color: ${colors.textoPreto};
+  font-size: 15px;
+  text-align: center;
+  border-Radius: 20px;
+  padding: 5%;
+  elevation: 2;
+  margin-top: 10px;
+`;
+
+export const ButtonTextTitulo = styled.Text`
+  color: ${colors.textoPreto};
+  font-size: 20px;
+  text-align: center;
+
+  font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
+`;
+export const ButtonTextSubTitulo  = styled.Text`
+margin-top: 10px;
+  color: ${colors.textoPreto};
+  font-size: 15px;
+  text-align: center;
+  
+  /* Adicione esta linha para tornar o texto em negrito */
+`;
 export const Container = styled.SafeAreaView`
   flex: 1;
   background-color:${colors.fundo};
