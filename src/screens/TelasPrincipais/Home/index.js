@@ -179,7 +179,7 @@ export default function App() {
   return (
     <ContainerTudo>
       <Modal
-        animationType="slide"
+        animationType="fate"
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {

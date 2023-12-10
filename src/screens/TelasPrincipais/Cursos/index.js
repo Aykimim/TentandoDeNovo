@@ -19,8 +19,7 @@ import {
   ButtonCurso,
   IconImage,
   ButtonText,
-  IconeView,
-
+  IconeView
 } from "./styles";
 
 //components
@@ -95,7 +94,7 @@ const CoursesPage = () => {
     // navigation.navigate("Cursos");
     navigation.reset({
       index: 0,
-      routes: [{ name: "MainTab" }]//,screen
+      routes: [{ name: "MainTab" }] //,screen
     });
   }
 
@@ -103,7 +102,7 @@ const CoursesPage = () => {
     {
       nome: "Empreendedorismo",
       progress: 75,
-      
+
       svgIcon: <Icon name="briefcase" size={30} color={colors.icone} />
     },
     {
@@ -126,14 +125,34 @@ const CoursesPage = () => {
     {
       nome: "Planejamento",
       progress: 90,
-      svgIcon: (
-        <Icon
-          
-          name="clipboard"
-          size={30}
-          color={colors.icone}
-        />
-      )
+      svgIcon: <Icon name="clipboard" size={30} color={colors.icone} />
+    },
+
+    {
+      nome: "Inovação Tecnológica",
+      progress: 80,
+      svgIcon: <Icon name="cogs" size={30} color={colors.icone} />
+    },
+    {
+      nome: "Sustentabilidade",
+      progress: 30,
+      svgIcon: <Icon name="leaf" size={30} color={colors.icone} />
+    },
+
+    {
+      nome: "Comunicação Eficaz",
+      progress: 55,
+      svgIcon: <Icon name="comment" size={30} color={colors.icone} />
+    },
+    {
+      nome: "Desenvolvimento de Equipe",
+      progress: 70,
+      svgIcon: <Icon name="users" size={30} color={colors.icone} />
+    },
+    {
+      nome: "Inteligência Emocional",
+      progress: 45,
+      svgIcon: <Icon name="heart" size={30} color={colors.icone} />
     },
 
     {
@@ -147,11 +166,7 @@ const CoursesPage = () => {
       <ScreenNameHeader headerName="Cursos" />
       <ScrollView>
         {cursos.map((curso, index) => (
-          <CourseItem
-            key={index}
-            course={curso}
-            onPressNavigate={Trilha}
-          />
+          <CourseItem key={index} course={curso} onPressNavigate={Trilha} />
         ))}
       </ScrollView>
     </Container>
