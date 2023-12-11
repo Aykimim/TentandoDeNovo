@@ -169,8 +169,6 @@ export const ButtonModal = styled.TouchableHighlight`
   padding: 5%;
   elevation: 2;
   margin-top: 10px;
-  width: 60%;
-  max-width: 150px;
 `;
 
 export const ButtonTextTopo = styled.Text`
