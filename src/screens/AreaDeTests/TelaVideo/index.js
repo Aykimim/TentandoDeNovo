@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { TouchableOpacity, Text, View } from "react-native";
-import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import {
   ChangeableButtonContainer,
@@ -11,12 +9,14 @@ import {
   CustomButton,
   ButtonText,
   ContainerPai,
-  ButtonTextTopo
+  ButtonTextTopo,
+  ContainerVideo
 } from "./styles";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { Header } from "react-native-elements";
 import { colors } from "../../../Components/Theme";
-
+import { View } from "react-native";
+import YoutubeIframe from "react-native-youtube-iframe";
 function MyCustomLeftComponent() {
   const navigation = useNavigation();
 
@@ -26,7 +26,7 @@ function MyCustomLeftComponent() {
 
   return (
     <ButtonText onPress={navigateToVoltar}>
-      <Icon name="arrow-left" size={20} color={colors.branco}/>
+      <Icon name="arrow-left" size={20} color={colors.branco} />
     </ButtonText>
   );
 }
@@ -46,11 +46,6 @@ function MyCustomRightComponent() {
 export default function App() {
   const navigation = useNavigation();
 
-
-
-
-
-
   const [isSquare, setIsSquare] = useState(true);
 
   const handlePress = () => {
@@ -65,15 +60,19 @@ export default function App() {
         centerComponent={<MyCustomCenterComponent />}
         rightComponent={<MyCustomRightComponent />}
       />
+       <ContainerVideo>
+          <YoutubeIframe videoId="ryISEgXkCac" height={500} width={500} />
+        </ContainerVideo>
 
-
-
-
-      <ChangeableButtonContainer>
+      {/* <ChangeableButtonContainer>
+ 
+        
         <ChangeableButton isSquare={isSquare} onPress={handlePress}>
           <ChangeableButtonText>Dedo no Cu é gritaria</ChangeableButtonText>
         </ChangeableButton>
-      </ChangeableButtonContainer>
+      </ChangeableButtonContainer> */}
+
+
     </Container>
   );
 }

@@ -10,22 +10,26 @@ import Home from "../screens/TelasPrincipais/Home";
 import Rank from "../screens/TelasPrincipais/Rank";
 import Cursos from "../screens/TelasPrincipais/Cursos";
 import Perfil from "../screens/TelasPrincipais/Perfil";
-
+// position= "absolute"
 const Tab = createBottomTabNavigator();
 const CustomIcon = ({ color, size, isActive, iconName }) => (
   <View style={{ alignItems: 'center' }}>
     {isActive && (
+      
       <Svg width={size} height={size} viewBox="0 0 102 102" fill="none">
+          <Icon  name={iconName} size={size} color={color} />
         <Path
           d="M76 1H26C12.1929 1 1 12.1929 1 26V76C1 89.8071 12.1929 101 26 101H76C89.8071 101 101 89.8071 101 76V26C101 12.1929 89.8071 1 76 1Z"
           stroke={color}
           strokeWidth="5"
+          
         />
         {/* Adicione mais elementos Path aqui conforme necessário */}
-        <Icon name={iconName} size={size} color={color} />
+      
       </Svg>
     )}
     {!isActive && <Icon name={iconName} size={size} color={color} />}
+    
   </View>
 );
 
@@ -54,7 +58,8 @@ export default () => (
       tabBarStyle: {
         backgroundColor: colors.fundo,
         paddingBottom: 5,
-        height: 52
+        height: 52,
+        
       }
     })}
   >

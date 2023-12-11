@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components/native";
-
 import { colors } from "../../../Components/Theme";
 
+export const VIDEO_HEIGHT = styled.SafeAreaView`
+  width: 100px;
+  height: 100px;
+`;
 
 export const ChangeableButtonContainer = styled.View`
   align-items: center;
@@ -19,14 +22,18 @@ export const ChangeableButton = styled.TouchableOpacity`
 export const ChangeableButtonText = styled.Text`
   color: ${colors.textoBranco};
   font-weight: bold;
-
-
 `;
 
 export const ContainerPai = styled.SafeAreaView`
   background-color: ${colors.fundo};
 `;
 
+export const ContainerVideo = styled.SafeAreaView`
+
+
+
+  align-items: center;
+`;
 export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: ${colors.fundo};
@@ -43,9 +50,11 @@ export const Textentrada = styled.TextInput`
   justify-content: center;
   align-items: center;
   color: ${colors.textoPreto};
-  background-color: ${({ isPressed }) => (isPressed ? colors.textoPreto : colors.secundaria)};
+  background-color: ${({ isPressed }) =>
+    isPressed ? colors.textoPreto : colors.secundaria};
   border-width: ${({ isPressed }) => (isPressed ? "0px" : "2px")};
-  border-color: ${({ isPressed }) => (isPressed ? colors.textoPreto : colors.primaria)};
+  border-color: ${({ isPressed }) =>
+    isPressed ? colors.textoPreto : colors.primaria};
 
   border-radius: 20px;
   margin-top: 20px;

@@ -48,7 +48,7 @@ export default function App() {
   }
 
   function navigateTest2() {
-    navigation.navigate("PerguntaTres");
+    navigation.navigate("TelaVideo");
   }
   function navigateToPerguntas() {
     navigation.navigate("Perguntas");
