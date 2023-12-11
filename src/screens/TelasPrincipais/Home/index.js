@@ -11,9 +11,12 @@ import {
   StyleSheet,
   TouchableWithoutFeedback
 } from "react-native";
+
 import Svg, { Circle, Path, Line } from "react-native-svg";
 import styled from "styled-components/native";
 import { colors } from "../../../Components/Theme";
+import rodaCarregamento from '../../../Components/CirculoProgresso';
+
 import EggWithSpot from '../../../Components/EggWithSpot';
 import {
   ButtonTextTitulo,

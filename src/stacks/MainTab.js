@@ -14,26 +14,17 @@ import Perfil from "../screens/TelasPrincipais/Perfil";
 const Tab = createBottomTabNavigator();
 const CustomIcon = ({ color, size, isActive, iconName }) => (
   <View style={{ alignItems: 'center' }}>
-    {isActive && (
-      
-      <Svg width={size} height={size} viewBox="0 0 102 102" fill="none">
-          <Icon  name={iconName} size={size} color={color} />
-        <Path
-          d="M76 1H26C12.1929 1 1 12.1929 1 26V76C1 89.8071 12.1929 101 26 101H76C89.8071 101 101 89.8071 101 76V26C101 12.1929 89.8071 1 76 1Z"
-          stroke={color}
-          strokeWidth="5"
-          
-        />
-        {/* Adicione mais elementos Path aqui conforme necessário */}
-      
-      </Svg>
-    )}
-    {!isActive && <Icon name={iconName} size={size} color={color} />}
-    
+ <Icon name={iconName} size={size} color={color} />
   </View>
 );
-
-
+    // <Svg width={25} height={size} viewBox="0 0 100 100" fill="none">
+     
+    //   {/* <Path
+    //     d="M76 1H26C12.1929 1 1 12.1929 1 26V76C1 89.8071 12.1929 101 26 101H76C89.8071 101 101 89.8071 101 76V26C101 12.1929 89.8071 1 76 1Z"
+    //     stroke={color}
+    //     strokeWidth="5"
+    //   /> */}
+    // </Svg>
 export default () => (
   <Tab.Navigator
     screenOptions={({ route }) => ({
@@ -51,15 +42,17 @@ export default () => (
           iconName = "user";
         }
 
-        return <CustomIcon iconName={iconName} size={size} color={color} isActive={focused} />;
+        // Define o tamanho do ícone com base no foco
+        const iconSize = focused ? size : size * 0.9;
+
+        return <CustomIcon iconName={iconName} size={iconSize} color={color} isActive={focused} />;
       },
       tabBarActiveTintColor: colors.primaria,
-      tabBarInactiveTintColor: colors.primaria,
+      tabBarInactiveTintColor: colors.cinza,
       tabBarStyle: {
         backgroundColor: colors.fundo,
         paddingBottom: 5,
-        height: 52,
-        
+        height: 55,
       }
     })}
   >

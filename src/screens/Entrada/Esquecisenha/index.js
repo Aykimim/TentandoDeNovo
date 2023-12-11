@@ -4,7 +4,8 @@ import { StatusBar } from "expo-status-bar";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { Container, SendButton, SendButtontext, StyledInput,TextEscrita,ContainerMenor,ButtonText,SetaVoltar } from "./styles";
 import { colors } from "../../../Components/Theme";
-
+import Carregando from '../../../Components/Carregando';
+import RodaCarregamento from '../../../Components/CirculoProgresso';
 import Icon from "react-native-vector-icons/FontAwesome";
 
 
@@ -30,9 +31,11 @@ export default function App() {
 
   return (
     <Container>
+      {/* <Carregando/> */}
+      
       <ContainerMenor>
       <SetaVoltar onPress={navigateToVoltar}>
-      <Icon name="arrow-left" size={30} color="#fff" />
+      <Icon name="arrow-left" size={30} color={colors.icone} />
     </SetaVoltar>
 
       <TextEscrita style={{ flex: 0 }}>

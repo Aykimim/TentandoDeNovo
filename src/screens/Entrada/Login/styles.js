@@ -45,9 +45,11 @@ export const TextEscrita = styled.Text`
 export const SendButtontextBorda = styled.TouchableHighlight`
   border-radius: 20px;
   background-color: ${colors.primaria};
-  margin-top: 25px;
+  margin-top: 10%;
+  margin-bottom: 15%;
   padding: 1px;
-  color: ${colors.textoPreto};
+
+  color: ${colors.secundaria};
 `;
 export const SendButton = styled.Text`
   font-size: 25px;

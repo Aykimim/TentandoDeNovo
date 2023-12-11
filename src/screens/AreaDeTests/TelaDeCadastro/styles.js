@@ -10,7 +10,7 @@ export const ChangeableButtonContainer = styled.View`
 `;
 
 export const ChangeableButton = styled.TouchableOpacity`
-  background-color: ${({ isSquare }) => (isSquare ? "#3498db" : "#e74c3c")};
+  background-color: ${({ isSquare }) => (isSquare ? colors.primaria : colors.secundaria )};
   padding: 15px;
   border-radius: ${({ isSquare }) => (isSquare ? "5px" : "50px")};
   margin-top: 20px;

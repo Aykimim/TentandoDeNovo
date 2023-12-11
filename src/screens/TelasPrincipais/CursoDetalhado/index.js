@@ -74,8 +74,8 @@ export default function App() {
   function navigateToPerguntasDois() {
     navigation.navigate("PerguntaDois");
   }
-  function navigateToPerguntasTres() {
-    navigation.navigate("PerguntaTres");
+  function PlanoPago() {
+    alert("Sem plano pago", "Você precisa de um plano pago para acessar esta funcionalidade.");
   }
   const [modalVisible, setModalVisible] = useState(false);
   function Material(tela) {
@@ -191,7 +191,7 @@ export default function App() {
 
         <ButtonCurso
           key="3"
-          onPress={() => navigateToVoltar()}
+          onPress={() => PlanoPago()}
           underlayColor={colors.secundaria}
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>

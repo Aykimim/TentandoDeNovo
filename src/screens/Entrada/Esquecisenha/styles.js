@@ -52,16 +52,21 @@ export const Text = styled.Text`
 
 
 export const StyledInput = styled.TextInput`
-  font-size: 20px;
-  width: 80%;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  padding-horizontal: 25%;
-  color: ${colors.textoPreto};
-  background-color:${colors.primaria};
-  border-radius: 50px;
-  margin-top: 20px;
+font-size: 20px;
+width: 80%;
+text-align: left;
+justify-content: center;
+align-items: center;
+color: ${colors.textoPreto};
+background-color: ${({ isPressed }) => (isPressed ? colors.textoPreto : colors.secundaria)};
+border-width: ${({ isPressed }) => (isPressed ? "0px" : "2px")};
+border-color: ${({ isPressed }) => (isPressed ? colors.textoPreto : colors.primaria)};
+
+border-radius: 20px;
+margin-top: 20px;
+margin-right: 5px;
+padding-left: 10px;
+padding: 10px;
 `;
 
 

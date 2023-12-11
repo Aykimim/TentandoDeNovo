@@ -18,7 +18,8 @@ export const colors = {
   barraDeProgressoRedondaTexto: "#fff",
   tarefaFeita: "#f2ce57",
   tarefaNaoFeita: "#f2e3b6",
-  icone: "#000"
+  icone: "#000",
+  cinza: "#707070"
 };
 //darkTheme
 export const colors2 = {
@@ -36,8 +37,9 @@ export const colors2 = {
     barraDeProgressoRedondaTexto: "#121212",
     tarefaFeita: "#754a00",
     tarefaNaoFeita: "#594e34",
-    icone: "#EAE8E9"
-  
+    icone: "#EAE8E9",
+   
+  cinza: "#707070"
 };
 //blueTheme
 export const colors3 = {
@@ -73,6 +75,41 @@ export const colors4 = {
     barraDeProgressoRedondaTexto: "#fff",
     tarefaFeita: "#E16539",
     tarefaNaoFeita: "#303030",
-    icone: "#000"
-
+    icone: "#000",
+    cinza: "#707070"
 };
+export const colors5 = {
+    primaria: "#8A2BE2",      // Roxo
+    secundaria: "#FFFFFF",    // Branco
+    fundo: "#EAE8E9",
+    textoBranco: "#EAE8E9",
+    textoPreto: "#1C191A",
+    branco: "#fff",
+    trilha: "#000",
+    barraDeProgresso: "#8A2BE2",  // Roxo
+    transparent: "#EAE8E9",
+    barraDeProgressoRedonda: "#fff",
+    barraDeProgressoRedondaTexto: "#fff",
+    tarefaFeita: "#8A2BE2",        // Roxo
+    tarefaNaoFeita: "#FFFFFF",     // Branco
+    icone: "#000",
+    cinza: "#707070"
+  };
+  export const colors6 = {
+    primaria: "#A35FD4",      // Tom mais claro de roxo
+    secundaria: "#FFFFFF",    // Branco
+    fundo: "#F2F0F1",         // Tom mais claro para o fundo
+    textoBranco: "#FFFFFF",    // Branco
+    textoPreto: "#1C191A",
+    branco: "#fff",
+    trilha: "#000",
+    barraDeProgresso: "#A35FD4",  // Tom mais claro de roxo
+    transparent: "#F2F0F1",       // Tom mais claro para o fundo
+    barraDeProgressoRedonda: "#fff",
+    barraDeProgressoRedondaTexto: "#fff",
+    tarefaFeita: "#A35FD4",        // Tom mais claro de roxo
+    tarefaNaoFeita: "#FFFFFF",     // Branco
+    icone: "#000",
+    cinza: "#707070"
+  };
+  

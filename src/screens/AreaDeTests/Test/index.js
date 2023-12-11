@@ -1,50 +1,50 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import React from "react";
+import { StyleSheet, View, Text } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
-  withDecay,
-} from 'react-native-reanimated';
+  withSpring,
+  withTiming
+} from "react-native-reanimated";
 import {
   Gesture,
   GestureDetector,
-  GestureHandlerRootView,
-} from 'react-native-gesture-handler';
-
-const SIZE = 120;
+  GestureHandlerRootView
+} from "react-native-gesture-handler";
+import Svg, { Circle, Path, Line } from "react-native-svg";
+import { colors } from "../../../Components/Theme";
 
 export default function App() {
+  const pressed = useSharedValue(false);
   const offset = useSharedValue(0);
-  const width = useSharedValue(0);
-
-  const onLayout = (event) => {
-    width.value = event.nativeEvent.layout.width;
-  };
 
   const pan = Gesture.Pan()
-    .onChange((event) => {
-      // highlight-next-line
-      offset.value += event.changeX;
+    .onBegin(() => {
+      pressed.value = true;
     })
-    .onFinalize((event) => {
-      // highlight-start
-      offset.value = withDecay({
-        velocity: event.velocityX,
-        rubberBandEffect: true,
-        clamp: [-(width.value / 2) + SIZE / 2, width.value / 2 - SIZE / 2],
-      });
-      // highlight-end
+    .onChange((event) => {
+      offset.value = event.translationX;
+    })
+    .onFinalize(() => {
+      offset.value = withSpring(0);
+      pressed.value = false;
     });
 
   const animatedStyles = useAnimatedStyle(() => ({
-    transform: [{ translateX: offset.value }],
+    transform: [
+      { translateX: offset.value },
+      { scale: withTiming(pressed.value ? 1.2 : 1) }
+    ],
+    backgroundColor: pressed.value ? "#FFE04B" : "#b58df1"
   }));
 
   return (
     <GestureHandlerRootView style={styles.container}>
-      <View onLayout={onLayout} style={styles.wrapper}>
+      <View style={styles.container}>
         <GestureDetector gesture={pan}>
-          <Animated.View style={[styles.box, animatedStyles]} />
+          <Animated.View style={[styles.circle, animatedStyles]}>
+            <Text style={styles.text}>Hello</Text>
+          </Animated.View>
         </GestureDetector>
       </View>
     </GestureHandlerRootView>
@@ -54,23 +54,22 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100%',
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%"
   },
-  wrapper: {
-    flex: 1,
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
+  circle: {
+    height: 120,
+    width: 120,
+    backgroundColor: "#b58df1",
+    borderRadius: 500,
+    cursor: "grab",
+    alignItems: "center",
+    justifyContent: "center"
   },
-  box: {
-    height: SIZE,
-    width: SIZE,
-    backgroundColor: '#b58df1',
-    borderRadius: 20,
-    cursor: 'grab',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  text: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold"
+  }
 });

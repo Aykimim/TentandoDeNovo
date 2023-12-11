@@ -48,7 +48,7 @@ export default function App() {
   const [isPressed, setIsPressed] = useState(false);
 
   function goToNextScreen(tela) {
-    navigation.navigate(tela);
+    
   }
 
   const handleText = () => {
@@ -59,6 +59,7 @@ export default function App() {
 
   const handlePress = () => {
     setIsSquare((prev) => !prev);
+    navigation.navigate("Login");
   };
 
   return (
@@ -80,15 +81,12 @@ export default function App() {
       <Textentrada placeholder="Senha" secureTextEntry={true} />
       <Textentrada placeholder="Confirma Senha" secureTextEntry={true} />
 
-      <CustomButton onPress={() => goToNextScreen("Login")}>
-        <ButtonText>Cadastrar</ButtonText>
-      </CustomButton>
-
       <ChangeableButtonContainer>
         <ChangeableButton isSquare={isSquare} onPress={handlePress}>
-          <ChangeableButtonText>Clique</ChangeableButtonText>
+          <ChangeableButtonText>Cadastrar</ChangeableButtonText>
         </ChangeableButton>
       </ChangeableButtonContainer>
     </Container>
   );
 }
+// onPress={() => goToNextScreen("Login")}
