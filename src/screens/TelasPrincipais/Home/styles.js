@@ -114,6 +114,7 @@ export const ButtonCursoComeco = styled.TouchableHighlight`
   border-radius: 20px;
   margin-left: 5%;
   margin-right: 5%;
+  margin-top: 3%;
   padding: 2%;
   margin-bottom: 100px;
   shadow-color: ${colors.textoPreto};
