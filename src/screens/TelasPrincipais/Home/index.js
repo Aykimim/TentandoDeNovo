@@ -61,8 +61,8 @@ import ScreenNameHeader from "../../../Components/ScreenNameHeader";
 export default function App() {
   const navigation = useNavigation();
 
-  function Material() {
-    navigation.navigate("CursoDetalhado");
+  function Material(tela) {
+    navigation.navigate(tela);
   }
 
   const Stack = createStackNavigator();
@@ -181,13 +181,9 @@ export default function App() {
     <ContainerTudo>
       
       <Modal
-        animationType="fate"
+        animationType="fade"
         transparent={true}
         visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
-        }}
       >
         <TouchableWithoutFeedback
           onPress={() => setModalVisible(!modalVisible)}
@@ -201,11 +197,20 @@ export default function App() {
               <ButtonModal
                 style={[styles.button, styles.buttonClose]}
                 onPress={() => {
-                  Material(); // Chama a função Material
+                  Material("CursoDetalhado"); // Chama a função Material
                   setModalVisible(!modalVisible); // Fecha o modal
                 }}
               >
                 <Text style={styles.textStyle}>COMEÇAR A APRENDER</Text>
+              </ButtonModal>
+              <ButtonModal
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => {
+                  Material("TelaVideo"); // Chama a função Material
+                  setModalVisible(!modalVisible); // Fecha o modal
+                }}
+              >
+                <Text style={styles.textStyle}>Vídeo Explicativo</Text>
               </ButtonModal>
             </View>
           </View>

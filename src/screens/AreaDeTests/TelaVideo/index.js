@@ -16,6 +16,7 @@ import {
 import Icon from "react-native-vector-icons/FontAwesome";
 import { Header } from "react-native-elements";
 import { colors } from "../../../Components/Theme";
+import VideoPlayer from "../../../Components/VideoPlayer";
 
 function MyCustomLeftComponent() {
   const navigation = useNavigation();
@@ -66,14 +67,8 @@ export default function App() {
         rightComponent={<MyCustomRightComponent />}
       />
 
+      <VideoPlayer></VideoPlayer>
 
-
-
-      <ChangeableButtonContainer>
-        <ChangeableButton isSquare={isSquare} onPress={handlePress}>
-          <ChangeableButtonText>Dedo no Cu é gritaria</ChangeableButtonText>
-        </ChangeableButton>
-      </ChangeableButtonContainer>
     </Container>
   );
 }
