@@ -9,7 +9,10 @@ border-width: 1px;
   margin: 5px;
   align-items: center;
 `;
-
+export const ButtonTexticone = styled.Text`
+  color: ${colors.textoPreto};
+ 
+`;
 export const ButtonConfirmar = styled.TouchableHighlight`
   background-color: ${({ mostrarBotao }) =>
     mostrarBotao ? colors.secundaria : colors.primaria};

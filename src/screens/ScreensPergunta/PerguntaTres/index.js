@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { View, Modal,  StyleSheet,TouchableWithoutFeedback } from "react-native";
+import {
+  View,
+  Modal,
+  StyleSheet,
+  TouchableWithoutFeedback
+} from "react-native";
 import { Header } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -17,10 +22,10 @@ import {
   ButtonTextConfirmar,
   ContainerQuestao,
   ButtonModal,
-  
-  ButtonTextSubTitulo,
+  ButtonTexticone,
+  ButtonTextSubTitulo
 } from "./styles";
-import EggWithSpot from '../../../Components/EggWithSpot';
+import EggWithSpot from "../../../Components/EggWithSpot";
 function MyCustomLeftComponent() {
   const navigation = useNavigation();
 
@@ -49,7 +54,18 @@ function MyCustomCenterComponent() {
 }
 
 function MyCustomRightComponent() {
-  return <ButtonText></ButtonText>;
+  return (
+    <View
+      style={{
+        position: "absolute",
+        flexDirection: "row",
+        alignItems: "center"
+      }}
+    >
+      <Icon name="heart" size={20} color={colors.textoBranco} />
+      <ButtonTexticone style={{ marginLeft: 5 }}>5</ButtonTexticone>
+    </View>
+  );
 }
 
 export default function App() {
@@ -57,7 +73,7 @@ export default function App() {
   const [respostaSelecionada, setRespostaSelecionada] = useState(null);
 
   const [modalVisible, setModalVisible] = useState(false);
- 
+
   function Material() {
     // navigation.navigate("Cursos");
     navigation.reset({
@@ -66,12 +82,10 @@ export default function App() {
     });
   }
   function botaoteste(curso) {
-   
     setModalVisible(true);
   }
 
   function closeModal() {
-    
     setModalVisible(false);
   }
 
@@ -99,7 +113,12 @@ export default function App() {
       />
       <ContainerQuestao>
         <ButtonTextPergunta>
-        O empreendedorismo sustentável busca não apenas o sucesso financeiro a curto prazo, mas também a criação de valor a longo prazo para a sociedade e o meio ambiente. Entre as estratégias inovadoras destacadas, qual delas envolve a transição de um modelo linear para uma abordagem mais sustentável, promovendo a reutilização e reciclagem para reduzir o desperdício e minimizar o impacto ambiental?
+          O empreendedorismo sustentável busca não apenas o sucesso financeiro a
+          curto prazo, mas também a criação de valor a longo prazo para a
+          sociedade e o meio ambiente. Entre as estratégias inovadoras
+          destacadas, qual delas envolve a transição de um modelo linear para
+          uma abordagem mais sustentável, promovendo a reutilização e reciclagem
+          para reduzir o desperdício e minimizar o impacto ambiental?
         </ButtonTextPergunta>
         <ContainerPerguntas>
           <ButtonText
@@ -170,34 +189,34 @@ export default function App() {
         >
           <ButtonTextConfirmar>Prosseguir</ButtonTextConfirmar>
         </ButtonConfirmar>
-    
       </ContainerQuestao>
       <Modal
         animationType="slide"
-        transparent={false}
+        transparent={true}
         visible={modalVisible}
         onRequestClose={closeModal}
       >
-        <TouchableWithoutFeedback
+        {/* <TouchableWithoutFeedback
           onPress={() => setModalVisible(!modalVisible)}
-        >
-          <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-            <EggWithSpot />
-              <ButtonTextTitulo>Parabéns</ButtonTextTitulo>
-              <ButtonTextTitulo>Você acertou todas as questões</ButtonTextTitulo>
-              <ButtonModal
-                style={[styles.button, styles.buttonClose]}
-                onPress={() => {
-                  Material(); // Chama a função Material
-                  setModalVisible(!modalVisible); // Fecha o modal
-                }}
-              >
-                <ButtonTextTitulo style={styles.textStyle}>Finalizar</ButtonTextTitulo>
-              </ButtonModal>
-            </View>
+        > */}
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <ButtonTextTitulo>Parabéns</ButtonTextTitulo>
+            <ButtonTextTitulo>Você acertou todas as questões</ButtonTextTitulo>
+            <ButtonModal
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => {
+                Material(); // Chama a função Material
+                setModalVisible(!modalVisible); // Fecha o modal
+              }}
+            >
+              <ButtonTextTitulo style={styles.textStyle}>
+                Finalizar
+              </ButtonTextTitulo>
+            </ButtonModal>
           </View>
-        </TouchableWithoutFeedback>
+        </View>
+        {/* </TouchableWithoutFeedback> */}
       </Modal>
     </Container>
   );

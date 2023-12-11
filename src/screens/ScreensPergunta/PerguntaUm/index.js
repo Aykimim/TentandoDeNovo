@@ -14,7 +14,8 @@ import {
   ButtonTextTitulo,
   ButtonConfirmar,
   ButtonTextConfirmar,
-  ContainerQuestao
+  ContainerQuestao,
+  ButtonTexticone
 } from "./styles";
 
 function MyCustomLeftComponent() {
@@ -45,7 +46,18 @@ function MyCustomCenterComponent() {
 }
 
 function MyCustomRightComponent() {
-  return <ButtonText></ButtonText>;
+  return (
+    <View
+      style={{
+        position: "absolute",
+        flexDirection: "row",
+        alignItems: "center"
+      }}
+    >
+      <Icon name="heart" size={20} color={colors.textoBranco} />
+      <ButtonTexticone style={{ marginLeft: 5 }}>5</ButtonTexticone>
+    </View>
+  );
 }
 
 export default function App() {
@@ -148,7 +160,6 @@ export default function App() {
         >
           <ButtonTextConfirmar>Prosseguir</ButtonTextConfirmar>
         </ButtonConfirmar>
-    
       </ContainerQuestao>
     </Container>
   );

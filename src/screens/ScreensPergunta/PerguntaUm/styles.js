@@ -28,6 +28,12 @@ export const ButtonTextConfirmar = styled.Text`
 
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
 `;
+
+
+export const ButtonTexticone = styled.Text`
+  color: ${colors.textoPreto};
+ 
+`;
 export const ButtonText = styled.Text`
   color: ${colors.textoPreto};
   font-size: 12px;

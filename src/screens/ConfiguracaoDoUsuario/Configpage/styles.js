@@ -19,7 +19,7 @@ export const ButtonText = styled.Text`
   flex: 1; /* Isso faz o texto ocupar todo o espaço vertical */
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
   position: relative; /* Adicione esta linha para tornar o position relativo */
-  `;
+`;
 
 export const IconImage = styled.Image`
   max-width: 50px;
@@ -28,10 +28,6 @@ export const IconImage = styled.Image`
   top: 0;
   left: 0;
 `;
-
-
-
-
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -64,19 +60,16 @@ export const CampoNome = styled.Text`
   color: ${colors.textoPreto};
 `;
 
-
-
 export const Text = styled.Text`
   color: ${colors.textoPreto};
   font-size: 20px;
   font-weight: bold;
-  
 `;
 
 export const TextEscrita = styled.Text`
   font-size: 15px;
   text-align: center;
-  color:${colors.textoPreto};
+  color: ${colors.textoPreto};
   margin-top: 20px;
 `;
 

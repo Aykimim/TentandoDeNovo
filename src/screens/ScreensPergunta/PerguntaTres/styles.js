@@ -9,7 +9,10 @@ export const ButtonModal = styled.TouchableHighlight`
   elevation: 2;
   margin-top: 10px;
 `;
-
+export const ButtonTexticone = styled.Text`
+  color: ${colors.textoPreto};
+ 
+`;
 export const ButtonTextTitulo = styled.Text`
   color: ${colors.textoPreto};
   font-size: 20px;

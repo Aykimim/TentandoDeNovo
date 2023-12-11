@@ -2,42 +2,30 @@ import styled from "styled-components/native";
 import { colors } from "../../../Components/Theme";
 import Svg, { Line, Path } from "react-native-svg";
 
-
-export const centeredView  = styled.View`
+export const centeredView = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
   margin-top: 22px;
 `;
 
-export const modalView = styled.View`
-
-`;
-  // margin: 20px;
-  // background-color: white;
-  // border-radius: 20px;
-  // padding: 35px;
-  // align-items: center;
-  // shadow-color: #000;
-  // shadow-offset: {
-  //   width: 0,
-  //   height: 2,
-  // };
-  // shadow-opacity: 0.25;
-  // shadow-radius: 4px;
-  // elevation: 5;
-
-
-
-
-
-
-
-
+export const modalView = styled.View``;
+// margin: 20px;
+// background-color: white;
+// border-radius: 20px;
+// padding: 35px;
+// align-items: center;
+// shadow-color: #000;
+// shadow-offset: {
+//   width: 0,
+//   height: 2,
+// };
+// shadow-opacity: 0.25;
+// shadow-radius: 4px;
+// elevation: 5;
 
 export const CheckIcon = styled(Svg)`
   position: absolute;
-
 `;
 export const ProgressoRedondo = styled.View``;
 export const ContainerFilho = styled.SafeAreaView`
@@ -57,21 +45,20 @@ export const ScrollViewTudo = styled.ScrollView``;
 
 export const ButtonCursoMeio = styled.TouchableHighlight`
   align-items: center;
-  
+
   width: 100px;
   height: 100px;
   border-radius: 25px;
   justify-content: center;
   flex-direction: row; /* Add this line to allow flexDirection in children */
   margin-top: -50px; /* ajuste conforme necessário */
-  
+
   shadow-color: ${colors.textoPreto};
   shadow-offset: 1px;
   shadow-opacity: 0.25;
 
   elevation: 10;
 `;
-
 
 // export const ButtonCursoMeia1 = styled.TouchableHighlight`
 //   align-items: center;
@@ -93,7 +80,7 @@ export const ButtonCursoMeio = styled.TouchableHighlight`
 
 export const ButtonCursoDireita = styled.TouchableHighlight`
   align-items: center;
-  
+
   width: 100px;
   height: 100px;
   border-radius: 25px;
@@ -108,7 +95,7 @@ export const ButtonCursoDireita = styled.TouchableHighlight`
 
 export const ButtonCursoEsquerda = styled.TouchableHighlight`
   align-items: center;
- 
+
   width: 100px;
   height: 100px;
   border-radius: 25px;
@@ -166,19 +153,19 @@ export const ButtonTextTitulo = styled.Text`
 
   font-weight: bold; /* Adicione esta linha para tornar o texto em negrito */
 `;
-export const ButtonTextSubTitulo  = styled.Text`
-margin-top: 10px;
+export const ButtonTextSubTitulo = styled.Text`
+  margin-top: 10px;
   color: ${colors.textoPreto};
   font-size: 15px;
   text-align: center;
-  
+
   /* Adicione esta linha para tornar o texto em negrito */
 `;
 export const ButtonModal = styled.TouchableHighlight`
   color: ${colors.textoPreto};
   font-size: 15px;
   text-align: center;
-  border-Radius: 20px;
+  border-radius: 20px;
   padding: 5%;
   elevation: 2;
   margin-top: 10px;
