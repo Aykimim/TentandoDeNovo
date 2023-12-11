@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import Svg, { Circle, Path, Line } from "react-native-svg";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import {
@@ -174,7 +174,14 @@ export default function App() {
           onPress={() => setModalVisible(true)}
           underlayColor={colors.secundaria}
         >
+          
           <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <Svg width="31" height="34" viewBox="0 0 21 24" fill="none">
+                  <Path
+                    d="M20.0037 10.2688C21.3373 11.0382 21.3378 12.9627 20.0047 13.7329L3.50738 23.2638C2.17427 24.034 0.507329 23.0722 0.506897 21.5326L0.50154 2.48004C0.501107 0.940443 2.1675 -0.022274 3.50105 0.747152L20.0037 10.2688Z"
+                    fill="black"
+                  />
+                </Svg>
             <ButtonText>Video Aula</ButtonText>
           </View>
         </ButtonCurso>
@@ -185,7 +192,7 @@ export default function App() {
           underlayColor={colors.secundaria}
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <ButtonText>Perguntas</ButtonText>
+            <ButtonText>Atividades</ButtonText>
           </View>
         </ButtonCurso>
 

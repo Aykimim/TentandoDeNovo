@@ -4,7 +4,7 @@
 //no codigo é assim color: color={colors.branco}
 //no Styles é assim color: ${colors.textoPreto};
 //rgba(255,255,255,0.0)
-export const colors = {
+export const colors1 = {
   primaria: "#f2ce57",
   secundaria: "#f2e3b6",
   fundo: "#EAE8E9",
@@ -95,7 +95,7 @@ export const colors5 = {
     icone: "#000",
     cinza: "#707070"
   };
-  export const colors6 = {
+  export const colors = {
     primaria: "#A35FD4",      // Tom mais claro de roxo
     secundaria: "#FFFFFF",    // Branco
     fundo: "#F2F0F1",         // Tom mais claro para o fundo

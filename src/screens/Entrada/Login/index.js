@@ -117,7 +117,7 @@ export default function App() {
     // Simula uma autenticação bem-sucedida
     // Substitua esta lógica pela sua lógica de autenticação real
     setTimeout(() => {
-      if (nomeUser === "" && senha === "") {
+      if (nomeUser === "Coxinha" && senha === "Coxinha") {
         setLoggedIn(true);
         navigateToHome();
       } else {
