@@ -25,21 +25,19 @@ export const ChangeableButtonText = styled.Text`
 `;
 
 export const ContainerPai = styled.SafeAreaView`
-  background-color: ${colors.fundo};
-`;
-
-export const ContainerVideo = styled.SafeAreaView`
-
-
-
-  align-items: center;
-`;
-export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: ${colors.fundo};
 
   align-items: center;
 `;
+
+export const ContainerVideo = styled.SafeAreaView`
+  align-items: center;
+  padding: 5%;
+  background-color: ${colors.primaria};
+`;
+export const Container = styled.SafeAreaView`
+padding: 5%;`;
 //justify-content: center;
 // padding-horizontal: 5%;
 // padding-vertical: 5%;

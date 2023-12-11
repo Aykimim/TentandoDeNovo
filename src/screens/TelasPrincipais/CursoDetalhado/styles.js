@@ -12,7 +12,20 @@ export const ButtonTextTitulo = styled.Text`
   font-weight: bold;
   
 `;
-
+export const ContainerVideo = styled.SafeAreaView`
+  align-items: center;
+  padding: 5%;
+  background-color: ${colors.primaria};
+`;
+export const ButtonModal = styled.TouchableHighlight`
+  color: ${colors.textoPreto};
+  font-size: 15px;
+  text-align: center;
+  border-radius: 20px;
+  padding: 5%;
+  elevation: 2;
+  margin-top: 10px;
+`;
 export const ButtonTextParagrafo = styled.Text`
   color: ${colors.textoPreto};
   font-size: 20px;

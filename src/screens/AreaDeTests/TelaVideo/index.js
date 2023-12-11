@@ -53,15 +53,19 @@ export default function App() {
   };
 
   return (
-    <Container>
-      <Header
+    <ContainerPai>
+       <Header
         backgroundColor={colors.primaria}
         leftComponent={<MyCustomLeftComponent />}
         centerComponent={<MyCustomCenterComponent />}
         rightComponent={<MyCustomRightComponent />}
       />
+    <Container>
+     
+
+
        <ContainerVideo>
-          <YoutubeIframe videoId="ryISEgXkCac" height={500} width={500} />
+          <YoutubeIframe videoId="ryISEgXkCac" height={200} width={300} />
         </ContainerVideo>
 
       {/* <ChangeableButtonContainer>
@@ -74,5 +78,6 @@ export default function App() {
 
 
     </Container>
+    </ContainerPai>
   );
 }

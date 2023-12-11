@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { ScrollView, TouchableOpacity, View, Image } from "react-native";
+import {
+  ScrollView,
+  TouchableOpacity,
+  View,
+  Image,
+  StyleSheet,
+  Modal,
+  TouchableWithoutFeedback
+} from "react-native";
 import { Header } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { colors } from "../../../Components/Theme";
+import YoutubeIframe from "react-native-youtube-iframe";
 import {
   TextEscrita,
   Container,
@@ -18,7 +28,9 @@ import {
   ButtonTextTitulo,
   ButtonTextParagrafo,
   ContainerTexto,
-  IconTopo
+  IconTopo,
+  ButtonModal,
+  ContainerVideo
 } from "./styles";
 
 function MyCustomLeftComponent() {
@@ -54,9 +66,7 @@ function MyCustomRightComponent() {
 export default function App() {
   const navigation = useNavigation();
 
-  function navigateToTelaVideo() {
-    navigation.navigate("TelaVideo");
-  }
+
 
   function navigateToPerguntasUm() {
     navigation.navigate("PerguntaUm");
@@ -67,9 +77,35 @@ export default function App() {
   function navigateToPerguntasTres() {
     navigation.navigate("PerguntaTres");
   }
-
+  const [modalVisible, setModalVisible] = useState(false);
+  function Material(tela) {
+    navigation.navigate(tela);
+  }
   return (
     <Container>
+      <Modal animationType="fade" transparent={true} visible={modalVisible}>
+        {/* <TouchableWithoutFeedback
+          onPress={() => setModalVisible(!modalVisible)}
+        > */}
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <ButtonTextTitulo>Empreendedorismo</ButtonTextTitulo>
+              <ContainerVideo>
+          <YoutubeIframe videoId="ryISEgXkCac" height={200} width={300} />
+        </ContainerVideo>
+              <ButtonModal
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => {
+                  Material("CursoDetalhado"); // Chama a função Material
+                  setModalVisible(!modalVisible); // Fecha o modal
+                }}
+              >
+                <ButtonTextTitulo>Fechar</ButtonTextTitulo>
+              </ButtonModal>
+            </View>
+          </View>
+        {/* </TouchableWithoutFeedback> */}
+      </Modal>
       <Header
         backgroundColor={colors.primaria}
         leftComponent={<MyCustomLeftComponent />}
@@ -135,7 +171,7 @@ export default function App() {
         </ContainerTexto>
         <ButtonCurso
           key="1"
-          onPress={() => navigateToTelaVideo()}
+          onPress={() => setModalVisible(true)}
           underlayColor={colors.secundaria}
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -166,3 +202,40 @@ export default function App() {
     </Container>
   );
 }
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: colors.fundo,
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2
+  },
+
+  buttonClose: {
+    backgroundColor: colors.primaria
+  },
+  textStyle: {
+    color: colors.textoBranco,
+    fontWeight: "bold",
+    textAlign: "center"
+  }
+});
