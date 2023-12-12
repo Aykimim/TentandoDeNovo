@@ -36,9 +36,10 @@ export const ScrollViewTudo = styled.ScrollView`
 export const ButtonCursoTudo = styled.View`
   flex-direction: row;
   padding-left: 5%;
-  padding-right: 5%;
-  max-width: 350px;
+  padding-right: 8%;
+  
 `;
+//max-width: 350px;
 // border-radius: 10px;
 // padding: 5px;
 // flex-direction: row; /* Define a direção como "row" para alinhar os elementos horizontalmente */

@@ -22,7 +22,7 @@ export const colors1 = {
   cinza: "#707070"
 };
 //darkTheme
-export const colors2 = {
+export const darkTheme = {
  
     primaria: "#754a00",
     secundaria: "#594e34",

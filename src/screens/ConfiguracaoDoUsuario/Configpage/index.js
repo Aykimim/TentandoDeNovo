@@ -76,7 +76,7 @@ export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   function toggleDarkMode() {
-    setIsDarkMode((prevMode) => !prevMode);
+    // setIsDarkMode((prevMode) => !prevMode);
   }
 
 return (
@@ -95,6 +95,7 @@ return (
         underlayColor={colors.primaria}
       >
         <View style={{ flexDirection: "row", alignItems: "center" }}>
+
           <Icon name="adjust" size={20} color={colors.branco} />
           <ButtonText>Tema</ButtonText>
         </View>

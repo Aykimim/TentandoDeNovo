@@ -117,7 +117,7 @@ export default function App() {
     // Simula uma autenticação bem-sucedida
     // Substitua esta lógica pela sua lógica de autenticação real
     setTimeout(() => {
-      if (nomeUser === "Coxinha" && senha === "Coxinha") {
+      if (nomeUser === "Teste" && senha === "Teste") {
         setLoggedIn(true);
         navigateToHome();
       } else {
@@ -235,7 +235,10 @@ export default function App() {
               Esqueci a senha.
             </SendButtontextEsqueciSenha>
           </SendButton>
-
+          <SendButtontextEsqueciSenha>
+            Email:"Teste"
+             Senhas:"Teste"
+            </SendButtontextEsqueciSenha>
           {/* <SendButton onPress={navigateTest}>
             <SendButtontextEsqueciSenha>
               navigateTest
@@ -291,7 +294,7 @@ export default function App() {
 
           <TextEscrita style={{ flex: 0 }}>
             Ao se inscrever, você concorda com nossos Termos e Política de
-            Privacidade Você pode excluir sua conta em suasconfigurações{" "}
+            Privacidade Você pode excluir sua conta em suas configurações{" "}
           </TextEscrita>
         </>
       )}
